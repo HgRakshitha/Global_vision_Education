@@ -1,0 +1,178 @@
+.aboutus-header {
+  width: 100%;
+  background-color: #FBF2E7;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.aboutus-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.aboutus-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.aboutus-company-logo {
+  height: 80px;
+  width: auto;
+  max-width: 280px;
+  object-fit: contain;
+  display: block;
+}
+
+.aboutus-logo-fallback {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aboutus-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutus-logo-main {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.1;
+}
+
+.aboutus-logo-subtitle {
+  font-size: 0.61rem;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.aboutus-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+.aboutus-nav-link {
+  text-decoration: none;
+  color: #006772;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.aboutus-nav-link:hover {
+  color: #006772;
+}
+
+.aboutus-nav-link.active {
+  color: #006772;
+}
+
+.aboutus-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #006772;
+  border-radius: 2px;
+}
+
+.aboutus-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.aboutus-btn-consultation {
+  background-color: #006772;
+  color: white;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: inherit;
+}
+
+.aboutus-btn-consultation:hover {
+  background-color: #005a63;
+}
+
+@media (max-width: 1024px) {
+  .aboutus-company-logo {
+    height: 70px;
+    max-width: 220px;
+  }
+  
+  .aboutus-nav-menu {
+    margin-right: 2rem;
+  }
+  
+  .aboutus-nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .aboutus-nav-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutus-header-container {
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .aboutus-company-logo {
+    height: 55px;
+    max-width: 180px;
+  }
+  
+  .aboutus-nav-menu {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    margin-right: 0;
+  }
+  
+  .aboutus-header-actions {
+    gap: 0.5rem;
+  }
+  
+  .aboutus-btn-consultation {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+

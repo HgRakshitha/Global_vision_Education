@@ -1,0 +1,699 @@
+/* CSS Variables - Color Palette */
+:root {
+  --teal-overlay: rgba(13, 138, 135, 0.5); /* #0d8a87 with ~50% opacity */
+  --dark-teal: #0b6f6b;
+  --cream-bg: #F6EFE8;
+  --card-cream: #F3EEE8;
+  --accent-pill: #E8F8F4;
+  --heading-text: #0B1A1A;
+  --light-green: #06B795;
+}
+
+.services-page {
+  min-height: 100vh;
+  background-color: var(--cream-bg);
+  width: 100%;
+}
+
+/* Services Hero Section */
+.services-hero {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: visible;
+}
+
+.services-hero-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 0;
+}
+
+.services-hero-bg {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services-hero-bg-left {
+  transform: scaleX(1);
+}
+
+.services-hero-bg-right {
+  transform: scaleX(-1);
+}
+
+.services-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(0, 103, 114, 0.3) 0%, rgba(6, 183, 149, 0.2) 100%);
+}
+
+/* Left diagonal overlay - bottom to top slanted triangle */
+.services-hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--teal-overlay);
+  clip-path: polygon(0 100%, 0 0, 52% 0, 48% 100%);
+}
+
+/* Right diagonal overlay - top to bottom slanted triangle */
+.services-hero-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 138, 135, 0.45);
+  clip-path: polygon(52% 0, 100% 0, 100% 100%, 48% 100%);
+}
+
+/* Decorative geometric shapes at bottom */
+.services-hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(6, 183, 149, 0.3) 0%, rgba(0, 103, 114, 0.2) 100%);
+  clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.services-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  height: 140px;
+  background: linear-gradient(225deg, rgba(0, 103, 114, 0.3) 0%, rgba(6, 183, 149, 0.2) 100%);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Left diagonal overlay - bottom to top slanted triangle */
+.services-hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--teal-overlay);
+  clip-path: polygon(0 100%, 0 0, 52% 0, 48% 100%);
+}
+
+/* Right diagonal overlay - top to bottom slanted triangle */
+.services-hero-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 138, 135, 0.45);
+  clip-path: polygon(52% 0, 100% 0, 100% 100%, 48% 100%);
+}
+
+
+.services-hero-content {
+  position: absolute;
+  z-index: 2;
+  bottom: 60px;
+  left: 60px;
+}
+
+.services-hero-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* Service Cards Container */
+.services-cards-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* First Row - Centered at bottom of hero, slightly up */
+.services-cards-row-1 {
+  position: absolute;
+  z-index: 3;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+/* Second Row - Below hero section, offset, can overlap next section */
+.services-cards-row-2 {
+  position: relative;
+  margin-top: -40px;
+  padding: 0 2rem;
+  width: fit-content;
+  margin-left: calc(50% + 62px);
+  margin-right: auto;
+  margin-bottom: 0;
+  /* Offset: first card should be below 3rd card of first row */
+  /* First row: 3 cards (100px each) + 2 gaps (12px each) = 324px total, centered at 50% */
+  /* First card starts at: 50% - 162px */
+  /* Third card starts at: 50% - 162px + 224px (2 cards + 2 gaps) = 50% + 62px */
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.service-card {
+  background-color: #FBF2E7;
+  border-radius: 16px;
+  width: 100px;
+  height: 105px;
+  padding: 10px 6px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(6, 20, 20, 0.15);
+}
+
+.service-card-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #006672 0%, #06B795 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.service-card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #0F1729;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0;
+}
+
+/* What We Offer Section */
+.what-we-offer {
+  background: linear-gradient(to bottom, #FBF2E7 0%, #FBF2E7 18%, #006772 100%);
+  padding: 60px 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.what-we-offer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.what-we-offer-label {
+  display: inline-block;
+  background-color: var(--dark-teal);
+  color: #ffffff;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.what-we-offer-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  text-align: center;
+  line-height: 1.3;
+  position: relative;
+}
+
+.what-we-offer-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 48px 0;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Program Cards */
+.what-we-offer-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+}
+
+.program-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 320px;
+  min-height: 360px;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  padding: 24px 20px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--dark-teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.program-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.program-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.program-card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #526D7A;
+  margin: 0 0 10px 0;
+}
+
+.program-card-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #526D7A;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.program-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-card-features li {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #526D7A;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.program-card-features .checkmark {
+  color: var(--dark-teal);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Secondary Services Buttons */
+.secondary-services {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.secondary-service-btn {
+  width: 280px;
+  height: 95px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F2 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 16px 20px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #00444D;
+  cursor: default;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.secondary-service-btn:hover {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F2 100%);
+  color: #00444D;
+  transform: none;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.secondary-service-btn:active {
+  transform: none;
+  opacity: 1;
+  color: #00444D;
+}
+
+.secondary-service-btn * {
+  opacity: 1 !important;
+}
+
+/* Enrollment Process Section */
+.enrollment-process {
+  background-color: #006772;
+  padding: 60px 2rem;
+}
+
+.enrollment-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.enrollment-process-label {
+  display: inline-block;
+  background-color: #e5e7eb;
+  color: #006772;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.enrollment-process-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.enrollment-process-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0 0 48px 0;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enrollment-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.enrollment-step-card {
+  background-color: #ffffff;
+  width: 300px;
+  height: 240px;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.step-number {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #006772;
+  margin: 0 auto 16px;
+  line-height: 1;
+  text-align: center;
+}
+
+.step-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 auto 12px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.step-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Services CTA Section */
+.services-cta {
+  background-color: #FBF2E7;
+  padding: 60px 2rem;
+}
+
+.services-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-cta-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #006772;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.services-cta-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #006772;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.services-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.services-cta-btn-primary {
+  background-color: #006772;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.services-cta-btn-primary:hover {
+  background-color: #004d55;
+}
+
+.services-cta-btn-secondary {
+  background-color: #ffffff;
+  color: #006772;
+  border: 2px solid #006772;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-cta-btn-secondary:hover {
+  background-color: #006772;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .what-we-offer-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .program-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-hero {
+    height: auto;
+    min-height: 440px;
+  }
+
+  .what-we-offer-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary-services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondary-service-btn {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .services-hero-content {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding: 40px 2rem 20px;
+    order: 1;
+  }
+
+  .services-hero-title {
+    font-size: 42px;
+    color: #ffffff;
+    position: relative;
+    z-index: 3;
+  }
+
+  .services-cards-row-1 {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    padding: 20px 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services-cards-row-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero-title {
+    font-size: 36px;
+  }
+
+
+  .service-card {
+    width: 100px;
+    height: 100px;
+    padding: 10px 6px;
+  }
+
+  .service-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .service-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .service-card-title {
+    font-size: 10px;
+  }
+
+  .what-we-offer-heading {
+    font-size: 24px;
+  }
+}

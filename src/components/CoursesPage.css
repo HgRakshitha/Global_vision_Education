@@ -1,0 +1,904 @@
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.courses-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FBF2E7;
+}
+
+/* Hero Section */
+.courses-hero {
+  background: linear-gradient(to bottom right, #006772 0%, #006772 40%, rgba(251, 242, 231, 0.72) 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark gradient in left upper corner */
+.courses-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 103, 114, 0.6) 0%, rgba(0, 103, 114, 0.3) 40%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.courses-hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  min-height: 600px;
+}
+
+/* Left Content */
+.courses-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 2;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.courses-hero-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.title-line {
+  display: block;
+}
+
+.courses-hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.courses-btn-primary {
+  background-color: #FBF2E7;
+  color: #006772;
+  border: 2px solid #006772;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.courses-btn-primary:hover {
+  background-color: #006772;
+  color: #ffffff;
+}
+
+.courses-btn-secondary {
+  background-color: transparent;
+  color: #FBF2E7;
+  border: 2px solid #FBF2E7;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.courses-btn-secondary:hover {
+  background-color: #FBF2E7;
+  color: #006772;
+}
+
+/* Right Image */
+.courses-hero-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  animation: fadeInRight 0.8s ease-out 0.3s both;
+}
+
+.courses-hero-image {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-50px);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Info Boxes */
+.floating-info-box {
+  position: absolute;
+  background-color: #FBF2E7;
+  border: 1px solid #006772;
+  border-radius: 16px;
+  width: 189px;
+  height: 72px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 1;
+  box-sizing: border-box;
+  animation: scaleIn 0.6s ease-out 0.8s both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.floating-box-1 {
+  top: 20px;
+  right: 20px;
+  animation-delay: 0.8s;
+  width: 160px;
+  height: 60px;
+  padding: 10px 12px;
+}
+
+.floating-box-2 {
+  bottom: 40px;
+  left: 100px;
+  animation-delay: 1s;
+}
+
+.info-icon-box {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  background-color: rgba(6, 183, 149, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon-text {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #006772;
+}
+
+.info-text {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #006772;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-checkmark {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(67%) saturate(1234%) hue-rotate(152deg) brightness(95%) contrast(101%);
+}
+
+/* Courses Section - Top part with cream background */
+.courses-section-top {
+  background-color: #FBF2E7;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+/* Courses Section - Bottom part with mixed cream/green gradient */
+.courses-section {
+  background: linear-gradient(to bottom, 
+    rgba(0, 103, 114, 1) 0%,
+    rgba(251, 242, 231, 0.7176) 50%,
+    rgba(0, 103, 114, 1) 100%);
+  padding: 2rem 2rem 4rem 2rem;
+  position: relative;
+}
+
+.courses-section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.courses-section-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.heading-line {
+  display: block;
+}
+
+.courses-section-heading .highlight-teal {
+  color: #006772;
+}
+
+.courses-section-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Program Sections */
+.program-section {
+  margin-bottom: 4rem;
+}
+
+.program-section-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Override for Undergraduate Programs title */
+.undergraduate-programs-section .program-section-title {
+  color: #00444D;
+}
+
+.program-section-subtitle {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Override for Undergraduate Programs subtitle to match Secondary Education */
+.undergraduate-programs-section .program-section-subtitle {
+  color: #FBF2E7;
+}
+
+/* Secondary Education Container and Cards */
+.secondary-education-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.secondary-education-container .program-section-title {
+  color: #FBF2E7;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.secondary-education-container .program-section-subtitle {
+  color: #FBF2E7;
+  margin: 0 0 2rem 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.secondary-education-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-items: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.secondary-education-card {
+  width: 290px;
+  height: 260px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+  position: relative;
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secondary-education-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.secondary-education-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.secondary-education-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #06B795;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.secondary-card-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.secondary-education-card::after {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.secondary-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.secondary-card-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: none;
+}
+
+.secondary-card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  text-align: left;
+}
+
+.secondary-card-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.secondary-card-read-more {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #08B584;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  color: #06B795;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+}
+
+.secondary-card-read-more:hover {
+  color: #00444D;
+}
+
+/* Program Cards Grid */
+.program-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 3rem;
+}
+
+.program-cards-grid-large {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Undergraduate Programs Cards */
+.undergraduate-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.undergraduate-card {
+  width: 290px;
+  height: 260px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+  position: relative;
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.undergraduate-card:nth-child(1) { animation-delay: 0.1s; }
+.undergraduate-card:nth-child(2) { animation-delay: 0.2s; }
+.undergraduate-card:nth-child(3) { animation-delay: 0.3s; }
+.undergraduate-card:nth-child(4) { animation-delay: 0.4s; }
+.undergraduate-card:nth-child(5) { animation-delay: 0.5s; }
+.undergraduate-card:nth-child(6) { animation-delay: 0.6s; }
+
+.undergraduate-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.undergraduate-card-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: none;
+}
+
+.undergraduate-card::after {
+  content: '';
+  position: absolute;
+  bottom: 52px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.undergraduate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.undergraduate-card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  text-align: left;
+}
+
+.undergraduate-card-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.undergraduate-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: none;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  gap: 12px;
+}
+
+.undergraduate-duration {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.undergraduate-read-more {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #08B584;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.undergraduate-read-more:hover {
+  color: #06B795;
+}
+
+/* Postgraduate Programs Cards */
+.postgraduate-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.postgraduate-cards-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.postgraduate-cards-row-first {
+  justify-content: center;
+}
+
+.postgraduate-cards-row-second {
+  justify-content: center;
+  /* Center 3 cards to align with first row's 4 cards */
+  /* Each card is 290px, gap is 24px */
+  /* 4 cards: 4*290 + 3*24 = 1232px */
+  /* 3 cards: 3*290 + 2*24 = 918px */
+  /* Offset to center: (1232 - 918) / 2 = 157px */
+  /* Reduced padding to move left */
+  padding-left: 60px;
+}
+
+.postgraduate-card {
+  width: 290px;
+  height: 260px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+  position: relative;
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postgraduate-card:nth-child(1) { animation-delay: 0.1s; }
+.postgraduate-card:nth-child(2) { animation-delay: 0.2s; }
+.postgraduate-card:nth-child(3) { animation-delay: 0.3s; }
+.postgraduate-card:nth-child(4) { animation-delay: 0.4s; }
+.postgraduate-card:nth-child(5) { animation-delay: 0.5s; }
+.postgraduate-card:nth-child(6) { animation-delay: 0.6s; }
+.postgraduate-card:nth-child(7) { animation-delay: 0.7s; }
+
+.postgraduate-card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.postgraduate-card-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: none;
+}
+
+.postgraduate-card::after {
+  content: '';
+  position: absolute;
+  bottom: 52px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.postgraduate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.postgraduate-card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  text-align: left;
+}
+
+.postgraduate-card-description {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postgraduate-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: none;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  gap: 12px;
+}
+
+.postgraduate-duration {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.postgraduate-read-more {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #08B584;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.postgraduate-read-more:hover {
+  color: #06B795;
+}
+
+/* Override for Postgraduate Programs subtitle */
+.postgraduate-programs-section .program-section-subtitle {
+  color: #FBF2E7;
+}
+
+/* Override for Postgraduate Programs title */
+.postgraduate-programs-section .program-section-title {
+  color: #00444D;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .program-cards-grid-large {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .courses-section-heading {
+    font-size: 2rem;
+  }
+
+  .program-cards-grid,
+  .program-cards-grid-large {
+    grid-template-columns: 1fr;
+  }
+
+  .program-section-title {
+    font-size: 1.75rem;
+  }
+}

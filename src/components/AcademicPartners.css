@@ -1,0 +1,84 @@
+.academic-partners {
+  padding: 1.5rem 2rem;
+  background-color: #FBF2E7;
+}
+
+.partners-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.partners-headline {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+}
+
+.affiliation-item {
+  font-size: 32px;
+  font-weight: 800;
+  color: #006772;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .academic-partners {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .partners-container {
+    max-width: 800px;
+  }
+  
+  .partners-headline {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .partners-logos {
+    gap: 2rem;
+  }
+  
+  .affiliation-item {
+    font-size: 28px;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 768px) {
+  .academic-partners {
+    padding: 1rem 1rem;
+  }
+  
+  .partners-container {
+    max-width: 100%;
+  }
+  
+  .partners-headline {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .partners-logos {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .affiliation-item {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+

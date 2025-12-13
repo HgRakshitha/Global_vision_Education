@@ -1,0 +1,149 @@
+.statistics {
+  position: relative;
+  z-index: 3;
+  margin-top: 0;
+  padding: 1rem 2rem;
+  background-color: #006772;
+}
+
+.statistics-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 70px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #06B795 0%, #008B7A 50%, #06B795 100%);
+  border-radius: 35px; /* Half of height (70/2) for perfect oval shape */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 6px 20px rgba(6, 183, 149, 0.3);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #006672 0%, #06B795 100%);
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-text {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+
+@media (max-width: 1024px) {
+  .statistics {
+    margin-top: 3rem;
+  }
+  
+  .statistics-container {
+    width: 95%;
+    max-width: 900px;
+    height: auto;
+    min-height: 70px;
+    border-radius: 35px;
+    padding: 0.5rem 1.5rem;
+    gap: 0.75rem;
+  }
+  
+  .stat-icon {
+    width: 45px;
+    height: 45px;
+    padding: 6px;
+  }
+  
+  .stat-icon img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .stat-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .statistics {
+    margin-top: 2.5rem;
+    padding: 1rem 1rem;
+  }
+  
+  .statistics-container {
+    width: 95%;
+    max-width: 900px;
+    height: auto;
+    min-height: 70px;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 35px;
+  }
+  
+  .stat-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .stat-icon {
+    width: 45px;
+    height: 45px;
+    padding: 6px;
+  }
+  
+  .stat-icon img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .stat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .stat-text {
+    font-size: 0.85rem;
+    white-space: normal;
+  }
+}
+

@@ -1,0 +1,311 @@
+.services-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Upper Section - Deep Teal Background */
+.services-upper {
+  position: relative;
+  background-color: #006772;
+  padding: 0 0 3rem 0;
+  display: block;
+  overflow: hidden;
+}
+
+.services-upper-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #FBF2E7;
+  border-radius: 0 0 50% 50%;
+  padding: 2.25rem 2rem 3.25rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.services-upper-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.services-label {
+  display: inline-block;
+  background-color: #D9F2EE;
+  color: #06B795;
+  padding: 0.45rem 1.35rem;
+  border-radius: 50px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.3px;
+}
+
+.services-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 0.875rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.services-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.65;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-curve {
+  display: none;
+}
+
+/* Lower Section - Dark Teal Background */
+.services-lower {
+  background-color: #006772;
+  padding: 5rem 2rem 3rem;
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.application-process-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FBF2E7;
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Application Process Grid - Home Page Only */
+.application-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+
+.application-process-card {
+  background-color: #FBF2E7;
+  width: 360px;
+  height: 220px;
+  border-radius: 24px;
+  border: none;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.application-process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.application-process-card:hover .application-process-icon-wrapper {
+  transform: scale(1.05);
+}
+
+.application-process-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background-color: #006772;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.application-process-icon-svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.application-process-icon-svg path {
+  fill: white;
+}
+
+.application-process-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F1729;
+  margin: 0 0 0.75rem 0;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+  text-align: left;
+  width: 100%;
+}
+
+.application-process-card:hover .application-process-title {
+  color: #0F1729;
+}
+
+.application-process-description {
+  font-size: 0.9rem;
+  color: #5C6A8A;
+  margin: 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.application-process-card:hover .application-process-description {
+  color: #5C6A8A;
+}
+
+@media (max-width: 1024px) {
+  .services-heading {
+    font-size: 2rem;
+  }
+  
+  .application-process-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .services-upper-content {
+    padding: 2rem 1.5rem 3rem;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .application-process-grid {
+    grid-template-columns: repeat(2, 360px);
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .services-upper {
+    padding: 0;
+  }
+  
+  .services-lower {
+    padding: 4.5rem 1.5rem 2.5rem;
+    margin-top: -60px;
+  }
+  
+  .application-process-card {
+    width: 360px;
+    height: 220px;
+    padding: 1.25rem 1rem;
+  }
+  
+  .application-process-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .application-process-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .application-process-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .application-process-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-heading {
+    font-size: 1.75rem;
+  }
+  
+  .application-process-heading {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .services-description {
+    font-size: 0.9rem;
+  }
+  
+  .services-upper-content {
+    padding: 1.75rem 1rem 2.5rem;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .application-process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+  
+  .services-upper {
+    padding: 0;
+  }
+  
+  .services-lower {
+    padding: 4rem 1rem 2rem;
+    margin-top: -50px;
+  }
+  
+  .application-process-card {
+    width: 100%;
+    max-width: 360px;
+    height: 220px;
+    padding: 1.25rem 1rem;
+  }
+  
+  .application-process-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .application-process-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .application-process-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .application-process-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+

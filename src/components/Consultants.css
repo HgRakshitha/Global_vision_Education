@@ -1,0 +1,260 @@
+.consultants-section {
+  background-color: #006772;
+  padding: 4rem 2rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultants-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.consultants-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.consultants-subheading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.consultants-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  margin: -1.3rem 0 0;
+  line-height: 42px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.consultants-description {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.5;
+  margin: -0.8rem 0 0;
+  opacity: 0.95;
+  max-width: 480px;
+}
+
+.consultants-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #006672 0%, #06B795 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 0 0 5px #FBF2E7;
+}
+
+.feature-icon-img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.feature-icon-fallback {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-fallback svg {
+  color: white;
+  width: 18px;
+  height: 18px;
+}
+
+.feature-icon-fallback svg path {
+  stroke: white;
+  fill: white;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.feature-description {
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.consultants-images {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.consultants-images::before {
+  content: '';
+  position: absolute;
+  left: -80px;
+  bottom: -50px;
+  width: 400px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(6, 183, 149, 0.3) 0%, rgba(6, 183, 149, 0.15) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+
+.consultants-images::after {
+  content: '';
+  position: absolute;
+  left: -60px;
+  bottom: 50px;
+  width: 300px;
+  height: 250px;
+  background: radial-gradient(ellipse at center, rgba(6, 183, 149, 0.25) 0%, rgba(6, 183, 149, 0.1) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(15deg);
+}
+
+.consultant-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: visible;
+  height: 520px;
+  margin-top: auto;
+  margin-bottom: -130px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+}
+
+.consultant-image-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  width: 90px;
+  height: 90px;
+  background: rgba(6, 183, 149, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.consultant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+  transform: scale(1.1);
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .consultants-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .consultants-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .consultants-heading {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  
+  .consultants-images {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .consultants-section {
+    padding: 2.5rem 1rem;
+  }
+  
+  .consultants-content {
+    gap: 2rem;
+  }
+  
+  .consultants-heading {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  
+  .consultants-description {
+    font-size: 0.9rem;
+  }
+  
+  .consultants-features {
+    gap: 1.25rem;
+  }
+  
+  .feature-icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .feature-title {
+    font-size: 1rem;
+  }
+  
+  .feature-description {
+    font-size: 0.85rem;
+  }
+  
+  .consultants-images {
+    max-width: 100%;
+  }
+}
