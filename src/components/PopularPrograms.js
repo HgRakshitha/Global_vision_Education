@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PopularPrograms.css';
-
-// Import program images - Update these paths when you add your images
 import lifeSciencesImg from '../assets/images/programs/life.png';
 import mbbsImg from '../assets/images/programs/mbbs.png';
 import engineeringImg from '../assets/images/programs/eng.png';

@@ -42,7 +42,7 @@ const Services = () => {
         <div className="services-upper-content">
           <div className="services-upper-inner">
             <div className="services-label">Our Services</div>
-            <h2 className="services-heading">Complete Support for Your Study Abroad Journey</h2>
+            <h2 className="services-heading">Complete Support for Your Educational Journey</h2>
             <p className="services-description">
               From choosing the right university to settling into your new home, we're with you every step of the way.
             </p>

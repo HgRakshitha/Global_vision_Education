@@ -39,7 +39,7 @@ const AboutUsHeader = () => {
           <Link to="/" className="aboutus-nav-link">Home</Link>
           <Link to="/about" className="aboutus-nav-link">About</Link>
           <Link to="/services" className="aboutus-nav-link">Services</Link>
-          <Link to="/courses" className="aboutus-nav-link">Study Abroad</Link>
+          <Link to="/courses" className="aboutus-nav-link">Course</Link>
           <Link to="/contact" className="aboutus-nav-link">Contact</Link>
         </nav>
 

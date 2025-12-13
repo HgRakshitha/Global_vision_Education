@@ -1,10 +1,6 @@
 import React from 'react';
 import './Consultants.css';
-
-// Import consultant image - Update this path when you add your image
 import consultantImg from '../assets/images/consultants/consultant.png';
-
-// Import feature icons - Update these paths when you add your icons
 import studentCentricIcon from '../assets/images/icons/svg.png';
 import comprehensiveSupportIcon from '../assets/images/icons/svg.png';
 import globalNetworkIcon from '../assets/images/icons/svg.png';
@@ -19,12 +15,12 @@ const Consultants = () => {
     {
       icon: comprehensiveSupportIcon,
       title: 'Comprehensive Support',
-      description: 'We put your needs and aspirations at the forefront, tailoring our guidance to your individual journey.'
+      description: 'End-to-end assistance throughout your educational journey, from application to enrollment and beyond.'
     },
     {
       icon: globalNetworkIcon,
       title: 'Global Network',
-      description: 'We put your needs and aspirations at the forefront, tailoring our guidance to your individual journey.'
+      description: 'Access to a wide network of universities and educational institutions worldwide for better opportunities.'
     }
   ];
 
@@ -46,9 +42,9 @@ const Consultants = () => {
         
         <div className="consultants-content">
           <div className="consultants-subheading">What makes us UNIQUE?</div>
-          <h2 className="consultants-heading">Get to Know our Study Abroad Consultants</h2>
+          <h2 className="consultants-heading">Get to Know our Consultants</h2>
           <p className="consultants-description">
-            In a realm of educational options, our distinctive approach defines Best Study Abroad Consultants in Dubai, Global Vision Education as the premier choice for students seeking unparalleled guidance.
+            In a realm of educational options, our distinctive approach defines Global Vision Education as the premier choice for students seeking unparalleled guidance.
           </p>
           
           <div className="consultants-features">
