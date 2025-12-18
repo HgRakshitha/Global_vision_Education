@@ -7,9 +7,34 @@
   background-color: #006772;
 }
 
+.hero-title-overlay {
+  position: absolute;
+  top: 2.5rem;
+  left: 11.5rem;
+  z-index: 20;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0%;
+  margin: 0;
+  color: #00444d;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-title .highlight {
+  color: #006772;
+}
+
 .hero-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 1410px;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem 0 2rem;
@@ -17,10 +42,13 @@
   justify-content: center;
   align-items: flex-end;
   z-index: 2;
-  min-height: 240px;
-  background-color: #FBF2E7;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(247, 244, 236, 0.4) 0%, transparent 50%),
+  min-height: 390px;
+  background-color: #fbf2e7;
+  background-image: radial-gradient(
+      circle at 40% 80%,
+      rgba(247, 244, 236, 0.4) 0%,
+      transparent 50%
+    ),
     repeating-linear-gradient(
       45deg,
       transparent,
@@ -37,15 +65,41 @@
   z-index: 3;
   display: flex;
   align-items: flex-end;
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   margin-bottom: 0;
   height: 100%;
+}
+
+.hero-trust-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  right: -12rem;
+  width: 290px;
+  height: 35px;
+  background: #06b7951a;
+  border-radius: 9999px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #006772;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  z-index: 5;
+}
+
+.hero-trust-badge span {
+  font-size: 16px;
 }
 
 .hero-image {
   width: 100%;
   max-width: 100%;
-  max-height: 350px;
+  max-height: 320px;
+  left: -6px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -58,13 +112,13 @@
   .hero {
     padding: 0 0 2.5rem 0;
   }
-  
+
   .hero-container {
     padding: 0.75rem 1.5rem 0 1.5rem;
     min-height: 200px;
     border-radius: 0 0 50% 50%;
   }
-  
+
   .hero-image {
     max-height: 300px;
   }
@@ -74,15 +128,19 @@
   .hero {
     padding: 0 0 2rem 0;
   }
-  
+
   .hero-container {
     padding: 0.5rem 1rem 0 1rem;
     min-height: 180px;
     border-radius: 0 0 50% 50%;
   }
-  
+
   .hero-image {
     max-height: 250px;
   }
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}

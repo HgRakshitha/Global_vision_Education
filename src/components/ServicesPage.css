@@ -2,11 +2,11 @@
 :root {
   --teal-overlay: rgba(13, 138, 135, 0.5); /* #0d8a87 with ~50% opacity */
   --dark-teal: #0b6f6b;
-  --cream-bg: #F6EFE8;
-  --card-cream: #F3EEE8;
-  --accent-pill: #E8F8F4;
-  --heading-text: #0B1A1A;
-  --light-green: #06B795;
+  --cream-bg: #f6efe8;
+  --card-cream: #f3eee8;
+  --accent-pill: #e8f8f4;
+  --heading-text: #0b1a1a;
+  --light-green: #06b795;
 }
 
 .services-page {
@@ -54,12 +54,16 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(0, 103, 114, 0.3) 0%, rgba(6, 183, 149, 0.2) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 103, 114, 0.3) 0%,
+    rgba(6, 183, 149, 0.2) 100%
+  );
 }
 
 /* Left diagonal overlay - bottom to top slanted triangle */
 .services-hero-overlay::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -71,7 +75,7 @@
 
 /* Right diagonal overlay - top to bottom slanted triangle */
 .services-hero-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -83,26 +87,34 @@
 
 /* Decorative geometric shapes at bottom */
 .services-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 300px;
   height: 120px;
-  background: linear-gradient(135deg, rgba(6, 183, 149, 0.3) 0%, rgba(0, 103, 114, 0.2) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(6, 183, 149, 0.3) 0%,
+    rgba(0, 103, 114, 0.2) 100%
+  );
   clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
   z-index: 2;
   pointer-events: none;
 }
 
 .services-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   width: 350px;
   height: 140px;
-  background: linear-gradient(225deg, rgba(0, 103, 114, 0.3) 0%, rgba(6, 183, 149, 0.2) 100%);
+  background: linear-gradient(
+    225deg,
+    rgba(0, 103, 114, 0.3) 0%,
+    rgba(6, 183, 149, 0.2) 100%
+  );
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
   z-index: 2;
   pointer-events: none;
@@ -110,7 +122,7 @@
 
 /* Left diagonal overlay - bottom to top slanted triangle */
 .services-hero-overlay::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -122,7 +134,7 @@
 
 /* Right diagonal overlay - top to bottom slanted triangle */
 .services-hero-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -132,7 +144,6 @@
   clip-path: polygon(52% 0, 100% 0, 100% 100%, 48% 100%);
 }
 
-
 .services-hero-content {
   position: absolute;
   z-index: 2;
@@ -141,7 +152,7 @@
 }
 
 .services-hero-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 52px;
   font-weight: 700;
   color: #ffffff;
@@ -158,7 +169,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 /* First Row - Centered at bottom of hero, slightly up */
 .services-cards-row-1 {
@@ -188,7 +198,7 @@
 }
 
 .service-card {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   border-radius: 16px;
   width: 100px;
   height: 105px;
@@ -212,7 +222,7 @@
 .service-card-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, #006672 0%, #06B795 100%);
+  background: linear-gradient(135deg, #006672 0%, #06b795 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -227,10 +237,10 @@
 }
 
 .service-card-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 0.6rem;
   font-weight: 600;
-  color: #0F1729;
+  color: #0f1729;
   margin: 0;
   line-height: 1.2;
   text-align: center;
@@ -239,7 +249,7 @@
 
 /* What We Offer Section */
 .what-we-offer {
-  background: linear-gradient(to bottom, #FBF2E7 0%, #FBF2E7 18%, #006772 100%);
+  background: linear-gradient(to bottom, #fbf2e7 0%, #fbf2e7 18%, #006772 100%);
   padding: 60px 2rem;
   position: relative;
   z-index: 5;
@@ -255,7 +265,7 @@
   display: inline-block;
   background-color: var(--dark-teal);
   color: #ffffff;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -266,7 +276,7 @@
 }
 
 .what-we-offer-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: #1f2937;
@@ -277,7 +287,7 @@
 }
 
 .what-we-offer-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #6b7280;
@@ -340,18 +350,18 @@
 }
 
 .program-card-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #526D7A;
+  color: #526d7a;
   margin: 0 0 10px 0;
 }
 
 .program-card-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 13px;
   font-weight: 400;
-  color: #526D7A;
+  color: #526d7a;
   line-height: 1.6;
   margin: 0 0 16px 0;
 }
@@ -363,10 +373,10 @@
 }
 
 .program-card-features li {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #526D7A;
+  color: #526d7a;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -394,14 +404,14 @@
 .secondary-service-btn {
   width: 280px;
   height: 95px;
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F2 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fdf8f2 100%);
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   padding: 16px 20px;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 700;
-  color: #00444D;
+  color: #00444d;
   cursor: default;
   text-align: center;
   display: flex;
@@ -411,8 +421,8 @@
 }
 
 .secondary-service-btn:hover {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F2 100%);
-  color: #00444D;
+  background: linear-gradient(135deg, #ffffff 0%, #fdf8f2 100%);
+  color: #00444d;
   transform: none;
   box-shadow: none;
   opacity: 1;
@@ -421,7 +431,7 @@
 .secondary-service-btn:active {
   transform: none;
   opacity: 1;
-  color: #00444D;
+  color: #00444d;
 }
 
 .secondary-service-btn * {
@@ -444,7 +454,7 @@
   display: inline-block;
   background-color: #e5e7eb;
   color: #006772;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -455,7 +465,7 @@
 }
 
 .enrollment-process-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #ffffff;
@@ -464,7 +474,7 @@
 }
 
 .enrollment-process-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -501,7 +511,7 @@
 }
 
 .step-number {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 40px;
   font-weight: 700;
   color: #006772;
@@ -511,7 +521,7 @@
 }
 
 .step-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 17px;
   font-weight: 700;
   color: #1f2937;
@@ -521,7 +531,7 @@
 }
 
 .step-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -532,7 +542,7 @@
 
 /* Services CTA Section */
 .services-cta {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 60px 2rem;
 }
 
@@ -543,7 +553,7 @@
 }
 
 .services-cta-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: #006772;
@@ -552,7 +562,7 @@
 }
 
 .services-cta-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #006772;
@@ -574,7 +584,7 @@
   border: none;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -591,7 +601,7 @@
   border: 2px solid #006772;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -609,7 +619,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+
   .program-card {
     max-width: 100%;
   }
@@ -672,7 +682,6 @@
     font-size: 36px;
   }
 
-
   .service-card {
     width: 100px;
     height: 100px;
@@ -695,5 +704,138 @@
 
   .what-we-offer-heading {
     font-size: 24px;
+  }
+}
+
+/* -------------------------------
+   HERO – subtle background motion
+--------------------------------*/
+.services-hero-bg {
+  animation: heroBgFloat 18s ease-in-out infinite;
+}
+
+.services-hero-bg-right {
+  animation-delay: -9s;
+}
+
+@keyframes heroBgFloat {
+  0% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-12px) scaleX(1.02);
+  }
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+}
+
+/* -------------------------------
+   SERVICE CARDS – wave motion
+--------------------------------*/
+.service-card {
+  animation: serviceFloat 6s ease-in-out infinite;
+}
+
+.service-card:nth-child(even) {
+  animation-delay: -3s;
+}
+
+@keyframes serviceFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------
+   SERVICE ICONS – breathing glow
+--------------------------------*/
+.service-card-icon {
+  animation: iconPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(6, 183, 149, 0);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(6, 183, 149, 0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(6, 183, 149, 0);
+  }
+}
+
+/* -------------------------------
+   PROGRAM CARDS – slow lift illusion
+--------------------------------*/
+.program-card {
+  animation: programLift 10s ease-in-out infinite;
+}
+
+.program-card:nth-child(2) {
+  animation-delay: -5s;
+}
+
+@keyframes programLift {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------
+   ENROLLMENT STEPS – gentle stagger
+--------------------------------*/
+.enrollment-step-card {
+  animation: stepFloat 8s ease-in-out infinite;
+}
+
+.enrollment-step-card:nth-child(even) {
+  animation-delay: -4s;
+}
+
+@keyframes stepFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------
+   CTA – attention pulse (soft)
+--------------------------------*/
+.services-cta-btn-primary {
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 103, 114, 0);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(0, 103, 114, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 103, 114, 0);
   }
 }

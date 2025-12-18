@@ -34,10 +34,10 @@
 }
 
 .contact-banner-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  color: #FBF2E7;
+  color: #fbf2e7;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -58,7 +58,7 @@
 .contact-main-container {
   width: 1100px;
   height: 680px;
-  background-color: #FCFAF8;
+  background-color: #fcfaf8;
   border-radius: 50px;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -71,7 +71,7 @@
   left: 60px;
   width: 580px;
   height: 560px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -80,18 +80,18 @@
 }
 
 .contact-form-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0F242E;
+  color: #0f242e;
   margin: 0 0 0.5rem 0;
 }
 
 .contact-form-subtitle {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #526D7A;
+  color: #526d7a;
   margin: 0 0 1.5rem 0;
 }
 
@@ -114,21 +114,21 @@
 }
 
 .form-label {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #0F242E;
+  color: #0f242e;
 }
 
 .form-input,
 .form-textarea {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   padding: 12px 16px;
   border: none;
   border-radius: 8px;
-  background-color: #F8F5F0;
-  color: #0F242E;
+  background-color: #f8f5f0;
+  color: #0f242e;
   transition: border-color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
@@ -136,13 +136,13 @@
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #526D7A;
+  color: #526d7a;
 }
 
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  background-color: #F0EBE0;
+  background-color: #f0ebe0;
 }
 
 .form-textarea {
@@ -158,11 +158,11 @@
 }
 
 .contact-submit-btn {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(90deg, #006772 0%, #06B795 100%);
+  background: linear-gradient(90deg, #006772 0%, #06b795 100%);
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
@@ -201,7 +201,8 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(32%) sepia(67%) saturate(2234%) hue-rotate(154deg) brightness(94%) contrast(89%);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(67%) saturate(2234%)
+    hue-rotate(154deg) brightness(94%) contrast(89%);
 }
 
 .contact-form-left .social-icon:hover {
@@ -224,7 +225,7 @@
 }
 
 .contact-info-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
@@ -264,7 +265,7 @@
 }
 
 .contact-info-label {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #ffffff;
@@ -272,7 +273,7 @@
 }
 
 .contact-info-text {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
@@ -282,7 +283,7 @@
 
 /* Quick Connect Section */
 .quick-connect-section {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 3rem 2rem;
   margin-top: 2rem;
 }
@@ -293,10 +294,10 @@
 }
 
 .quick-connect-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0F242E;
+  color: #0f242e;
   text-align: center;
   margin: 0 0 2rem 0;
 }
@@ -312,8 +313,8 @@
 .quick-connect-card {
   width: 342.39px;
   height: 78px;
-  background-color: #FCFAF8;
-  border: 1px solid #06B795;
+  background-color: #fcfaf8;
+  border: 1px solid #06b795;
   border-radius: 50px;
   padding: 1rem 1.5rem;
   display: flex;
@@ -344,18 +345,18 @@
 }
 
 .quick-connect-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #0F242E;
+  color: #0f242e;
   margin: 0;
 }
 
 .quick-connect-subtitle {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #526D7A;
+  color: #526d7a;
   margin: 0;
 }
 
@@ -370,7 +371,7 @@
 
 /* Our Location Section */
 .our-location-section {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 3rem 2rem;
   margin-top: 0;
 }
@@ -382,11 +383,11 @@
 }
 
 .find-us-button {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #ffffff;
-  background-color: #06B795;
+  background-color: #06b795;
   border: none;
   border-radius: 20px;
   padding: 8px 24px;
@@ -398,22 +399,22 @@
 }
 
 .find-us-button:hover {
-  background-color: #00444D;
+  background-color: #00444d;
 }
 
 .our-location-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0F242E;
+  color: #0f242e;
   margin: 0 0 1rem 0;
 }
 
 .our-location-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #526D7A;
+  color: #526d7a;
   margin: 0 0 2rem 0;
   max-width: 600px;
   margin-left: auto;
@@ -446,58 +447,58 @@
 }
 
 .contact-faq-section .faq-heading {
-  color: #FBF2E7;
+  color: #fbf2e7;
   background: none;
   -webkit-background-clip: unset;
-  -webkit-text-fill-color: #FBF2E7;
+  -webkit-text-fill-color: #fbf2e7;
   background-clip: unset;
 }
 
 .contact-faq-section .faq-label {
   background-color: transparent;
-  color: #FBF2E7;
+  color: #fbf2e7;
   padding: 0;
 }
 
 .contact-faq-section .faq-item {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .contact-faq-section .faq-question {
-  background-color: #FFFFFF;
-  color: #0F242E;
+  background-color: #ffffff;
+  color: #0f242e;
 }
 
 .contact-faq-section .faq-question:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .contact-faq-section .faq-question.active {
-  background-color: #FFFFFF;
-  color: #0F242E;
+  background-color: #ffffff;
+  color: #0f242e;
 }
 
 .contact-faq-section .faq-question.active .faq-chevron {
-  color: #0F242E;
+  color: #0f242e;
 }
 
 .contact-faq-section .faq-chevron {
-  color: #0F242E;
+  color: #0f242e;
 }
 
 .contact-faq-section .faq-answer {
-  background-color: #FFFFFF;
-  color: #526D7A;
+  background-color: #ffffff;
+  color: #526d7a;
 }
 
 .contact-faq-section .view-all-btn {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #006772;
   border: 1px solid #006772;
 }
 
 .contact-faq-section .view-all-btn:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: #006772;
 }
 
@@ -545,5 +546,183 @@
 
   .our-location-heading {
     font-size: 2rem;
+  }
+}
+
+/* ===============================
+   HERO BACKGROUND – slow motion
+================================ */
+.contact-banner {
+  animation: bannerFloat 18s ease-in-out infinite;
+}
+
+@keyframes bannerFloat {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 45%;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+/* ===============================
+   HERO TITLE – cinematic reveal
+================================ */
+.contact-banner-title {
+  animation: titleFadeUp 1.2s ease forwards;
+}
+
+@keyframes titleFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===============================
+   MAIN CARD – floating illusion
+================================ */
+.contact-main-container {
+  animation: cardFloat 10s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   FORM – gentle breathing
+================================ */
+.contact-form-left {
+  animation: formBreath 6s ease-in-out infinite;
+}
+
+@keyframes formBreath {
+  0% {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.14);
+  }
+  100% {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ===============================
+   INFO PANEL – soft glow
+================================ */
+.contact-info-right {
+  animation: infoGlow 7s ease-in-out infinite;
+}
+
+@keyframes infoGlow {
+  0% {
+    box-shadow: inset 0 0 0 rgba(6, 183, 149, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 35px rgba(6, 183, 149, 0.35);
+  }
+  100% {
+    box-shadow: inset 0 0 0 rgba(6, 183, 149, 0);
+  }
+}
+
+/* ===============================
+   CONTACT ICONS – life motion
+================================ */
+.contact-info-icon img {
+  animation: iconDrift 4s ease-in-out infinite;
+}
+
+.contact-info-item:nth-child(even) .contact-info-icon img {
+  animation-delay: -2s;
+}
+
+@keyframes iconDrift {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   QUICK CONNECT – alternating wave
+================================ */
+.quick-connect-card {
+  animation: quickWave 8s ease-in-out infinite;
+}
+
+.quick-connect-card:nth-child(2) {
+  animation-delay: -4s;
+}
+
+@keyframes quickWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MAP – subtle presence
+================================ */
+.map-container iframe {
+  animation: mapPresence 6s ease-in-out infinite;
+}
+
+@keyframes mapPresence {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ===============================
+   CTA BUTTON – premium pulse
+================================ */
+.contact-submit-btn {
+  animation: ctaPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(6, 183, 149, 0);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(6, 183, 149, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(6, 183, 149, 0);
   }
 }

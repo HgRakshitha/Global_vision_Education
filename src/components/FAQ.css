@@ -1,5 +1,5 @@
 .faq-section {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 3rem 2rem;
   position: relative;
 }
@@ -12,7 +12,7 @@
 
 .faq-label {
   display: inline-block;
-  background-color: #D9F2EE;
+  background-color: #d9f2ee;
   color: #000000;
   padding: 0.4rem 1.2rem;
   border-radius: 50px;
@@ -26,7 +26,7 @@
 .faq-heading {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #06B795 0%, #006772 100%);
+  background: linear-gradient(135deg, #06b795 0%, #006772 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -49,7 +49,7 @@
 }
 
 .faq-item {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -59,7 +59,7 @@
 .faq-question {
   width: 100%;
   padding: 1rem 1.25rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: none;
   text-align: left;
   cursor: pointer;
@@ -74,11 +74,11 @@
 }
 
 .faq-question:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .faq-question.active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
 }
 
@@ -102,7 +102,7 @@
 
 .faq-answer {
   padding: 0 1.25rem 1rem 1.25rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #6b7280;
   font-size: 0.85rem;
   line-height: 1.6;
@@ -160,26 +160,26 @@
   .faq-section {
     padding: 3rem 1.5rem;
   }
-  
+
   .faq-heading {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   .faq-grid {
     gap: 1.25rem;
     margin-bottom: 2.5rem;
   }
-  
+
   .faq-column {
     gap: 0.875rem;
   }
-  
+
   .faq-question {
     padding: 1.1rem 1.25rem;
     font-size: 0.95rem;
   }
-  
+
   .faq-answer {
     padding: 0 1.25rem 1.1rem 1.25rem;
     font-size: 0.9rem;
@@ -190,35 +190,99 @@
   .faq-section {
     padding: 2.5rem 1rem;
   }
-  
+
   .faq-heading {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .faq-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .faq-column {
     gap: 0.75rem;
   }
-  
+
   .faq-question {
     padding: 1rem 1.1rem;
     font-size: 0.9rem;
   }
-  
+
   .faq-answer {
     padding: 0 1.1rem 1rem 1.1rem;
     font-size: 0.85rem;
   }
-  
+
   .view-all-btn {
     padding: 0.65rem 1.5rem;
     font-size: 0.9rem;
   }
 }
+/* =====================================
+   FAQ CONTINUOUS MOTION (NO HOVER)
+===================================== */
 
+/* base motion for all cards */
+.faq-item {
+  animation: faqBreath 6.5s ease-in-out infinite;
+}
+
+/* alternate up-down pattern */
+.faq-item:nth-child(even) {
+  animation-delay: 3.25s;
+}
+
+/* slow breathing motion */
+@keyframes faqBreath {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* soft ambient light movement */
+.faq-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(6, 183, 149, 0.12),
+    transparent 70%
+  );
+  opacity: 0;
+  animation: faqLightMove 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.faq-item:nth-child(even)::before {
+  animation-delay: 3.5s;
+}
+
+/* light sweep animation */
+@keyframes faqLightMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  40% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}

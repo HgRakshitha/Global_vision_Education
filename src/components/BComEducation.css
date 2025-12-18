@@ -1,0 +1,437 @@
+.bcom-standard-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #006772;
+}
+
+/* Hero Section */
+.bcom-hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #006772;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+.bcom-hero-oval {
+  position: absolute;
+  width: 1450px;
+  height: 500px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fbf2e7;
+  border-radius: 50%;
+}
+
+/* Main Content */
+.bcom-main-content {
+  position: relative;
+  z-index: 10;
+  margin-top: -200px;
+}
+
+/* Top buttons */
+.bcom-top-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.bcom-back-link-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3d858f;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+}
+
+.bcom-program-tag-center {
+  background-color: rgba(0, 99, 112, 0.1);
+  color: #00444d;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Centered section */
+.bcom-centered-section {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bcom-main-title {
+  font-size: 2.125rem;
+  font-weight: 700;
+  color: #00444d;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Meta tags for duration and level */
+.bcom-meta-tags {
+  display: flex;
+  gap: 1rem;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.bcom-meta-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #00444d;
+  font-weight: 500;
+}
+
+/* Bottom Section */
+.bcom-bottom-section {
+  background-color: #006772;
+  padding: 4rem 0;
+  border-radius: 50px 50px 0 0;
+}
+
+.bcom-bottom-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+/* Columns */
+.bcom-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bcom-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* About Program */
+.bcom-about-program-card {
+  width: 850px;
+  height: auto;
+  background-color: #fdf8f2;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.1rem 2rem;
+}
+
+.bcom-about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.bcom-about-card-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #00444d;
+}
+
+.bcom-about-card-description {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #3d858f;
+}
+
+/* Info Cards (Career + Eligibility) */
+.bcom-info-card {
+  background-color: #fdf8f2;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Career width */
+.bcom-left-column .bcom-info-card {
+  width: 850px;
+}
+
+/* Eligibility adjustments */
+.bcom-right-column .bcom-info-card {
+  width: 420px;
+  padding: 1.2rem;
+}
+
+/* Education grid */
+.bcom-bottom-container .education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+}
+
+/* Education boxes */
+.bcom-bottom-container .higher-education-box {
+  width: 100%;
+  height: 50px;
+  background-color: #fdf8f2;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #00444d;
+}
+
+/* Last item spans full width below */
+.bcom-bottom-container .higher-education-box:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.plain-icon {
+  width: 20px;
+  height: 20px;
+  background: none;
+  padding: 0;
+}
+
+/* Buttons */
+.bcom-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.bcom-btn-apply {
+  background-color: #006772;
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bcom-btn-info {
+  background-color: #fdf8f2;
+  color: #006772;
+  border: 1px solid #006772;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+}
+
+/* Quick Facts Section */
+.bcom-quick-facts {
+  background-color: #fdf8f2;
+  border-radius: 16px;
+  padding: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 420px;
+}
+
+.quick-facts-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #00444d;
+  margin-bottom: 0.75rem;
+}
+
+.quick-facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.quick-fact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+}
+
+.quick-fact-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  color: #3d858f;
+  font-weight: 600;
+}
+
+.quick-fact-value {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  color: #00444d;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bcom-bottom-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bcom-about-program-card,
+  .bcom-left-column .bcom-info-card,
+  .bcom-right-column .bcom-info-card,
+  .bcom-quick-facts {
+    width: 100%;
+  }
+
+  .bcom-bottom-container .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bcom-bottom-container .higher-education-box {
+    width: 100%;
+  }
+}
+
+/* ================================
+   BCOM PAGE – ANIMATION ADD-ONS
+   (AUTO | SAFE | CONSISTENT)
+================================ */
+
+/* Page fade-in */
+.bcom-standard-page {
+  animation: bcomPageFade 0.8s ease-out forwards;
+}
+
+/* Hero oval breathing */
+.bcom-hero-oval {
+  animation: bcomOvalBreath 7s ease-in-out infinite;
+}
+
+/* Title gentle reveal */
+.bcom-main-title {
+  animation: bcomTitleFade 1s ease forwards;
+}
+
+/* Cards reveal */
+.bcom-about-program-card,
+.bcom-info-card,
+.bcom-quick-facts {
+  opacity: 0;
+  animation: bcomCardReveal 0.9s ease forwards;
+}
+
+/* Career boxes stagger */
+.bcom-bottom-container .higher-education-box {
+  opacity: 0;
+  animation: bcomBoxFade 0.6s ease forwards;
+}
+
+.bcom-bottom-container .higher-education-box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.bcom-bottom-container .higher-education-box:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.bcom-bottom-container .higher-education-box:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.bcom-bottom-container .higher-education-box:nth-child(4) {
+  animation-delay: 0.65s;
+}
+.bcom-bottom-container .higher-education-box:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Primary CTA soft pulse */
+.bcom-btn-apply {
+  animation: bcomButtonPulse 5s ease-in-out infinite;
+}
+
+/* ================================
+   KEYFRAMES
+================================ */
+
+@keyframes bcomPageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bcomOvalBreath {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.02);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes bcomTitleFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bcomCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bcomBoxFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bcomButtonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}

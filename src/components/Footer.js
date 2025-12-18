@@ -104,7 +104,7 @@ const Footer = () => {
             © Global Vision Education. All Rights Reserved.
           </div>
           <div className="footer-social">
-            <a href="https://wa.me/+971506191844" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-twitter" aria-label="WhatsApp">
+            <a href="https://x.com/GlobalVisionEdu" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-twitter" aria-label="Twitter">
               <img src={twitterIcon} alt="WhatsApp" />
             </a>
             <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-facebook" aria-label="Facebook">

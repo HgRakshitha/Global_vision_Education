@@ -45,7 +45,6 @@ const Header = () => {
 
         {/* Action Buttons */}
         <div className="header-actions">
-          <button className="btn-signin">Sign In</button>
           <button className="btn-consultation">Free Consultation</button>
         </div>
       </div>

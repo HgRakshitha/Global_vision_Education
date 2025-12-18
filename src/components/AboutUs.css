@@ -636,3 +636,84 @@
     font-size: 1.75rem;
   }
 }
+
+
+
+.aboutus-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.15),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.aboutus-hero-content {
+  transition: transform 0.6s ease;
+}
+
+.aboutus-hero-content:hover {
+  transform: translateY(-6px);
+}
+
+.aboutus-feature-card,
+.why-choose-card,
+.core-value-card,
+.vision-mission-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.aboutus-feature-card:hover,
+.why-choose-card:hover {
+  transform: translateY(-6px);
+}
+
+.core-value-card:hover {
+  transform: translateX(6px);
+}
+
+.vision-mission-card:hover {
+  transform: translateY(-6px);
+}
+
+.aboutus-image {
+  transition: transform 0.6s ease;
+}
+
+.aboutus-image:hover {
+  transform: translateY(-8px);
+}
+
+.aboutus-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutus-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: aboutCtaSweep 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes aboutCtaSweep {
+  0% { transform: translateX(-120%); }
+  60% { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}

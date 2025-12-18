@@ -31,7 +31,7 @@
 }
 
 .consultants-heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 42px;
   font-weight: 700;
   font-style: normal;
@@ -66,7 +66,7 @@
 .feature-icon-wrapper {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #006672 0%, #06B795 100%);
+  background: linear-gradient(135deg, #006672 0%, #06b795 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@
   flex-shrink: 0;
   padding: 12px;
   position: relative;
-  box-shadow: 0 0 0 5px #FBF2E7;
+  box-shadow: 0 0 0 5px #fbf2e7;
 }
 
 .feature-icon-img {
@@ -132,13 +132,18 @@
 }
 
 .consultants-images::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -80px;
   bottom: -50px;
   width: 400px;
   height: 300px;
-  background: radial-gradient(ellipse at center, rgba(6, 183, 149, 0.3) 0%, rgba(6, 183, 149, 0.15) 40%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(6, 183, 149, 0.3) 0%,
+    rgba(6, 183, 149, 0.15) 40%,
+    transparent 70%
+  );
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -146,13 +151,18 @@
 }
 
 .consultants-images::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -60px;
   bottom: 50px;
   width: 300px;
   height: 250px;
-  background: radial-gradient(ellipse at center, rgba(6, 183, 149, 0.25) 0%, rgba(6, 183, 149, 0.1) 40%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(6, 183, 149, 0.25) 0%,
+    rgba(6, 183, 149, 0.1) 40%,
+    transparent 70%
+  );
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -174,7 +184,7 @@
 }
 
 .consultant-image-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -20px;
   left: -30px;
@@ -202,17 +212,17 @@
   .consultants-section {
     padding: 3rem 1.5rem;
   }
-  
+
   .consultants-container {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .consultants-heading {
     font-size: 32px;
     line-height: 32px;
   }
-  
+
   .consultants-images {
     max-width: 500px;
     margin: 0 auto;
@@ -223,38 +233,117 @@
   .consultants-section {
     padding: 2.5rem 1rem;
   }
-  
+
   .consultants-content {
     gap: 2rem;
   }
-  
+
   .consultants-heading {
     font-size: 26px;
     line-height: 26px;
   }
-  
+
   .consultants-description {
     font-size: 0.9rem;
   }
-  
+
   .consultants-features {
     gap: 1.25rem;
   }
-  
+
   .feature-icon-wrapper {
     width: 45px;
     height: 45px;
   }
-  
+
   .feature-title {
     font-size: 1rem;
   }
-  
+
   .feature-description {
     font-size: 0.85rem;
   }
-  
+
   .consultants-images {
     max-width: 100%;
+  }
+}
+/* =========================
+   CONTINUOUS AMBIENT MOTION
+========================= */
+
+.consultants-section {
+  animation: sectionGlow 12s ease-in-out infinite;
+}
+
+@keyframes sectionGlow {
+  0% {
+    background-color: #006772;
+  }
+  50% {
+    background-color: #007b86;
+  }
+  100% {
+    background-color: #006772;
+  }
+}
+
+/* Soft content breathing */
+.consultants-content {
+  animation: contentBreath 8s ease-in-out infinite;
+}
+
+@keyframes contentBreath {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Feature items – staggered, slow */
+.feature-item {
+  animation: featureFloat 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.feature-item:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.feature-item:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+@keyframes featureFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Consultant image – calm depth motion */
+.consultant-image {
+  animation: imageDepth 10s ease-in-out infinite;
+}
+
+@keyframes imageDepth {
+  0% {
+    transform: scale(1.08);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1.08);
   }
 }

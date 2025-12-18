@@ -231,4 +231,76 @@
     font-size: 0.8rem;
   }
 }
+/* ===============================
+   SAFE VISUAL EFFECTS (NO ANIMATION OVERRIDE)
+================================ */
+
+/* Floating effect using transform (no animation conflict) */
+.image-wrapper {
+  will-change: transform;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+/* Image cinematic light sweep */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 1.2s ease;
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.image-wrapper:hover::after {
+  opacity: 1;
+  transform: translateX(120%);
+}
+
+/* Text depth on hover (no animation override) */
+.welcome-content {
+  transition: transform 0.5s ease;
+}
+
+.welcome-content:hover {
+  transform: translateY(-4px);
+}
+
+/* Heading premium underline reveal */
+.welcome-title-line {
+  position: relative;
+}
+
+.welcome-title-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: width 0.6s ease;
+}
+
+.welcome-content:hover .welcome-title-line::after {
+  width: 100%;
+}
+
+/* Paragraph micro motion */
+.welcome-text p {
+  transition: transform 0.4s ease;
+}
+
+.welcome-text p:hover {
+  transform: translateX(-6px);
+}
 

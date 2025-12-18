@@ -44,7 +44,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -98,7 +99,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -109,12 +111,17 @@
 .courses-page {
   min-height: 100vh;
   width: 100%;
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
 }
 
 /* Hero Section */
 .courses-hero {
-  background: linear-gradient(to bottom right, #006772 0%, #006772 40%, rgba(251, 242, 231, 0.72) 100%);
+  background: linear-gradient(
+    to bottom right,
+    #006772 0%,
+    #006772 40%,
+    rgba(251, 242, 231, 0.72) 100%
+  );
   padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
@@ -122,13 +129,18 @@
 
 /* Dark gradient in left upper corner */
 .courses-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0, 103, 114, 0.6) 0%, rgba(0, 103, 114, 0.3) 40%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 103, 114, 0.6) 0%,
+    rgba(0, 103, 114, 0.3) 40%,
+    transparent 70%
+  );
   z-index: 1;
   pointer-events: none;
 }
@@ -154,7 +166,7 @@
 }
 
 .courses-hero-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: #ffffff;
@@ -178,12 +190,12 @@
 }
 
 .courses-btn-primary {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   color: #006772;
   border: 2px solid #006772;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -197,11 +209,11 @@
 
 .courses-btn-secondary {
   background-color: transparent;
-  color: #FBF2E7;
-  border: 2px solid #FBF2E7;
+  color: #fbf2e7;
+  border: 2px solid #fbf2e7;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -209,7 +221,7 @@
 }
 
 .courses-btn-secondary:hover {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   color: #006772;
 }
 
@@ -237,7 +249,7 @@
 /* Floating Info Boxes */
 .floating-info-box {
   position: absolute;
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   border: 1px solid #006772;
   border-radius: 16px;
   width: 189px;
@@ -287,14 +299,14 @@
 }
 
 .info-icon-text {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #006772;
 }
 
 .info-text {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #006772;
@@ -307,21 +319,24 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(25%) sepia(67%) saturate(1234%) hue-rotate(152deg) brightness(95%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(25%) sepia(67%) saturate(1234%)
+    hue-rotate(152deg) brightness(95%) contrast(101%);
 }
 
 /* Courses Section - Top part with cream background */
 .courses-section-top {
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 2rem 2rem 1rem 2rem;
 }
 
 /* Courses Section - Bottom part with mixed cream/green gradient */
 .courses-section {
-  background: linear-gradient(to bottom, 
+  background: linear-gradient(
+    to bottom,
     rgba(0, 103, 114, 1) 0%,
     rgba(251, 242, 231, 0.7176) 50%,
-    rgba(0, 103, 114, 1) 100%);
+    rgba(0, 103, 114, 1) 100%
+  );
   padding: 2rem 2rem 4rem 2rem;
   position: relative;
 }
@@ -334,7 +349,7 @@
 }
 
 .courses-section-heading {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1f2937;
@@ -355,7 +370,7 @@
 }
 
 .courses-section-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #4b5563;
@@ -371,7 +386,7 @@
 }
 
 .program-section-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
@@ -382,11 +397,11 @@
 
 /* Override for Undergraduate Programs title */
 .undergraduate-programs-section .program-section-title {
-  color: #00444D;
+  color: #00444d;
 }
 
 .program-section-subtitle {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -397,7 +412,7 @@
 
 /* Override for Undergraduate Programs subtitle to match Secondary Education */
 .undergraduate-programs-section .program-section-subtitle {
-  color: #FBF2E7;
+  color: #fbf2e7;
 }
 
 /* Secondary Education Container and Cards */
@@ -413,14 +428,14 @@
 }
 
 .secondary-education-container .program-section-title {
-  color: #FBF2E7;
+  color: #fbf2e7;
   margin: 0 0 0.75rem 0;
   font-size: 1.75rem;
   text-align: center;
 }
 
 .secondary-education-container .program-section-subtitle {
-  color: #FBF2E7;
+  color: #fbf2e7;
   margin: 0 0 2rem 0;
   font-size: 14px;
   text-align: center;
@@ -439,7 +454,7 @@
   width: 290px;
   height: 260px;
   border-radius: 20px;
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #fbf2e7 100%);
   padding: 18px;
   display: flex;
   flex-direction: column;
@@ -469,7 +484,7 @@
 .secondary-card-icon {
   width: 60px;
   height: 60px;
-  background-color: #06B795;
+  background-color: #06b795;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -485,7 +500,7 @@
 }
 
 .secondary-education-card::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 48px;
   left: 18px;
@@ -515,7 +530,7 @@
 }
 
 .secondary-card-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -524,7 +539,7 @@
 }
 
 .secondary-card-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -539,10 +554,10 @@
 }
 
 .secondary-card-read-more {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #08B584;
+  color: #08b584;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -550,14 +565,14 @@
   margin-top: auto;
   position: relative;
   z-index: 1;
-  color: #06B795;
+  color: #06b795;
   text-decoration: none;
   transition: color 0.3s ease;
   align-self: flex-start;
 }
 
 .secondary-card-read-more:hover {
-  color: #00444D;
+  color: #00444d;
 }
 
 /* Program Cards Grid */
@@ -586,7 +601,7 @@
   width: 290px;
   height: 260px;
   border-radius: 20px;
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #fbf2e7 100%);
   padding: 18px;
   display: flex;
   flex-direction: column;
@@ -600,12 +615,24 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.undergraduate-card:nth-child(1) { animation-delay: 0.1s; }
-.undergraduate-card:nth-child(2) { animation-delay: 0.2s; }
-.undergraduate-card:nth-child(3) { animation-delay: 0.3s; }
-.undergraduate-card:nth-child(4) { animation-delay: 0.4s; }
-.undergraduate-card:nth-child(5) { animation-delay: 0.5s; }
-.undergraduate-card:nth-child(6) { animation-delay: 0.6s; }
+.undergraduate-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.undergraduate-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.undergraduate-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.undergraduate-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.undergraduate-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.undergraduate-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 .undergraduate-card-icon {
   width: 60px;
@@ -627,7 +654,7 @@
 }
 
 .undergraduate-card::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 52px;
   left: 18px;
@@ -643,7 +670,7 @@
 }
 
 .undergraduate-card-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -652,7 +679,7 @@
 }
 
 .undergraduate-card-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -681,7 +708,7 @@
 }
 
 .undergraduate-duration {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #6b7280;
@@ -692,10 +719,10 @@
 }
 
 .undergraduate-read-more {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #08B584;
+  color: #08b584;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
@@ -705,7 +732,7 @@
 }
 
 .undergraduate-read-more:hover {
-  color: #06B795;
+  color: #06b795;
 }
 
 /* Postgraduate Programs Cards */
@@ -745,7 +772,7 @@
   width: 290px;
   height: 260px;
   border-radius: 20px;
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FBF2E7 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #fbf2e7 100%);
   padding: 18px;
   display: flex;
   flex-direction: column;
@@ -759,13 +786,27 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.postgraduate-card:nth-child(1) { animation-delay: 0.1s; }
-.postgraduate-card:nth-child(2) { animation-delay: 0.2s; }
-.postgraduate-card:nth-child(3) { animation-delay: 0.3s; }
-.postgraduate-card:nth-child(4) { animation-delay: 0.4s; }
-.postgraduate-card:nth-child(5) { animation-delay: 0.5s; }
-.postgraduate-card:nth-child(6) { animation-delay: 0.6s; }
-.postgraduate-card:nth-child(7) { animation-delay: 0.7s; }
+.postgraduate-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.postgraduate-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.postgraduate-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.postgraduate-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.postgraduate-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.postgraduate-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.postgraduate-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
 
 .postgraduate-card-icon {
   width: 60px;
@@ -786,7 +827,7 @@
 }
 
 .postgraduate-card::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 52px;
   left: 18px;
@@ -802,7 +843,7 @@
 }
 
 .postgraduate-card-title {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -811,7 +852,7 @@
 }
 
 .postgraduate-card-description {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -840,7 +881,7 @@
 }
 
 .postgraduate-duration {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #6b7280;
@@ -851,10 +892,10 @@
 }
 
 .postgraduate-read-more {
-  font-family: 'Poppins', 'Inter', sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #08B584;
+  color: #08b584;
   text-decoration: none;
   transition: color 0.3s ease;
   white-space: nowrap;
@@ -864,17 +905,17 @@
 }
 
 .postgraduate-read-more:hover {
-  color: #06B795;
+  color: #06b795;
 }
 
 /* Override for Postgraduate Programs subtitle */
 .postgraduate-programs-section .program-section-subtitle {
-  color: #FBF2E7;
+  color: #fbf2e7;
 }
 
 /* Override for Postgraduate Programs title */
 .postgraduate-programs-section .program-section-title {
-  color: #00444D;
+  color: #00444d;
 }
 
 /* Responsive Design */

@@ -3,11 +3,39 @@
   padding: 4rem 2rem;
   position: relative;
   min-height: 600px;
+  overflow: hidden;
+}
+
+/* Ambient background glow */
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(6, 183, 149, 0.25),
+    transparent 60%
+  );
+  animation: bgPulse 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes bgPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
 }
 
 .testimonials-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials-heading {
@@ -25,6 +53,7 @@
   align-items: start;
 }
 
+/* Cards */
 .testimonial-card {
   background: rgba(0, 102, 114, 0.6);
   border-radius: 50px;
@@ -37,74 +66,76 @@
   gap: 1rem;
   width: 100%;
   max-width: 320px;
-  height: auto;
   min-height: 420px;
   opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.6s ease forwards, cardFloat 8s ease-in-out infinite;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  overflow: hidden;
+}
+
+/* Floating motion */
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer effect */
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: cardShimmer 9s linear infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+@keyframes cardShimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .testimonial-card:nth-child(1) {
   animation-delay: 0.1s;
 }
-
 .testimonial-card:nth-child(2) {
   animation-delay: 0.2s;
 }
-
 .testimonial-card:nth-child(3) {
   animation-delay: 0.3s;
 }
-
 .testimonial-card:nth-child(4) {
   animation-delay: 0.4s;
 }
 
-@keyframes fadeInUpOdd {
+/* Entry animation */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(0);
   }
 }
 
-@keyframes fadeInUpEven {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-20px);
-  }
-}
-
-.testimonial-card:nth-child(odd) {
-  animation-name: fadeInUpOdd;
-  transform: translateY(20px);
-}
-
-.testimonial-card:nth-child(even) {
-  animation-name: fadeInUpEven;
-  transform: translateY(-20px);
-}
-
-.testimonial-card:nth-child(odd):hover {
-  transform: translateY(15px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.testimonial-card:nth-child(even):hover {
-  transform: translateY(-25px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
+/* Quote */
 .quote-icon {
   font-size: 4rem;
   font-weight: 800;
@@ -113,11 +144,24 @@
   position: absolute;
   top: 0.75rem;
   left: 1.25rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   z-index: 0;
+  animation: quoteGlow 4s ease-in-out infinite;
 }
 
+@keyframes quoteGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
 
+/* Text */
 .testimonial-quote {
   color: white;
   font-size: 0.85rem;
@@ -152,19 +196,10 @@
   font-weight: 700;
   font-size: 1rem;
   flex-shrink: 0;
-  border: none;
-  transition: all 0.3s ease;
 }
-
 
 .testimonial-info {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.testimonial-name-rating {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -174,111 +209,87 @@
   color: white;
   font-size: 0.9rem;
   font-weight: 700;
-  margin: 0;
 }
 
 .testimonial-university {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.85rem;
-  margin: 0;
   display: none;
 }
 
+/* Stars */
 .testimonial-rating {
   display: flex;
   gap: 0.2rem;
-  align-items: center;
-  margin: 0;
-  margin-top: 0.25rem;
 }
 
 .testimonial-rating svg {
   width: 16px;
   height: 16px;
+  animation: starTwinkle 3s ease-in-out infinite;
 }
 
+.testimonial-rating svg:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-  .testimonials-section {
-    padding: 3rem 1.5rem;
-    min-height: 550px;
-  }
-  
-  .testimonials-heading {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-  }
-  
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .testimonial-card {
-    max-width: 100%;
-    min-height: 400px;
-  }
-  
-  .testimonial-card:nth-child(odd) {
-    transform: translateY(15px);
-  }
-  
-  .testimonial-card:nth-child(even) {
-    transform: translateY(-15px);
   }
 }
 
 @media (max-width: 768px) {
-  .testimonials-section {
-    padding: 3rem 1rem;
-    min-height: 500px;
-  }
-  
-  .testimonials-heading {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: stretch;
   }
-  
+
   .testimonial-card {
-    max-width: 100%;
-    min-height: 380px;
-    padding: 1.5rem 1.25rem;
-    transform: none !important;
-  }
-  
-  .quote-icon {
-    font-size: 3.5rem;
-    top: 0.75rem;
-    left: 1.25rem;
-  }
-  
-  .testimonial-quote {
-    font-size: 0.85rem;
-    padding-top: 1.5rem;
-  }
-  
-  .testimonial-avatar {
-    width: 45px;
-    height: 45px;
-    font-size: 0.9rem;
-  }
-  
-  .testimonial-name {
-    font-size: 0.9rem;
-  }
-  
-  .testimonial-university {
-    font-size: 0.85rem;
-  }
-  
-  .testimonial-rating svg {
-    width: 16px;
-    height: 16px;
+    animation: fadeInUp 0.6s ease forwards;
+    transform: none;
   }
 }
 
+/* Alternate up–down floating pattern */
+.testimonial-card:nth-child(odd) {
+  animation-name: fadeInUp, cardFloatUp;
+}
+
+.testimonial-card:nth-child(even) {
+  animation-name: fadeInUp, cardFloatDown;
+}
+
+@keyframes cardFloatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFloatDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
