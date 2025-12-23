@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./TwelfthStandardEducation.css";
 import Header from "./Header";
@@ -12,6 +12,37 @@ import careerOverlay from "../assets/images/course/Overlay (28).png";
 import checkIcon from "../assets/images/icons/SVG (3).png";
 
 const TwelfthStandardEducation = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <div className="twelfth-standard-page">
       <Header />
@@ -22,8 +53,12 @@ const TwelfthStandardEducation = () => {
 
         {/* Centered Section */}
         <div className="twelfth-centered-section">
-          <div className="twelfth-top-buttons">
-            <Link to="/courses" className="twelfth-back-link-top">
+          <div 
+            className={`twelfth-top-buttons ${isVisible.topButtons ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.topButtons = el)}
+            data-key="topButtons"
+          >
+            <Link to="/courses" className="twelfth-back-link-top animate-slide-in-left">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M15 18L9 12L15 6"
@@ -36,12 +71,16 @@ const TwelfthStandardEducation = () => {
               Back to Programs
             </Link>
 
-            <div className="twelfth-program-tag-center">
+            <div className="twelfth-program-tag-center animate-pulse-subtle">
               Higher Secondary Program
             </div>
           </div>
 
-          <div className="twelfth-title-section">
+          <div 
+            className={`twelfth-title-section ${isVisible.title ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.title = el)}
+            data-key="title"
+          >
             <h1 className="twelfth-main-title">
               <span className="twelfth-title-line">12th Grade / +2</span>
               <span className="twelfth-title-line">
@@ -51,11 +90,16 @@ const TwelfthStandardEducation = () => {
           </div>
 
           {/* Higher Secondary Button */}
-          <div className="twelfth-secondary-tag">
+          <div 
+            className={`twelfth-secondary-tag ${isVisible.secondaryTag ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.secondaryTag = el)}
+            data-key="secondaryTag"
+            style={{ animationDelay: '0.2s' }}
+          >
             <img
               src={higherSecondaryIcon}
               alt="Higher Secondary Icon"
-              className="twelfth-secondary-icon"
+              className="twelfth-secondary-icon animate-float"
             />
             Higher Secondary
           </div>
@@ -67,7 +111,11 @@ const TwelfthStandardEducation = () => {
         <div className="twelfth-bottom-section">
           <div className="twelfth-bottom-container">
             {/* Left Column */}
-            <div className="twelfth-left-column">
+            <div 
+              className={`twelfth-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.leftColumn = el)}
+              data-key="leftColumn"
+            >
               {/* About This Program */}
               <div className="twelfth-about-program-card">
                 <div className="twelfth-about-card-header">
@@ -97,7 +145,7 @@ const TwelfthStandardEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="twelfth-about-icon no-bg-icon"
+                    className="twelfth-about-icon no-bg-icon animate-bounce-subtle"
                   />
                   <h3 className="twelfth-about-card-title">Career Prospects</h3>
                 </div>
@@ -105,19 +153,19 @@ const TwelfthStandardEducation = () => {
                 {/* GRID CONTAINER */}
                 <div className="education-grid">
                   {/* Bachelor's Degree */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Bachelor's Degree Programs</span>
                   </div>
 
                   {/* Professional Courses */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Professional Courses</span>
                   </div>
 
                   {/* Competitive Exams */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Competitive Examinations</span>
                   </div>
@@ -126,7 +174,11 @@ const TwelfthStandardEducation = () => {
             </div>
 
             {/* Right Column */}
-            <div className="twelfth-right-column">
+            <div 
+              className={`twelfth-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.rightColumn = el)}
+              data-key="rightColumn"
+            >
               <div className="twelfth-info-card">
                 <div className="twelfth-about-card-header">
                   <img
@@ -146,10 +198,10 @@ const TwelfthStandardEducation = () => {
                 </p>
 
                 <div className="twelfth-card-buttons">
-                  <Link to="/contact" className="twelfth-btn-apply">
+                  <Link to="/contact" className="twelfth-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="twelfth-btn-info">Get More Info</button>
+                  <button className="twelfth-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
             </div>

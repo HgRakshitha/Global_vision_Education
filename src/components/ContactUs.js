@@ -69,8 +69,8 @@ const ContactUs = () => {
                   </svg>
                 </button>
                 <div className="social-icons">
-                  <a href="https://wa.me/+971506191844" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <img src={twitterIcon} alt="WhatsApp" />
+                  <a href="https://x.com/GlobalVisionEdu" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <img src={twitterIcon} alt="Twitter" />
                   </a>
                   <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <img src={facebookIcon} alt="Facebook" />
@@ -92,7 +92,7 @@ const ContactUs = () => {
             <div className="contact-info-list">
               <div className="contact-info-item">
                 <div className="contact-info-icon">
-                  <img src={overlay4} alt="Location" />
+                  <img src={overlay7} alt="Location" />
                 </div>
                 <div className="contact-info-content">
                   <div className="contact-info-label">Our Address</div>
@@ -102,7 +102,7 @@ const ContactUs = () => {
               </div>
               <div className="contact-info-item">
                 <div className="contact-info-icon">
-                  <img src={overlay5} alt="Phone" />
+                  <img src={overlay4} alt="Phone" />
                 </div>
                 <div className="contact-info-content">
                   <div className="contact-info-label">Phone Number</div>
@@ -112,7 +112,7 @@ const ContactUs = () => {
               </div>
               <div className="contact-info-item">
                 <div className="contact-info-icon">
-                  <img src={overlay6} alt="Email" />
+                  <img src={overlay5} alt="Email" />
                 </div>
                 <div className="contact-info-content">
                   <div className="contact-info-label">Email Address</div>
@@ -121,7 +121,7 @@ const ContactUs = () => {
               </div>
               <div className="contact-info-item">
                 <div className="contact-info-icon">
-                  <img src={overlay7} alt="Clock" />
+                  <img src={overlay6} alt="Clock" />
                 </div>
                 <div className="contact-info-content">
                   <div className="contact-info-label">Working Hours</div>
@@ -173,21 +173,46 @@ const ContactUs = () => {
       <section className="our-location-section">
         <div className="our-location-container">
           <button className="find-us-button">FIND US</button>
-          <h2 className="our-location-heading">Our Location</h2>
+          <h2 className="our-location-heading">Our Locations</h2>
           <p className="our-location-description">
-            Visit our campus or connect with us online. We're always happy to meet prospective students.
+            Visit our campuses or connect with us online. We're always happy to meet prospective students.
           </p>
-          <div className="map-container">
-            <iframe
-              src={`https://www.google.com/maps?q=Ontario+Tower+-+1604+-+Office+Building,+17+1701-22+-+Business+Bay+-+Dubai+-+United+Arab+Emirates&hl=en&z=17&output=embed`}
-              width="100%"
-              height="450"
-              style={{ border: 0, borderRadius: '20px' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Our Location - Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates"
-            ></iframe>
+          <div className="maps-container">
+            <div className="map-item">
+              <h3 className="map-location-title">Location 1</h3>
+              <p className="map-location-address">Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates</p>
+              <div className="map-container">
+                <iframe
+                  src={`https://www.google.com/maps?q=Ontario+Tower+-+1604+-+Office+Building,+17+1701-22+-+Business+Bay+-+Dubai+-+United+Arab+Emirates&hl=en&z=17&output=embed`}
+                  width="100%"
+                  height="400"
+                  style={{ border: 0, borderRadius: '20px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Our Location - Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates"
+                ></iframe>
+              </div>
+            </div>
+            <div className="map-item">
+              <h3 className="map-location-title">Location 2</h3>
+              <p className="map-location-address">
+                KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33<br />
+                Building Al Salam
+              </p>
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps?q=K.M.TRADING+CORPORATE+OFFICE,+Al+Ferdous+Tower,+15th+Floor,+Room+No.+33,+Building+Al+Salam&output=embed"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0, borderRadius: '20px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Our Location - K.M. Trading Corporate Office - Al Ferdous Tower - Al Salam"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -497,6 +497,7 @@
   background-color: #ffffff;
   color: #006772;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .cta-button:hover {
@@ -716,4 +717,527 @@
 html,
 body {
   overscroll-behavior: none;
+}
+
+/* ============================================
+   ANIMATIONS - Always Visible (No Hover Required)
+   ============================================ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Initial state for scroll-triggered elements */
+.aboutus-left-column,
+.aboutus-right-column,
+.aboutus-feature-card,
+.aboutus-image-container,
+.purpose-tag,
+.vision-mission-heading,
+.vision-mission-card,
+.core-values-heading,
+.core-value-card,
+.why-us-label,
+.why-choose-heading,
+.why-choose-description,
+.why-choose-card,
+.cta-container {
+  opacity: 0;
+}
+
+/* When animation class is added, element becomes visible */
+.aboutus-left-column.animate-slide-in-left,
+.aboutus-right-column.animate-slide-in-right,
+.aboutus-feature-card.animate-fade-in-up,
+.aboutus-image-container.animate-fade-in-scale,
+.purpose-tag.animate-fade-in,
+.vision-mission-heading.animate-fade-in,
+.vision-mission-card.animate-slide-in-left,
+.vision-mission-card.animate-slide-in-right,
+.core-values-heading.animate-fade-in,
+.core-value-card.animate-fade-in-up,
+.why-us-label.animate-fade-in,
+.why-choose-heading.animate-fade-in,
+.why-choose-description.animate-fade-in,
+.why-choose-card.animate-fade-in-up,
+.cta-container.animate-fade-in-scale {
+  opacity: 1;
+}
+
+/* Fade In Scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 1s ease-out forwards;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Subtle Animation */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s ease-in-out infinite;
+}
+
+/* Pulse Icon Animation */
+@keyframes pulseIcon {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(6, 183, 149, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(6, 183, 149, 0);
+  }
+}
+
+.animate-pulse-icon {
+  animation: pulseIcon 2s ease-in-out infinite;
+}
+
+/* Rotate Slow Animation */
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 8s linear infinite;
+}
+
+/* Bounce Subtle Animation */
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2.5s ease-in-out infinite;
+}
+
+/* Pulse Button Animation */
+@keyframes pulseButton {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+  }
+}
+
+.animate-pulse-button {
+  animation: pulseButton 2s ease-in-out infinite;
+}
+
+/* Arrow Slide Animation */
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-arrow-slide {
+  animation: arrowSlide 1.5s ease-in-out infinite;
+}
+
+/* Hero Title Animation */
+.aboutus-hero-title {
+  animation: fadeIn 1.2s ease-out, slideInUp 1.2s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Continuous Background Animation for Hero */
+@keyframes heroBackgroundShift {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(1.05) translateX(-10px);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
+.aboutus-hero-bg {
+  animation: heroBackgroundShift 20s ease-in-out infinite;
+}
+
+/* Feature Cards Continuous Animation */
+.aboutus-feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutus-feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(6, 183, 149, 0.1),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Vision Mission Cards Glow Effect */
+.vision-mission-card {
+  position: relative;
+}
+
+.vision-mission-card::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    rgba(6, 183, 149, 0.3),
+    rgba(0, 103, 114, 0.3),
+    rgba(6, 183, 149, 0.3)
+  );
+  border-radius: 24px;
+  z-index: -1;
+  opacity: 0;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+/* Core Value Cards Continuous Animation */
+.core-value-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.core-value-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 183, 149, 0.05) 0%,
+    transparent 50%,
+    rgba(0, 103, 114, 0.05) 100%
+  );
+  border-radius: 12px;
+  opacity: 0;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Why Choose Cards Continuous Animation */
+.why-choose-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(6, 183, 149, 0.1) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  animation: ripple 3s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Image Container Animation */
+.aboutus-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutus-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 103, 114, 0.1) 50%,
+    transparent 100%
+  );
+  animation: imageOverlay 4s ease-in-out infinite;
+}
+
+@keyframes imageOverlay {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}
+
+/* CTA Section Enhanced Animation */
+.aboutus-cta {
+  position: relative;
+}
+
+.aboutus-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: ctaGlow 4s ease-in-out infinite;
+}
+
+@keyframes ctaGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Label Bullet Animation */
+.aboutus-label-bullet {
+  display: inline-block;
+  animation: bulletPulse 2s ease-in-out infinite;
+}
+
+@keyframes bulletPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Heading Highlight Animation */
+.aboutus-heading-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.aboutus-heading-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #006772,
+    transparent
+  );
+  animation: underlineExpand 2s ease-in-out infinite;
+}
+
+@keyframes underlineExpand {
+  0%, 100% {
+    transform: scaleX(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+  .animate-fade-in-up,
+  .animate-slide-in-left,
+  .animate-slide-in-right {
+    animation-duration: 0.6s;
+  }
+  
+  .animate-float,
+  .animate-bounce-subtle {
+    animation-duration: 2s;
+  }
 }

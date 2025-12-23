@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Statistics from "./components/Statistics";
@@ -24,6 +25,17 @@ import BAEducation from "./components/BAEducation";
 import BScEducation from "./components/BScEducation";
 import BComEducation from "./components/BComEducation";
 import BEdEducation from "./components/BEdEducation";
+import MBAEducation from "./components/MBAEducation";
+import MCAEducation from "./components/MCAEducation";
+import MAEducation from "./components/MAEducation";
+import MScEducation from "./components/MScEducation";
+import MComEducation from "./components/MComEducation";
+import MSWEducation from "./components/MSWEducation";
+import MEdEducation from "./components/MEdEducation";
+import DistanceEducation from "./components/DistanceEducation";
+import CertificateAttestation from "./components/CertificateAttestation";
+import CreditTransfer from "./components/CreditTransfer";
+import EquivalencyCertificate from "./components/EquivalencyCertificate";
 
 function Home() {
   return (
@@ -46,6 +58,7 @@ function Home() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <div className="app-content">
           <Routes>
@@ -68,6 +81,17 @@ function App() {
             <Route path="/courses/bsc" element={<BScEducation />} />
             <Route path="/courses/bcom" element={<BComEducation />} />
             <Route path="/courses/bed" element={<BEdEducation />} />
+            <Route path="/courses/mba" element={<MBAEducation />} />
+            <Route path="/courses/mca" element={<MCAEducation />} />
+            <Route path="/courses/ma" element={<MAEducation />} />
+            <Route path="/courses/msc" element={<MScEducation />} />
+            <Route path="/courses/mcom" element={<MComEducation />} />
+            <Route path="/courses/msw" element={<MSWEducation />} />
+            <Route path="/courses/med" element={<MEdEducation />} />
+            <Route path="/services/distance-education" element={<DistanceEducation />} />
+            <Route path="/services/certificate-attestation" element={<CertificateAttestation />} />
+            <Route path="/services/credit-transfer" element={<CreditTransfer />} />
+            <Route path="/services/equivalency-certificate" element={<EquivalencyCertificate />} />
           </Routes>
         </div>
       </div>

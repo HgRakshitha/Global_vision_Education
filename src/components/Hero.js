@@ -9,12 +9,12 @@ const Hero = () => {
       <div className="hero-title-overlay">
         <h1 className="hero-title">
           <span>
-            Your Journey to <span className="highlight">World-</span>
+            Achieve Your Dreams with <span className="highlight">Flexible</span>
           </span>
           <span>
-            <span className="highlight">Class</span> Education
+            <span className="highlight">Online</span> & Distance Learning
           </span>
-          <span>Starts Here</span>
+          <span>Programs</span>
         </h1>
       </div>
       <div className="hero-container">

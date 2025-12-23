@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./BComEducation.css";
 import Header from "./Header";
@@ -12,6 +12,37 @@ import careerOverlay from "../assets/images/course/Overlay (28).png";
 import checkIcon from "../assets/images/icons/SVG (3).png";
 
 const BComEducation = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <div className="bcom-standard-page">
       <Header />
@@ -22,8 +53,12 @@ const BComEducation = () => {
 
         {/* Centered Section */}
         <div className="bcom-centered-section">
-          <div className="bcom-top-buttons">
-            <Link to="/courses" className="bcom-back-link-top">
+          <div 
+            className={`bcom-top-buttons ${isVisible.topButtons ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.topButtons = el)}
+            data-key="topButtons"
+          >
+            <Link to="/courses" className="bcom-back-link-top animate-slide-in-left">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M15 18L9 12L15 6"
@@ -36,10 +71,14 @@ const BComEducation = () => {
               Back to Programs
             </Link>
 
-            <div className="bcom-program-tag-center">Undergraduate Program</div>
+            <div className="bcom-program-tag-center animate-pulse-subtle">Undergraduate Program</div>
           </div>
 
-          <div className="bcom-title-section">
+          <div 
+            className={`bcom-title-section ${isVisible.title ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.title = el)}
+            data-key="title"
+          >
             <h1 className="bcom-main-title">
               <span className="bcom-title-line">
                 BCom – Bachelor of Commerce
@@ -48,8 +87,13 @@ const BComEducation = () => {
           </div>
 
           {/* Duration and Level */}
-          <div className="bcom-meta-tags">
-            <div className="bcom-meta-tag">
+          <div 
+            className={`bcom-meta-tags ${isVisible.metaTags ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.metaTags = el)}
+            data-key="metaTags"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <div className="bcom-meta-tag animate-float">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <circle
                   cx="12"
@@ -67,7 +111,7 @@ const BComEducation = () => {
               </svg>
               3 Years
             </div>
-            <div className="bcom-meta-tag">
+            <div className="bcom-meta-tag animate-float" style={{ animationDelay: '0.3s' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2L15 8H22L17 12L19 18L12 14L5 18L7 12L2 8H9L12 2Z"
@@ -85,7 +129,11 @@ const BComEducation = () => {
         <div className="bcom-bottom-section">
           <div className="bcom-bottom-container">
             {/* Left Column */}
-            <div className="bcom-left-column">
+            <div 
+              className={`bcom-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.leftColumn = el)}
+              data-key="leftColumn"
+            >
               {/* About This Program */}
               <div className="bcom-about-program-card">
                 <div className="bcom-about-card-header">
@@ -113,7 +161,7 @@ const BComEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="bcom-about-icon no-bg-icon"
+                    className="bcom-about-icon no-bg-icon animate-bounce-subtle"
                   />
                   <h3 className="bcom-about-card-title">Career Prospects</h3>
                 </div>
@@ -121,31 +169,31 @@ const BComEducation = () => {
                 {/* GRID CONTAINER */}
                 <div className="education-grid">
                   {/* Accountant */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Accountant</span>
                   </div>
 
                   {/* Tax Consultant */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Tax Consultant</span>
                   </div>
 
                   {/* Auditor */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Auditor</span>
                   </div>
 
                   {/* Financial Analyst */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Financial Analyst</span>
                   </div>
 
                   {/* Banker */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Banker</span>
                   </div>
@@ -154,7 +202,11 @@ const BComEducation = () => {
             </div>
 
             {/* Right Column */}
-            <div className="bcom-right-column">
+            <div 
+              className={`bcom-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.rightColumn = el)}
+              data-key="rightColumn"
+            >
               <div className="bcom-info-card">
                 <div className="bcom-about-card-header">
                   <img
@@ -175,10 +227,10 @@ const BComEducation = () => {
                 </p>
 
                 <div className="bcom-card-buttons">
-                  <Link to="/contact" className="bcom-btn-apply">
+                  <Link to="/contact" className="bcom-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="bcom-btn-info">Get More Info</button>
+                  <button className="bcom-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
 
@@ -186,15 +238,15 @@ const BComEducation = () => {
               <div className="bcom-quick-facts">
                 <h4 className="quick-facts-title">Quick Facts</h4>
                 <div className="quick-facts-grid">
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <span className="quick-fact-label">Duration</span>
                     <span className="quick-fact-value">3 Years</span>
                   </div>
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <span className="quick-fact-label">Level</span>
                     <span className="quick-fact-value">Undergraduate</span>
                   </div>
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <span className="quick-fact-label">Mode</span>
                     <span className="quick-fact-value">Full-time</span>
                   </div>

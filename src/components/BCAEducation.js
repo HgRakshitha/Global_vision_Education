@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./BCAEducation.css";
 import Header from "./Header";
@@ -12,6 +12,37 @@ import careerOverlay from "../assets/images/course/Overlay (28).png";
 import checkIcon from "../assets/images/icons/SVG (3).png";
 
 const BCAEducation = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <div className="bca-standard-page">
       <Header />
@@ -22,8 +53,12 @@ const BCAEducation = () => {
 
         {/* Centered Section */}
         <div className="bca-centered-section">
-          <div className="bca-top-buttons">
-            <Link to="/courses" className="bca-back-link-top">
+          <div 
+            className={`bca-top-buttons ${isVisible.topButtons ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.topButtons = el)}
+            data-key="topButtons"
+          >
+            <Link to="/courses" className="bca-back-link-top animate-slide-in-left">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M15 18L9 12L15 6"
@@ -36,10 +71,14 @@ const BCAEducation = () => {
               Back to Programs
             </Link>
 
-            <div className="bca-program-tag-center">Undergraduate Program</div>
+            <div className="bca-program-tag-center animate-pulse-subtle">Undergraduate Program</div>
           </div>
 
-          <div className="bca-title-section">
+          <div 
+            className={`bca-title-section ${isVisible.title ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.title = el)}
+            data-key="title"
+          >
             <h1 className="bca-main-title">
               <span className="bca-title-line">BCA - Bachelor of</span>
               <span className="bca-title-line">Computer Applications</span>
@@ -47,8 +86,13 @@ const BCAEducation = () => {
           </div>
 
           {/* Duration and Level */}
-          <div className="bca-meta-tags">
-            <div className="bca-meta-tag">
+          <div 
+            className={`bca-meta-tags ${isVisible.metaTags ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.metaTags = el)}
+            data-key="metaTags"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <div className="bca-meta-tag animate-float">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <circle
                   cx="12"
@@ -66,7 +110,7 @@ const BCAEducation = () => {
               </svg>
               3 Years
             </div>
-            <div className="bca-meta-tag">
+            <div className="bca-meta-tag animate-float" style={{ animationDelay: '0.3s' }}>
               <img
                 src={undergraduateIcon}
                 alt="Undergraduate"
@@ -83,7 +127,11 @@ const BCAEducation = () => {
         <div className="bca-bottom-section">
           <div className="bca-bottom-container">
             {/* Left Column */}
-            <div className="bca-left-column">
+            <div 
+              className={`bca-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.leftColumn = el)}
+              data-key="leftColumn"
+            >
               {/* About This Program */}
               <div className="bca-about-program-card">
                 <div className="bca-about-card-header">
@@ -111,7 +159,7 @@ const BCAEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="bca-about-icon no-bg-icon"
+                    className="bca-about-icon no-bg-icon animate-bounce-subtle"
                   />
                   <h3 className="bca-about-card-title">Career Prospects</h3>
                 </div>
@@ -119,31 +167,31 @@ const BCAEducation = () => {
                 {/* GRID CONTAINER */}
                 <div className="education-grid">
                   {/* Software Developer */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Software Developer</span>
                   </div>
 
                   {/* Web Developer */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Web Developer</span>
                   </div>
 
                   {/* System Analyst */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>System Analyst</span>
                   </div>
 
                   {/* Database Administrator */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Database Administrator</span>
                   </div>
 
                   {/* IT Consultant */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>IT Consultant</span>
                   </div>
@@ -152,7 +200,11 @@ const BCAEducation = () => {
             </div>
 
             {/* Right Column */}
-            <div className="bca-right-column">
+            <div 
+              className={`bca-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.rightColumn = el)}
+              data-key="rightColumn"
+            >
               <div className="bca-info-card">
                 <div className="bca-about-card-header">
                   <img
@@ -172,10 +224,10 @@ const BCAEducation = () => {
                 </p>
 
                 <div className="bca-card-buttons">
-                  <Link to="/contact" className="bca-btn-apply">
+                  <Link to="/contact" className="bca-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="bca-btn-info">Get More Info</button>
+                  <button className="bca-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
 
@@ -183,15 +235,15 @@ const BCAEducation = () => {
               <div className="bca-quick-facts">
                 <h4 className="quick-facts-title">Quick Facts</h4>
                 <div className="quick-facts-grid">
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <span className="quick-fact-label">Duration</span>
                     <span className="quick-fact-value">3 Years</span>
                   </div>
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <span className="quick-fact-label">Level</span>
                     <span className="quick-fact-value">Undergraduate</span>
                   </div>
-                  <div className="quick-fact-item">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <span className="quick-fact-label">Mode</span>
                     <span className="quick-fact-value">Full-time</span>
                   </div>

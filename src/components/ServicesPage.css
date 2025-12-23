@@ -412,26 +412,27 @@
   font-size: 14px;
   font-weight: 700;
   color: #00444d;
-  cursor: default;
+  cursor: pointer;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .secondary-service-btn:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #fdf8f2 100%);
-  color: #00444d;
-  transform: none;
-  box-shadow: none;
-  opacity: 1;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f5f0 100%);
+  color: #006772;
+  border-color: #006772;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 103, 114, 0.15);
 }
 
 .secondary-service-btn:active {
-  transform: none;
-  opacity: 1;
-  color: #00444d;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 103, 114, 0.1);
 }
 
 .secondary-service-btn * {

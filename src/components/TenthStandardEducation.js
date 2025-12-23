@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./TenthStandardEducation.css";
 import Header from "./Header";
@@ -12,6 +12,37 @@ import careerOverlay from "../assets/images/course/Overlay (28).png";
 import checkIcon from "../assets/images/icons/SVG (3).png"; // ✅ MISSING IMPORT FIXED
 
 const TenthStandardEducation = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <div className="tenth-standard-page">
       <Header />
@@ -22,8 +53,12 @@ const TenthStandardEducation = () => {
 
         {/* Centered Section */}
         <div className="tenth-centered-section">
-          <div className="tenth-top-buttons">
-            <Link to="/courses" className="tenth-back-link-top">
+          <div 
+            className={`tenth-top-buttons ${isVisible.topButtons ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.topButtons = el)}
+            data-key="topButtons"
+          >
+            <Link to="/courses" className="tenth-back-link-top animate-slide-in-left">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M15 18L9 12L15 6"
@@ -36,10 +71,14 @@ const TenthStandardEducation = () => {
               Back to Programs
             </Link>
 
-            <div className="tenth-program-tag-center">Secondary Program</div>
+            <div className="tenth-program-tag-center animate-pulse-subtle">Secondary Program</div>
           </div>
 
-          <div className="tenth-title-section">
+          <div 
+            className={`tenth-title-section ${isVisible.title ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.title = el)}
+            data-key="title"
+          >
             <h1 className="tenth-main-title">
               <span className="tenth-title-line">10th Grade</span>
               <span className="tenth-title-line">
@@ -49,11 +88,16 @@ const TenthStandardEducation = () => {
           </div>
 
           {/* Secondary Button */}
-          <div className="tenth-secondary-tag">
+          <div 
+            className={`tenth-secondary-tag ${isVisible.secondaryTag ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.secondaryTag = el)}
+            data-key="secondaryTag"
+            style={{ animationDelay: '0.2s' }}
+          >
             <img
               src={secondaryIcon}
               alt="Secondary Icon"
-              className="tenth-secondary-icon"
+              className="tenth-secondary-icon animate-float"
             />
             Secondary
           </div>
@@ -65,7 +109,11 @@ const TenthStandardEducation = () => {
         <div className="tenth-bottom-section">
           <div className="tenth-bottom-container">
             {/* Left Column */}
-            <div className="tenth-left-column">
+            <div 
+              className={`tenth-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.leftColumn = el)}
+              data-key="leftColumn"
+            >
               {/* About This Program */}
               <div className="tenth-about-program-card">
                 <div className="tenth-about-card-header">
@@ -92,7 +140,7 @@ const TenthStandardEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="tenth-about-icon no-bg-icon"
+                    className="tenth-about-icon no-bg-icon animate-bounce-subtle"
                   />
                   <h3 className="tenth-about-card-title">Career Prospects</h3>
                 </div>
@@ -100,19 +148,19 @@ const TenthStandardEducation = () => {
                 {/* GRID CONTAINER */}
                 <div className="education-grid">
                   {/* Higher Secondary */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Higher Secondary Education</span>
                   </div>
 
                   {/* Vocational – RIGHT */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Vocational Training</span>
                   </div>
 
                   {/* Diploma – BELOW */}
-                  <div className="higher-education-box">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
                     <span>Diploma Programs</span>
                   </div>
@@ -121,7 +169,11 @@ const TenthStandardEducation = () => {
             </div>
 
             {/* Right Column */}
-            <div className="tenth-right-column">
+            <div 
+              className={`tenth-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.rightColumn = el)}
+              data-key="rightColumn"
+            >
               <div className="tenth-info-card">
                 <div className="tenth-about-card-header">
                   <img
@@ -140,10 +192,10 @@ const TenthStandardEducation = () => {
                 </p>
 
                 <div className="tenth-card-buttons">
-                  <Link to="/contact" className="tenth-btn-apply">
+                  <Link to="/contact" className="tenth-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="tenth-btn-info">Get More Info</button>
+                  <button className="tenth-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
             </div>

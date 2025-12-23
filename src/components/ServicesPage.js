@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ServicesPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -14,6 +15,8 @@ const ServicesPage = () => {
       row: 1,
     },
     {
+
+      
       title: "Application Support",
       row: 1,
     },
@@ -318,18 +321,18 @@ const ServicesPage = () => {
           </div>
 
           <div className="secondary-services">
-            <button className="secondary-service-btn">
+            <Link to="/services/certificate-attestation" className="secondary-service-btn">
               Certificate Attestation
-            </button>
-            <button className="secondary-service-btn">
+            </Link>
+            <Link to="/services/distance-education" className="secondary-service-btn">
               Complete Distance Education Support
-            </button>
-            <button className="secondary-service-btn">
-              Program Guidance & Advisory Solutions
-            </button>
-            <button className="secondary-service-btn">
-              Personal Academic Support & Guidance
-            </button>
+            </Link>
+            <Link to="/services/credit-transfer" className="secondary-service-btn">
+              Credit Transfer
+            </Link>
+            <Link to="/services/equivalency-certificate" className="secondary-service-btn">
+              Equivalency Certificate Services
+            </Link>
           </div>
         </div>
       </section>

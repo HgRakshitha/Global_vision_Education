@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./CoursesPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -22,6 +22,70 @@ import overlay24 from "../assets/images/course/Overlay (24).png";
 import overlay25 from "../assets/images/course/Overlay (25).png";
 
 const CoursesPage = () => {
+  const location = useLocation();
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (location.hash) {
+        const elementId = location.hash.substring(1);
+        setTimeout(() => {
+          const element = document.getElementById(elementId);
+          if (element) {
+            const headerOffset = 100;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    };
+
+    handleHashScroll();
+
+    // Also handle hash changes (e.g., when clicking links on the same page)
+    const handleHashChange = () => {
+      handleHashScroll();
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [location]);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   const secondaryOverlays = [overlay11, overlay12];
   const undergraduateOverlays = [
     overlay13,
@@ -101,42 +165,49 @@ const CoursesPage = () => {
       description:
         "Strategic business skills for careers in finance, marketing, HR, and operations.",
       duration: "2 Years",
+      path: "/courses/mba",
     },
     {
       title: "MCA",
       description:
         "Advanced software and IT skills for specialized roles in the tech industry.",
       duration: "2 Years",
+      path: "/courses/mca",
     },
     {
       title: "MA",
       description:
         "Specialized humanities skills for roles in education, research, and creative fields.",
       duration: "2 Years",
+      path: "/courses/ma",
     },
     {
       title: "MSc",
       description:
         "Specialized science skills for professional lab and research roles.",
       duration: "2 Years",
+      path: "/courses/msc",
     },
     {
       title: "M.Com",
       description:
         "Commerce specialization for careers in banking, taxation, and finance.",
       duration: "2 Years",
+      path: "/courses/mcom",
     },
     {
       title: "MSW",
       description:
         "Social work training for roles in community welfare and public service.",
       duration: "2 Years",
+      path: "/courses/msw",
     },
     {
       title: "M.Ed",
       description:
         "Education expertise for careers in research, policy, and academic management.",
       duration: "2 Years",
+      path: "/courses/med",
     },
   ];
 
@@ -148,29 +219,37 @@ const CoursesPage = () => {
       <section className="courses-hero">
         <div className="courses-hero-container">
           {/* Left Content */}
-          <div className="courses-hero-content">
+          <div 
+            className={`courses-hero-content ${isVisible.heroContent ? 'animate-slide-in-left' : ''}`}
+            ref={(el) => (elementsRef.current.heroContent = el)}
+            data-key="heroContent"
+          >
             <h1 className="courses-hero-title">
               <span className="title-line">Your Pathway to the</span>
               <span className="title-line">Right Career Starts</span>
               <span className="title-line">Here!</span>
             </h1>
             <div className="courses-hero-buttons">
-              <button className="courses-btn-primary">Explore Programs</button>
-              <button className="courses-btn-secondary">Get Guidance</button>
+              <button className="courses-btn-primary animate-pulse-button">Explore Programs</button>
+              <button className="courses-btn-secondary animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get Guidance</button>
             </div>
           </div>
 
           {/* Right Image */}
-          <div className="courses-hero-image-wrapper">
+          <div 
+            className={`courses-hero-image-wrapper ${isVisible.heroImage ? 'animate-slide-in-right' : ''}`}
+            ref={(el) => (elementsRef.current.heroImage = el)}
+            data-key="heroImage"
+          >
             <img
               src={heroImage}
               alt="Student reading"
-              className="courses-hero-image"
+              className="courses-hero-image animate-float"
             />
 
             {/* Floating Info Boxes */}
-            <div className="floating-info-box floating-box-1">
-              <div className="info-icon-box">
+            <div className="floating-info-box floating-box-1 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="info-icon-box animate-pulse-subtle">
                 <span className="info-icon-text">9+</span>
               </div>
               <div className="info-text">
@@ -178,8 +257,8 @@ const CoursesPage = () => {
                 <span>Partners</span>
               </div>
             </div>
-            <div className="floating-info-box floating-box-2">
-              <div className="info-icon-box">
+            <div className="floating-info-box floating-box-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="info-icon-box animate-pulse-subtle">
                 <img
                   src={tickIcon}
                   alt="Checkmark"
@@ -198,7 +277,11 @@ const CoursesPage = () => {
       {/* Courses Section - Top */}
       <section className="courses-section-top">
         <div className="courses-section-container">
-          <h2 className="courses-section-heading">
+          <h2 
+            className={`courses-section-heading ${isVisible.sectionHeading ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.sectionHeading = el)}
+            data-key="sectionHeading"
+          >
             <span className="heading-line">
               Find the Course That{" "}
               <span className="highlight-teal">Shapes</span>
@@ -207,7 +290,7 @@ const CoursesPage = () => {
               <span className="highlight-teal">Your Future</span>
             </span>
           </h2>
-          <p className="courses-section-description">
+          <p className="courses-section-description animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Explore our comprehensive range of undergraduate and postgraduate
             programs designed to help you succeed.
           </p>
@@ -226,7 +309,11 @@ const CoursesPage = () => {
               </p>
               <div className="secondary-education-cards-wrapper">
                 {secondaryPrograms.map((program, index) => (
-                  <div key={index} className="secondary-education-card">
+                  <div 
+                    key={index} 
+                    className={`secondary-education-card animate-fade-in-up`}
+                    style={{ animationDelay: `${0.1 * index}s` }}
+                  >
                     <div className="secondary-card-icon">
                       <img src={secondaryOverlays[index]} alt={program.title} />
                     </div>
@@ -249,9 +336,9 @@ const CoursesPage = () => {
                         Read More →
                       </Link>
                     ) : (
-                      <a href="#" className="secondary-card-read-more">
+                      <span className="secondary-card-read-more">
                         Read More →
-                      </a>
+                      </span>
                     )}
                   </div>
                 ))}
@@ -260,14 +347,18 @@ const CoursesPage = () => {
           </div>
 
           {/* Undergraduate Programs */}
-          <div className="program-section undergraduate-programs-section">
+          <div id="bachelors" className="program-section undergraduate-programs-section">
             <h3 className="program-section-title">Undergraduate Programs</h3>
             <p className="program-section-subtitle">
               Launch your career with industry-relevant bachelor's degrees.
             </p>
             <div className="undergraduate-cards-grid">
               {undergraduatePrograms.map((program, index) => (
-                <div key={index} className="undergraduate-card">
+                <div 
+                  key={index} 
+                  className={`undergraduate-card animate-fade-in-up`}
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
                   <div className="undergraduate-card-icon">
                     <img
                       src={undergraduateOverlays[index]}
@@ -325,9 +416,9 @@ const CoursesPage = () => {
                         Read More →
                       </Link>
                     ) : (
-                      <a href="#" className="undergraduate-read-more">
+                      <span className="undergraduate-read-more">
                         Read More →
-                      </a>
+                      </span>
                     )}
                   </div>
                 </div>
@@ -336,7 +427,7 @@ const CoursesPage = () => {
           </div>
 
           {/* Postgraduate Programs */}
-          <div className="program-section postgraduate-programs-section">
+          <div id="masters" className="program-section postgraduate-programs-section">
             <h3 className="program-section-title">Postgraduate Programs</h3>
             <p className="program-section-subtitle">
               Advance your expertise with specialized master's programs.
@@ -345,7 +436,11 @@ const CoursesPage = () => {
               {/* First Row - 4 cards */}
               <div className="postgraduate-cards-row postgraduate-cards-row-first">
                 {postgraduatePrograms.slice(0, 4).map((program, index) => (
-                  <div key={index} className="postgraduate-card">
+                  <div 
+                    key={index} 
+                    className={`postgraduate-card animate-fade-in-up`}
+                    style={{ animationDelay: `${0.1 * index}s` }}
+                  >
                     <div className="postgraduate-card-icon">
                       <img
                         src={postgraduateOverlays[index]}
@@ -360,9 +455,9 @@ const CoursesPage = () => {
                       <span className="postgraduate-duration">
                         {program.duration}
                       </span>
-                      <a href="#" className="postgraduate-read-more">
+                      <Link to={program.path} className="postgraduate-read-more">
                         Read More →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -370,7 +465,11 @@ const CoursesPage = () => {
               {/* Second Row - 3 cards centered */}
               <div className="postgraduate-cards-row postgraduate-cards-row-second">
                 {postgraduatePrograms.slice(4, 7).map((program, index) => (
-                  <div key={index + 4} className="postgraduate-card">
+                  <div 
+                    key={index + 4} 
+                    className={`postgraduate-card animate-fade-in-up`}
+                    style={{ animationDelay: `${0.1 * (index + 4)}s` }}
+                  >
                     <div className="postgraduate-card-icon">
                       <img
                         src={postgraduateOverlays[index + 4]}
@@ -385,9 +484,9 @@ const CoursesPage = () => {
                       <span className="postgraduate-duration">
                         {program.duration}
                       </span>
-                      <a href="#" className="postgraduate-read-more">
+                      <Link to={program.path} className="postgraduate-read-more">
                         Read More →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}

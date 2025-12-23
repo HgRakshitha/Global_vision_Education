@@ -117,13 +117,13 @@
   flex-direction: column;
   gap: 0.25rem;
   margin-bottom: 0.5rem;
-  align-items: flex-end;
-  text-align: right;
+  align-items: flex-start;
+  text-align: left;
   transition: transform 0.3s ease;
 }
 
 .welcome-content:hover .welcome-heading-wrapper {
-  transform: translateX(-5px);
+  transform: translateX(5px);
 }
 
 .welcome-subtitle {
@@ -131,7 +131,7 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.5px;
-  text-align: right;
+  text-align: left;
   margin: 0;
 }
 
@@ -142,7 +142,7 @@
   margin: 0;
   line-height: 1.2;
   letter-spacing: 1px;
-  text-align: right;
+  text-align: left;
   display: flex;
   flex-direction: column;
 }
@@ -283,7 +283,7 @@
 .welcome-title-line::after {
   content: "";
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: -4px;
   width: 0%;
   height: 2px;

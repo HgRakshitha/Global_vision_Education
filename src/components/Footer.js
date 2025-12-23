@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import companyLogo from '../assets/images/logo 1.png';
 import twitterIcon from '../assets/images/icons/twitter.png';
 import facebookIcon from '../assets/images/icons/facebook.png';
 import instagramIcon from '../assets/images/icons/instagram-fill.png';
 import linkedinIcon from '../assets/images/icons/linkedin.png';
+import phoneIcon from '../assets/images/icons/Overlay (4).png';
+import locationIcon from '../assets/images/icons/Overlay (7).png';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -22,7 +25,7 @@ const Footer = () => {
 
         {/* Main Footer Content */}
         <div className="footer-content">
-          {/* Column 1 - Company Information */}
+          {/* Column 1 - Company Information with Logo */}
           <div className="footer-column footer-company">
             <div className="footer-logo">
               <img 
@@ -62,35 +65,58 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2 - Company Links */}
+          {/* Column 2 - Quick Links */}
           <div className="footer-column">
-            <h3 className="footer-heading">Company</h3>
+            <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#mentors">Mentors</a></li>
-              <li><a href="#about">About us</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/courses">Course</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Column 3 - Support Links */}
+          {/* Column 3 - Contact Information */}
           <div className="footer-column">
-            <h3 className="footer-heading">Support</h3>
-            <ul className="footer-links">
-              <li><a href="#contact">Contact us</a></li>
-              <li><a href="#blogs">Blogs</a></li>
-            </ul>
+            <h3 className="footer-heading">Contact</h3>
+            <div className="footer-contact-info">
+              <div className="footer-phone">
+                <a href="tel:+971506191844" className="footer-phone-link">
+                  <img src={phoneIcon} alt="Phone" className="footer-icon" />
+                  +971 50 619 1844
+                </a>
+                <a href="tel:+97145793444" className="footer-phone-link">
+                  <img src={phoneIcon} alt="Phone" className="footer-icon" />
+                  +971 4 579 3444
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Column 4 - Services Links */}
+          {/* Column 4 - Address Locations */}
           <div className="footer-column">
-            <h3 className="footer-heading">Services</h3>
-            <ul className="footer-links">
-              <li><a href="#visa">Visa Assistance</a></li>
-              <li><a href="#pre-departure">Pre-Departure Guidance</a></li>
-              <li><a href="#university">University Selection</a></li>
-              <li><a href="#scholarship">Scholarship Guidance</a></li>
-              <li><a href="#application">Application Support</a></li>
-            </ul>
+            <h3 className="footer-heading">Our Locations</h3>
+            <div className="footer-addresses">
+              <a 
+                href="https://www.google.com/maps?q=Ontario+Tower+-+1604+-+Office+Building,+17+1701-22+-+Business+Bay+-+Dubai+-+United+Arab+Emirates" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer-address-link"
+              >
+                <img src={locationIcon} alt="Location" className="footer-icon" />
+                <span>Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates</span>
+              </a>
+              <a 
+                href="https://maps.app.goo.gl/S8J3rN54mYGpyQdw8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer-address-link"
+              >
+                <img src={locationIcon} alt="Location" className="footer-icon" />
+                <span>KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33- Building Al Salam</span>
+              </a>
+            </div>
           </div>
 
         </div>

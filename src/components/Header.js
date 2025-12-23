@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import companyLogo from '../assets/images/logo 1.png';
 
 const Header = () => {
+  const [courseDropdown, setCourseDropdown] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
+
   return (
     <header className="header">
       <div className="header-container">
@@ -38,8 +41,69 @@ const Header = () => {
         <nav className="nav-menu">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/about" className="nav-link">About</Link>
-          <Link to="/services" className="nav-link">Services</Link>
-          <Link to="/courses" className="nav-link">Course</Link>
+          
+          {/* Services Dropdown */}
+          <div 
+            className="nav-dropdown"
+            onMouseEnter={() => setServicesDropdown(true)}
+            onMouseLeave={() => setServicesDropdown(false)}
+          >
+            <Link 
+              to="/services" 
+              className="nav-link"
+            >
+              Services
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '4px', display: 'inline-block' }}>
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+            {servicesDropdown && (
+              <div 
+                className="dropdown-menu"
+                onMouseEnter={() => setServicesDropdown(true)}
+                onMouseLeave={() => setServicesDropdown(false)}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Link to="/services/distance-education" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Distance education</Link>
+                <Link to="/services/certificate-attestation" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Certificate attestation</Link>
+                <Link to="/services/credit-transfer" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Credit transfer</Link>
+                <Link to="/services/equivalency-certificate" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Equivalency Certificate services</Link>
+              </div>
+            )}
+          </div>
+
+          {/* Course Dropdown */}
+          <div 
+            className="nav-dropdown"
+            onMouseEnter={() => setCourseDropdown(true)}
+            onMouseLeave={() => setCourseDropdown(false)}
+          >
+            <Link 
+              to="/courses" 
+              className="nav-link"
+            >
+              Course
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '4px', display: 'inline-block' }}>
+                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+            {courseDropdown && (
+              <div 
+                className="dropdown-menu"
+                onMouseEnter={() => setCourseDropdown(true)}
+                onMouseLeave={() => setCourseDropdown(false)}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Link to="/courses#bachelors" className="dropdown-item" onClick={() => setCourseDropdown(false)}>
+                  Bachelors
+                </Link>
+                <Link to="/courses#masters" className="dropdown-item" onClick={() => setCourseDropdown(false)}>
+                  Masters
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
 

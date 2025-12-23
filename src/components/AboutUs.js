@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./AboutUs.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import aboutUsImage from "../assets/images/hero/About Us Image.png";
 import heroImg from "../assets/images/hero/img.png";
-import graduatesImage from "../assets/images/welcome/Group 24.png";
 import icon1 from "../assets/images/icons/bg3.png";
 import icon2 from "../assets/images/icons/bg2.png";
 import icon3 from "../assets/images/icons/bg1.png";
@@ -15,6 +15,38 @@ import overlayIcon3 from "../assets/images/icons/Overlay (2).png";
 import overlayIcon4 from "../assets/images/icons/Overlay (3).png";
 
 const AboutUs = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with data-key attribute
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
     <div className="aboutus-page">
       <Header />
@@ -24,7 +56,7 @@ const AboutUs = () => {
         <img src={aboutUsImage} alt="About Us" className="aboutus-hero-bg" />
         <div className="aboutus-hero-overlay"></div>
         <div className="aboutus-hero-content">
-          <h1 className="aboutus-hero-title">About US</h1>
+          <h1 className="aboutus-hero-title animate-fade-in">About US</h1>
         </div>
       </section>
 
@@ -32,8 +64,12 @@ const AboutUs = () => {
       <section className="aboutus-content">
         <div className="aboutus-container">
           {/* Left Column */}
-          <div className="aboutus-left-column">
-            <div className="aboutus-label">
+          <div 
+            className={`aboutus-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+            ref={(el) => (elementsRef.current.leftColumn = el)}
+            data-key="leftColumn"
+          >
+            <div className="aboutus-label animate-pulse-subtle">
               <span className="aboutus-label-bullet">•</span> ABOUT US
             </div>
             <h2 className="aboutus-heading">
@@ -48,7 +84,11 @@ const AboutUs = () => {
           </div>
 
           {/* Right Column */}
-          <div className="aboutus-right-column">
+          <div 
+            className={`aboutus-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+            ref={(el) => (elementsRef.current.rightColumn = el)}
+            data-key="rightColumn"
+          >
             <p className="aboutus-description">
               GVE was founded to solve a major challenge in the UAE -
               professionals wanted to study further but struggled with rigid
@@ -63,11 +103,14 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-
-        {/* Feature Cards */}
         <div className="aboutus-features">
-          <div className="aboutus-feature-card">
-            <div className="aboutus-feature-icon">
+          <div 
+            className={`aboutus-feature-card ${isVisible.feature1 ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.feature1 = el)}
+            data-key="feature1"
+            style={{ animationDelay: '0.1s' }}
+          >
+            <div className="aboutus-feature-icon animate-float">
               <img src={icon1} alt="Expert Guidance" />
             </div>
             <p className="aboutus-feature-text">
@@ -75,15 +118,25 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="aboutus-feature-card">
-            <div className="aboutus-feature-icon">
+          <div 
+            className={`aboutus-feature-card ${isVisible.feature2 ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.feature2 = el)}
+            data-key="feature2"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <div className="aboutus-feature-icon animate-float" style={{ animationDelay: '0.3s' }}>
               <img src={icon2} alt="Admission Support" />
             </div>
             <p className="aboutus-feature-text">End-to-End Admission Support</p>
           </div>
 
-          <div className="aboutus-feature-card">
-            <div className="aboutus-feature-icon">
+          <div 
+            className={`aboutus-feature-card ${isVisible.feature3 ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.feature3 = el)}
+            data-key="feature3"
+            style={{ animationDelay: '0.3s' }}
+          >
+            <div className="aboutus-feature-icon animate-float" style={{ animationDelay: '0.6s' }}>
               <img src={icon3} alt="Student-First Approach" />
             </div>
             <p className="aboutus-feature-text">
@@ -91,9 +144,11 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-
-        {/* Image Below Cards */}
-        <div className="aboutus-image-container">
+        <div 
+          className={`aboutus-image-container ${isVisible.image ? 'animate-fade-in-scale' : ''}`}
+          ref={(el) => (elementsRef.current.image = el)}
+          data-key="image"
+        >
           <img src={heroImg} alt="Hero image" className="aboutus-image" />
         </div>
       </section>
@@ -102,16 +157,32 @@ const AboutUs = () => {
       <section className="aboutus-vision-mission">
         <div className="vision-mission-container">
           {/* Purpose Tag */}
-          <div className="purpose-tag">OUR PURPOSE</div>
+          <div 
+            className={`purpose-tag ${isVisible.purposeTag ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.purposeTag = el)}
+            data-key="purposeTag"
+          >
+            OUR PURPOSE
+          </div>
 
           {/* Main Heading */}
-          <h2 className="vision-mission-heading">Vision & Mission</h2>
+          <h2 
+            className={`vision-mission-heading ${isVisible.vmHeading ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.vmHeading = el)}
+            data-key="vmHeading"
+          >
+            Vision & Mission
+          </h2>
 
           {/* Vision & Mission Cards */}
           <div className="vision-mission-cards">
-            <div className="vision-mission-card">
+            <div 
+              className={`vision-mission-card ${isVisible.visionCard ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.visionCard = el)}
+              data-key="visionCard"
+            >
               <div className="vm-card-header">
-                <div className="vm-icon">
+                <div className="vm-icon animate-pulse-icon">
                   <svg
                     width="28"
                     height="28"
@@ -148,9 +219,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="vision-mission-card">
+            <div 
+              className={`vision-mission-card ${isVisible.missionCard ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.missionCard = el)}
+              data-key="missionCard"
+            >
               <div className="vm-card-header">
-                <div className="vm-icon">
+                <div className="vm-icon animate-pulse-icon" style={{ animationDelay: '0.2s' }}>
                   <svg
                     width="28"
                     height="28"
@@ -201,12 +276,23 @@ const AboutUs = () => {
           </div>
 
           {/* Core Values Heading */}
-          <h2 className="core-values-heading">Our Core Values</h2>
+          <h2 
+            className={`core-values-heading ${isVisible.coreValuesHeading ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.coreValuesHeading = el)}
+            data-key="coreValuesHeading"
+          >
+            Our Core Values
+          </h2>
 
           {/* Core Values Cards */}
           <div className="core-values-grid">
-            <div className="core-value-card">
-              <div className="cv-icon">
+            <div 
+              className={`core-value-card ${isVisible.coreValue1 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.coreValue1 = el)}
+              data-key="coreValue1"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="cv-icon animate-rotate-slow">
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -214,8 +300,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="core-value-card">
-              <div className="cv-icon">
+            <div 
+              className={`core-value-card ${isVisible.coreValue2 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.coreValue2 = el)}
+              data-key="coreValue2"
+              style={{ animationDelay: '0.2s' }}
+            >
+              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.1s' }}>
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -223,8 +314,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="core-value-card">
-              <div className="cv-icon">
+            <div 
+              className={`core-value-card ${isVisible.coreValue3 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.coreValue3 = el)}
+              data-key="coreValue3"
+              style={{ animationDelay: '0.3s' }}
+            >
+              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.2s' }}>
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -232,8 +328,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="core-value-card">
-              <div className="cv-icon">
+            <div 
+              className={`core-value-card ${isVisible.coreValue4 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.coreValue4 = el)}
+              data-key="coreValue4"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.3s' }}>
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -247,19 +348,38 @@ const AboutUs = () => {
       {/* Why Choose Us Section */}
       <section className="aboutus-why-choose">
         <div className="why-choose-container">
-          <div className="why-us-label">WHY US</div>
-          <h2 className="why-choose-heading">
+          <div 
+            className={`why-us-label ${isVisible.whyUsLabel ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.whyUsLabel = el)}
+            data-key="whyUsLabel"
+          >
+            WHY US
+          </div>
+          <h2 
+            className={`why-choose-heading ${isVisible.whyChooseHeading ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.whyChooseHeading = el)}
+            data-key="whyChooseHeading"
+          >
             Why Choose Global Vision Education?
           </h2>
-          <p className="why-choose-description">
+          <p 
+            className={`why-choose-description ${isVisible.whyChooseDesc ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.whyChooseDesc = el)}
+            data-key="whyChooseDesc"
+          >
             We combine expertise, dedication, and a global network to deliver
             exceptional results for our students.
           </p>
 
           {/* Feature Cards */}
           <div className="why-choose-cards">
-            <div className="why-choose-card">
-              <div className="why-card-icon">
+            <div 
+              className={`why-choose-card ${isVisible.whyCard1 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.whyCard1 = el)}
+              data-key="whyCard1"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="why-card-icon animate-bounce-subtle">
                 <img
                   src={overlayIcon1}
                   alt="Flexible Study Options"
@@ -272,8 +392,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="why-choose-card">
-              <div className="why-card-icon">
+            <div 
+              className={`why-choose-card ${isVisible.whyCard2 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.whyCard2 = el)}
+              data-key="whyCard2"
+              style={{ animationDelay: '0.2s' }}
+            >
+              <div className="why-card-icon animate-bounce-subtle" style={{ animationDelay: '0.2s' }}>
                 <img
                   src={overlayIcon2}
                   alt="Transparent Process"
@@ -286,8 +411,13 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="why-choose-card">
-              <div className="why-card-icon">
+            <div 
+              className={`why-choose-card ${isVisible.whyCard3 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.whyCard3 = el)}
+              data-key="whyCard3"
+              style={{ animationDelay: '0.3s' }}
+            >
+              <div className="why-card-icon animate-bounce-subtle" style={{ animationDelay: '0.4s' }}>
                 <img
                   src={overlayIcon3}
                   alt="Personalized Assistance"
@@ -299,8 +429,14 @@ const AboutUs = () => {
                 Dedicated help throughout your studies.
               </p>
             </div>
-            <div className="why-choose-card">
-              <div className="why-card-icon">
+
+            <div 
+              className={`why-choose-card ${isVisible.whyCard4 ? 'animate-fade-in-up' : ''}`}
+              ref={(el) => (elementsRef.current.whyCard4 = el)}
+              data-key="whyCard4"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <div className="why-card-icon animate-bounce-subtle" style={{ animationDelay: '0.6s' }}>
                 <img
                   src={overlayIcon4}
                   alt="Professional Excellence"
@@ -316,16 +452,20 @@ const AboutUs = () => {
         </div>
       </section>
       <section className="aboutus-cta">
-        <div className="cta-container">
+        <div 
+          className={`cta-container ${isVisible.cta ? 'animate-fade-in-scale' : ''}`}
+          ref={(el) => (elementsRef.current.cta = el)}
+          data-key="cta"
+        >
           <h2 className="cta-heading">Ready to Start Your Journey?</h2>
           <p className="cta-description">
             Book a free consultation with our expert counselors and take the
             first step towards your dream education.
           </p>
-          <button className="cta-button" href="/ServicesPage.js">
+          <Link to="/services" className="cta-button animate-pulse-button">
             Explore Our Services
-            <span className="cta-arrow">→</span>
-          </button>
+            <span className="cta-arrow animate-arrow-slide">→</span>
+          </Link>
         </div>
       </section>
 

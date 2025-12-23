@@ -1,38 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PopularPrograms.css';
-import lifeSciencesImg from '../assets/images/programs/life.png';
-import mbbsImg from '../assets/images/programs/mbbs.png';
-import engineeringImg from '../assets/images/programs/eng.png';
-import artsMediaImg from '../assets/images/programs/arts.png';
 import managementImg from '../assets/images/programs/manage.png';
 import accountingImg from '../assets/images/programs/account.png';
+import artsMediaImg from '../assets/images/programs/arts.png';
+import engineeringImg from '../assets/images/programs/eng.png';
 
 const PopularPrograms = () => {
   const programs = [
     {
-      image: lifeSciencesImg,
-      name: 'LIFE SCIENCES'
-    },
-    {
-      image: mbbsImg,
-      name: 'MBBS'
-    },
-    {
-      image: engineeringImg,
-      name: 'ENGINEERING'
-    },
-    {
-      image: artsMediaImg,
-      name: 'ARTS & MEDIA'
-    },
-    {
       image: managementImg,
-      name: 'MANAGEMENT'
+      name: 'BBA'
     },
     {
       image: accountingImg,
-      name: 'ACCOUNTING'
+      name: 'B.Com'
+    },
+    {
+      image: artsMediaImg,
+      name: 'B.Ed'
+    },
+    {
+      image: accountingImg,
+      name: 'M.Com'
+    },
+    {
+      image: managementImg,
+      name: 'MBA'
+    },
+    {
+      image: engineeringImg,
+      name: 'M.Sc'
     }
   ];
 

@@ -1,0 +1,189 @@
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import "./MCAEducation.css";
+import Header from "./Header";
+import Footer from "./Footer";
+
+import postgraduateIcon from "../assets/images/course/SVG (4).png";
+import aboutOverlay from "../assets/images/course/Overlay (26).png";
+import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
+import careerOverlay from "../assets/images/course/Overlay (28).png";
+import checkIcon from "../assets/images/icons/SVG (3).png";
+
+const MCAEducation = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const elementsRef = useRef({});
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prev) => ({
+            ...prev,
+            [entry.target.dataset.key]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    Object.values(elementsRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      Object.values(elementsRef.current).forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
+  return (
+    <div className="mca-standard-page">
+      <Header />
+
+      <section className="mca-hero-section">
+        <div className="mca-hero-oval"></div>
+        <div className="mca-centered-section">
+          <div 
+            className={`mca-top-buttons ${isVisible.topButtons ? 'animate-fade-in' : ''}`}
+            ref={(el) => (elementsRef.current.topButtons = el)}
+            data-key="topButtons"
+          >
+            <Link to="/courses" className="mca-back-link-top animate-slide-in-left">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Back to Programs
+            </Link>
+            <div className="mca-program-tag-center animate-pulse-subtle">Postgraduate Program</div>
+          </div>
+          <div 
+            className={`mca-title-section ${isVisible.title ? 'animate-fade-in-scale' : ''}`}
+            ref={(el) => (elementsRef.current.title = el)}
+            data-key="title"
+          >
+            <h1 className="mca-main-title">
+              <span className="mca-title-line">MCA - Master of</span>
+              <span className="mca-title-line">Computer Applications</span>
+            </h1>
+          </div>
+          <div 
+            className={`mca-meta-tags ${isVisible.metaTags ? 'animate-fade-in-up' : ''}`}
+            ref={(el) => (elementsRef.current.metaTags = el)}
+            data-key="metaTags"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <div className="mca-meta-tag animate-float">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              2 Years
+            </div>
+            <div className="mca-meta-tag animate-float" style={{ animationDelay: '0.3s' }}>
+              <img src={postgraduateIcon} alt="Postgraduate" className="meta-tag-icon" />
+              Postgraduate
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mca-main-content">
+        <div className="mca-bottom-section">
+          <div className="mca-bottom-container">
+            <div 
+              className={`mca-left-column ${isVisible.leftColumn ? 'animate-slide-in-left' : ''}`}
+              ref={(el) => (elementsRef.current.leftColumn = el)}
+              data-key="leftColumn"
+            >
+              <div className="mca-about-program-card">
+                <div className="mca-about-card-header">
+                  <img src={aboutOverlay} alt="Program Icon" className="mca-about-icon" />
+                  <h3 className="mca-about-card-title">About This Program</h3>
+                </div>
+                <p className="mca-about-card-description">
+                  The Master of Computer Applications program provides advanced knowledge in software development, system design, database management, and emerging technologies. This program prepares students for leadership roles in the IT industry with hands-on experience in cutting-edge technologies.
+                </p>
+              </div>
+              <div className="mca-info-card career-prospects-card">
+                <div className="mca-about-card-header">
+                  <img src={careerOverlay} alt="Career Icon" className="mca-about-icon no-bg-icon animate-bounce-subtle" />
+                  <h3 className="mca-about-card-title">Career Prospects</h3>
+                </div>
+                <div className="education-grid">
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                    <img src={checkIcon} alt="icon" className="plain-icon" />
+                    <span>Software Architect</span>
+                  </div>
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    <img src={checkIcon} alt="icon" className="plain-icon" />
+                    <span>Systems Analyst</span>
+                  </div>
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                    <img src={checkIcon} alt="icon" className="plain-icon" />
+                    <span>Project Manager</span>
+                  </div>
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                    <img src={checkIcon} alt="icon" className="plain-icon" />
+                    <span>Data Scientist</span>
+                  </div>
+                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                    <img src={checkIcon} alt="icon" className="plain-icon" />
+                    <span>IT Consultant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div 
+              className={`mca-right-column ${isVisible.rightColumn ? 'animate-slide-in-right' : ''}`}
+              ref={(el) => (elementsRef.current.rightColumn = el)}
+              data-key="rightColumn"
+            >
+              <div className="mca-info-card">
+                <div className="mca-about-card-header">
+                  <img src={eligibilityOverlay} alt="Eligibility Icon" className="mca-about-icon small-icon" />
+                  <h3 className="mca-about-card-title small-title">Eligibility</h3>
+                </div>
+                <p className="mca-about-card-description">
+                  Completion of a Bachelor's degree in Computer Science, BCA, or related field from a recognized university with a minimum aggregate score. Mathematics background is preferred.
+                </p>
+                <div className="mca-card-buttons">
+                  <Link to="/contact" className="mca-btn-apply animate-pulse-button">Apply Now</Link>
+                  <button className="mca-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
+                </div>
+              </div>
+              <div className="mca-quick-facts">
+                <h4 className="quick-facts-title">Quick Facts</h4>
+                <div className="quick-facts-grid">
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                    <span className="quick-fact-label">Duration</span>
+                    <span className="quick-fact-value">2 Years</span>
+                  </div>
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    <span className="quick-fact-label">Level</span>
+                    <span className="quick-fact-value">Postgraduate</span>
+                  </div>
+                  <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                    <span className="quick-fact-label">Mode</span>
+                    <span className="quick-fact-value">Full-time</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default MCAEducation;
+
+

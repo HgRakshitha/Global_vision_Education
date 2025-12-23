@@ -95,8 +95,7 @@
 /* Application Process Grid - Home Page Only */
 .application-process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 360px);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(4, 280px);
   gap: 2rem;
   justify-content: center;
   max-width: 1400px;
@@ -106,23 +105,25 @@
 
 .application-process-card {
   background-color: #fbf2e7;
-  width: 360px;
-  height: 220px;
+  width: 280px;
+  height: 200px;
   border-radius: 24px;
   border: none;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1.25rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   opacity: 1;
   position: relative;
   z-index: 1;
   cursor: pointer;
   overflow: visible;
+  text-decoration: none;
+  color: inherit;
 }
 
 .application-process-card:hover {
@@ -162,10 +163,10 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: #0f1729;
-  margin: 0 0 0.75rem 0;
+  margin: 1rem 0 0 0;
   transition: color 0.3s ease;
   line-height: 1.4;
-  text-align: left;
+  text-align: center;
   width: 100%;
 }
 
@@ -203,7 +204,7 @@
   }
 
   .application-process-grid {
-    grid-template-columns: repeat(2, 360px);
+    grid-template-columns: repeat(2, 280px);
     gap: 2rem;
     padding: 0 1rem;
   }
@@ -218,9 +219,9 @@
   }
 
   .application-process-card {
-    width: 360px;
-    height: 220px;
-    padding: 1.25rem 1rem;
+    width: 280px;
+    height: 200px;
+    padding: 1.5rem 1.25rem;
   }
 
   .application-process-icon-wrapper {
@@ -282,9 +283,9 @@
 
   .application-process-card {
     width: 100%;
-    max-width: 360px;
-    height: 220px;
-    padding: 1.25rem 1rem;
+    max-width: 280px;
+    height: 200px;
+    padding: 1.5rem 1.25rem;
   }
 
   .application-process-icon-wrapper {
@@ -300,12 +301,9 @@
 
   .application-process-title {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-
-  .application-process-description {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-align: center;
   }
 }
 
@@ -314,65 +312,4 @@ body {
   overscroll-behavior: none;
 }
 
-/* ===============================
-   PREMIUM LIGHT-SWEEP ANIMATION
-================================ */
-
-.application-process-card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* light layer */
-.application-process-card::before {
-  content: "";
-  position: absolute;
-  top: -120%;
-  left: -120%;
-  width: 220%;
-  height: 220%;
-  background: linear-gradient(
-    120deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.18) 50%,
-    transparent 60%
-  );
-  transform: rotate(0deg);
-  animation: lightSweep 9s linear infinite;
-  pointer-events: none;
-}
-
-/* stagger timing */
-.application-process-card:nth-child(2)::before {
-  animation-delay: 2s;
-}
-.application-process-card:nth-child(3)::before {
-  animation-delay: 4s;
-}
-.application-process-card:nth-child(4)::before {
-  animation-delay: 6s;
-}
-.application-process-card:nth-child(5)::before {
-  animation-delay: 8s;
-}
-
-/* animation */
-@keyframes lightSweep {
-  0% {
-    transform: translateX(-40%) translateY(-40%);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  35% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(40%) translateY(40%);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+/* Light sweep animation removed as requested */
