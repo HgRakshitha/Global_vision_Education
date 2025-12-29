@@ -144,7 +144,7 @@ const MBAEducation = () => {
                 </div>
 
                 <p className="mba-about-card-description">
-                  The Master of Business Administration program provides comprehensive knowledge in business management, leadership, finance, marketing, and strategic planning. This program is designed to develop analytical thinking, decision-making skills, and business acumen needed for senior management roles in various industries.
+                  The Master of Business Administration program develops strategic thinking, leadership skills, and business management expertise. It is one of the most sought-after qualifications for professionals looking to grow into managerial and leadership roles.
                 </p>
               </div>
 
@@ -173,10 +173,10 @@ const MBAEducation = () => {
                     <span>Marketing Manager</span>
                   </div>
 
-                  {/* Financial Analyst */}
+                  {/* HR Manager */}
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Financial Analyst</span>
+                    <span>HR Manager</span>
                   </div>
 
                   {/* Operations Manager */}
@@ -185,10 +185,10 @@ const MBAEducation = () => {
                     <span>Operations Manager</span>
                   </div>
 
-                  {/* Consultant */}
+                  {/* Entrepreneur */}
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Consultant</span>
+                    <span>Entrepreneur</span>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ const MBAEducation = () => {
                 </div>
 
                 <p className="mba-about-card-description">
-                  Completion of a Bachelor's degree from a recognized university with a minimum aggregate score. Some programs may require work experience or entrance exams.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
 
                 <div className="mba-card-buttons">

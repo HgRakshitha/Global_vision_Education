@@ -106,7 +106,7 @@ const MEdEducation = () => {
                   <h3 className="med-about-card-title">About This Program</h3>
                 </div>
                 <p className="med-about-card-description">
-                  The Master of Education program provides advanced training in educational theory, pedagogy, curriculum development, and educational leadership. This program prepares educators for leadership roles in schools, educational administration, and curriculum design with a focus on innovative teaching methodologies.
+                  The Master of Education program is tailored for educators and academic professionals who want to deepen their understanding of teaching methodologies, educational leadership, curriculum design, and educational research.
                 </p>
               </div>
               <div className="med-info-card career-prospects-card">
@@ -117,23 +117,19 @@ const MEdEducation = () => {
                 <div className="education-grid">
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Educational Administrator</span>
+                    <span>Senior Teacher</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Curriculum Developer</span>
+                    <span>Academic Coordinator</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Education Consultant</span>
+                    <span>Education Administrator</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Teacher Educator</span>
-                  </div>
-                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>School Principal</span>
+                    <span>Researcher</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +145,7 @@ const MEdEducation = () => {
                   <h3 className="med-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="med-about-card-description">
-                  Completion of B.Ed or a Bachelor's degree in Education from a recognized university with a minimum aggregate score. Teaching experience may be preferred for some programs.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
                 <div className="med-card-buttons">
                   <Link to="/contact" className="med-btn-apply animate-pulse-button">Apply Now</Link>

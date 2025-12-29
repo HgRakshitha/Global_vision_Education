@@ -107,7 +107,7 @@ const MCAEducation = () => {
                   <h3 className="mca-about-card-title">About This Program</h3>
                 </div>
                 <p className="mca-about-card-description">
-                  The Master of Computer Applications program provides advanced knowledge in software development, system design, database management, and emerging technologies. This program prepares students for leadership roles in the IT industry with hands-on experience in cutting-edge technologies.
+                  The Master of Computer Applications program is designed to build strong technical expertise in software development, programming, data management, and emerging technologies. It is ideal for graduates seeking a professional career in the IT and technology sector.
                 </p>
               </div>
               <div className="mca-info-card career-prospects-card">
@@ -118,23 +118,19 @@ const MCAEducation = () => {
                 <div className="education-grid">
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Software Architect</span>
+                    <span>Software Developer</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Systems Analyst</span>
+                    <span>System Analyst</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Project Manager</span>
+                    <span>IT Consultant</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Data Scientist</span>
-                  </div>
-                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>IT Consultant</span>
+                    <span>Application Engineer</span>
                   </div>
                 </div>
               </div>
@@ -150,7 +146,7 @@ const MCAEducation = () => {
                   <h3 className="mca-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="mca-about-card-description">
-                  Completion of a Bachelor's degree in Computer Science, BCA, or related field from a recognized university with a minimum aggregate score. Mathematics background is preferred.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
                 <div className="mca-card-buttons">
                   <Link to="/contact" className="mca-btn-apply animate-pulse-button">Apply Now</Link>

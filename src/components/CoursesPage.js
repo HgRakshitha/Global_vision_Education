@@ -196,13 +196,6 @@ const CoursesPage = () => {
       path: "/courses/mcom",
     },
     {
-      title: "MSW",
-      description:
-        "Social work training for roles in community welfare and public service.",
-      duration: "2 Years",
-      path: "/courses/msw",
-    },
-    {
       title: "M.Ed",
       description:
         "Education expertise for careers in research, policy, and academic management.",

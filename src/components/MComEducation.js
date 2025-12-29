@@ -106,7 +106,7 @@ const MComEducation = () => {
                   <h3 className="mcom-about-card-title">About This Program</h3>
                 </div>
                 <p className="mcom-about-card-description">
-                  The Master of Commerce program offers advanced knowledge in accounting, finance, economics, business law, and taxation. This program prepares students for professional careers in finance, accounting, banking, and business management with a strong foundation in commercial principles.
+                  The Master of Commerce program provides advanced knowledge in accounting, finance, taxation, economics, and business management. It is suitable for commerce graduates aiming for leadership roles in finance and corporate sectors.
                 </p>
               </div>
               <div className="mcom-info-card career-prospects-card">
@@ -117,11 +117,11 @@ const MComEducation = () => {
                 <div className="education-grid">
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Financial Analyst</span>
+                    <span>Accountant</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Accountant</span>
+                    <span>Financial Analyst</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
@@ -129,11 +129,7 @@ const MComEducation = () => {
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Auditor</span>
-                  </div>
-                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Banking Professional</span>
+                    <span>Corporate Executive</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +145,7 @@ const MComEducation = () => {
                   <h3 className="mcom-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="mcom-about-card-description">
-                  Completion of a Bachelor's degree in Commerce or related field from a recognized university with a minimum aggregate score.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
                 <div className="mcom-card-buttons">
                   <Link to="/contact" className="mcom-btn-apply animate-pulse-button">Apply Now</Link>

@@ -30,7 +30,6 @@ import MCAEducation from "./components/MCAEducation";
 import MAEducation from "./components/MAEducation";
 import MScEducation from "./components/MScEducation";
 import MComEducation from "./components/MComEducation";
-import MSWEducation from "./components/MSWEducation";
 import MEdEducation from "./components/MEdEducation";
 import DistanceEducation from "./components/DistanceEducation";
 import CertificateAttestation from "./components/CertificateAttestation";
@@ -86,7 +85,6 @@ function App() {
             <Route path="/courses/ma" element={<MAEducation />} />
             <Route path="/courses/msc" element={<MScEducation />} />
             <Route path="/courses/mcom" element={<MComEducation />} />
-            <Route path="/courses/msw" element={<MSWEducation />} />
             <Route path="/courses/med" element={<MEdEducation />} />
             <Route path="/services/distance-education" element={<DistanceEducation />} />
             <Route path="/services/certificate-attestation" element={<CertificateAttestation />} />

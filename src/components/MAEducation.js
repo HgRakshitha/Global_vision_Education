@@ -106,7 +106,7 @@ const MAEducation = () => {
                   <h3 className="ma-about-card-title">About This Program</h3>
                 </div>
                 <p className="ma-about-card-description">
-                  The Master of Arts program offers specialized study in humanities and social sciences including literature, history, sociology, psychology, and political science. This program enhances critical thinking, research skills, and academic writing abilities for careers in education, research, and public service.
+                  The Master of Arts program focuses on advanced theoretical knowledge, critical thinking, and analytical skills in humanities and social sciences. It is suitable for candidates aiming for careers in teaching, research, public administration, content development, and civil services preparation.
                 </p>
               </div>
               <div className="ma-info-card career-prospects-card">
@@ -117,23 +117,23 @@ const MAEducation = () => {
                 <div className="education-grid">
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Professor</span>
+                    <span>Teaching</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Researcher</span>
+                    <span>Research</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Policy Analyst</span>
+                    <span>Public Services</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Content Strategist</span>
+                    <span>Media</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Cultural Advisor</span>
+                    <span>Academic Writing</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@ const MAEducation = () => {
                   <h3 className="ma-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="ma-about-card-description">
-                  Completion of a Bachelor's degree in Arts or related field from a recognized university with a minimum aggregate score.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
                 <div className="ma-card-buttons">
                   <Link to="/contact" className="ma-btn-apply animate-pulse-button">Apply Now</Link>

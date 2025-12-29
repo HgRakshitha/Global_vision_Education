@@ -106,7 +106,7 @@ const MScEducation = () => {
                   <h3 className="msc-about-card-title">About This Program</h3>
                 </div>
                 <p className="msc-about-card-description">
-                  The Master of Science program provides advanced study in various scientific disciplines including Physics, Chemistry, Mathematics, Biology, and Computer Science. This program emphasizes research methodology, experimental skills, and theoretical knowledge for careers in research, academia, and industry.
+                  The Master of Science program focuses on in-depth subject expertise, analytical skills, and research orientation. It is ideal for students planning careers in scientific research, teaching, healthcare, and technical fields depending on specialization.
                 </p>
               </div>
               <div className="msc-info-card career-prospects-card">
@@ -121,19 +121,15 @@ const MScEducation = () => {
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Laboratory Manager</span>
+                    <span>Lecturer</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Quality Analyst</span>
+                    <span>Lab Analyst</span>
                   </div>
                   <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                     <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Scientific Consultant</span>
-                  </div>
-                  <div className="higher-education-box animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <img src={checkIcon} alt="icon" className="plain-icon" />
-                    <span>Academic Researcher</span>
+                    <span>Industry Specialist</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +145,7 @@ const MScEducation = () => {
                   <h3 className="msc-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="msc-about-card-description">
-                  Completion of a Bachelor's degree in Science or related field from a recognized university with a minimum aggregate score. Specific subject requirements may apply based on specialization.
+                  Completion of undergraduate education in a relevant discipline from a recognized institution. Minimum eligibility criteria as per university requirements. Open to working professionals and fresh graduates.
                 </p>
                 <div className="msc-card-buttons">
                   <Link to="/contact" className="msc-btn-apply animate-pulse-button">Apply Now</Link>
