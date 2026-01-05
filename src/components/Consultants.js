@@ -1,6 +1,6 @@
 import React from 'react';
 import './Consultants.css';
-import consultantImg from '../assets/images/consultants/consultant.png';
+import consultantImg from '../assets/images/consultants/buss.png';
 import studentCentricIcon from '../assets/images/icons/svg.png';
 import comprehensiveSupportIcon from '../assets/images/icons/svg.png';
 import globalNetworkIcon from '../assets/images/icons/svg.png';

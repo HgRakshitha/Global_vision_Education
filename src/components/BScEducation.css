@@ -154,14 +154,14 @@
 }
 
 .bsc-about-card-title {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 800;
   color: #00444d;
 }
 
 .bsc-about-card-description {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 22px;
   color: #3d858f;
@@ -206,7 +206,7 @@
   justify-content: flex-start;
   gap: 12px;
   padding: 18px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #00444d;
@@ -223,6 +223,7 @@
   height: 20px;
   background: none;
   padding: 0;
+  filter: contrast(1.2) brightness(1.1);
 }
 
 /* Buttons */
@@ -264,7 +265,7 @@
 }
 
 .quick-facts-title {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 800;
   color: #00444d;
@@ -285,14 +286,14 @@
 }
 
 .quick-fact-label {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #3d858f;
   font-weight: 600;
 }
 
 .quick-fact-value {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #00444d;
   font-weight: 700;
@@ -317,6 +318,316 @@
 
   .bsc-bottom-container .higher-education-box {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bsc-hero-section {
+    height: 450px;
+    margin-top: -60px;
+  }
+
+  .bsc-hero-oval {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    top: -80px;
+  }
+
+  .bsc-main-content {
+    margin-top: -150px;
+  }
+
+  .bsc-centered-section {
+    top: 100px;
+    padding: 0 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bsc-top-buttons {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .bsc-back-link-top {
+    font-size: 12px;
+    left: 0;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .bsc-program-tag-center {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .bsc-main-title {
+    font-size: 1.75rem;
+    margin-top: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .bsc-title-line {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .bsc-meta-tags {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .bsc-meta-tag {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+
+  .bsc-bottom-section {
+    padding: 3rem 0;
+    border-radius: 40px 40px 0 0;
+  }
+
+  .bsc-bottom-container {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .bsc-left-column,
+  .bsc-right-column {
+    gap: 1.5rem;
+  }
+
+  .bsc-about-program-card,
+  .bsc-info-card,
+  .bsc-quick-facts {
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bsc-about-card-header {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bsc-about-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bsc-about-card-title {
+    font-size: 18px;
+  }
+
+  .bsc-card-title {
+    font-size: 1.25rem;
+  }
+
+  .bsc-card-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .bsc-bottom-container .education-grid {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .bsc-bottom-container .higher-education-box {
+    height: auto;
+    min-height: 45px;
+    padding: 12px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .plain-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bsc-card-buttons {
+    gap: 0.875rem;
+  }
+
+  .bsc-btn-apply,
+  .bsc-btn-info {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 14px;
+  }
+
+  .bsc-quick-facts {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bsc-hero-section {
+    height: 380px;
+    margin-top: -50px;
+  }
+
+  .bsc-hero-oval {
+    height: 320px;
+    top: -60px;
+  }
+
+  .bsc-main-content {
+    margin-top: -120px;
+  }
+
+  .bsc-centered-section {
+    top: 80px;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bsc-top-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .bsc-back-link-top {
+    font-size: 11px;
+    left: 0;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .bsc-program-tag-center {
+    font-size: 10px;
+    padding: 4px 10px;
+    align-self: flex-start;
+  }
+
+  .bsc-main-title {
+    font-size: 1.5rem;
+    margin-top: 12px;
+    gap: 0.25rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .bsc-title-line {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .bsc-meta-tags {
+    gap: 0.5rem;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .bsc-meta-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .bsc-bottom-section {
+    padding: 2.5rem 0;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .bsc-bottom-container {
+    padding: 0 1rem;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .bsc-left-column,
+  .bsc-right-column {
+    gap: 1.25rem;
+  }
+
+  .bsc-about-program-card,
+  .bsc-info-card,
+  .bsc-quick-facts {
+    padding: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bsc-about-card-header {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .bsc-about-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bsc-about-card-title {
+    font-size: 16px;
+  }
+
+  .bsc-card-title {
+    font-size: 1.1rem;
+  }
+
+  .bsc-card-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .bsc-bottom-container .education-grid {
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .bsc-bottom-container .higher-education-box {
+    height: auto;
+    min-height: 40px;
+    padding: 10px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .plain-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bsc-btn-apply,
+  .bsc-btn-info {
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .bsc-card-buttons {
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .bsc-quick-facts {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .quick-facts-title {
+    font-size: 13px;
+    margin-bottom: 0.625rem;
+  }
+
+  .quick-fact-label {
+    font-size: 13px;
+  }
+
+  .quick-fact-value {
+    font-size: 14px;
   }
 }
 

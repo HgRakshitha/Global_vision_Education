@@ -4,12 +4,11 @@ import "./TenthStandardEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-/* UPDATED ICONS */
 import secondaryIcon from "../assets/images/course/SVG (4).png";
 import aboutOverlay from "../assets/images/course/Overlay (26).png";
 import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
 import careerOverlay from "../assets/images/course/Overlay (28).png";
-import checkIcon from "../assets/images/icons/SVG (3).png"; // ✅ MISSING IMPORT FIXED
+import checkIcon from "../assets/images/icons/SVG (3).png";
 
 const TenthStandardEducation = () => {
   const [isVisible, setIsVisible] = useState({});

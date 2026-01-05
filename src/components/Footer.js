@@ -10,13 +10,6 @@ import phoneIcon from '../assets/images/icons/Overlay (4).png';
 import locationIcon from '../assets/images/icons/Overlay (7).png';
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <footer className="footer-section">
       <div className="footer-container">
@@ -51,17 +44,6 @@ const Footer = () => {
                   <div className="logo-subtitle">EDUCATION CONSULTANTS</div>
                 </div>
               </div>
-            </div>
-            <p className="footer-description">
-              Global Vision Education is dedicated to shaping global careers by offering trusted, comprehensive study-abroad guidance. We empower students to dream bigger and achieve more.
-            </p>
-            <div className="back-to-top-wrapper">
-              <span className="back-to-top-text">Back to top</span>
-              <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#1f2937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
             </div>
           </div>
 

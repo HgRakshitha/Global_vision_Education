@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./AboutUs.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import aboutUsImage from "../assets/images/hero/About Us Image.png";
+import aboutUsImage from "../assets/images/hero/discusss.png";
 import heroImg from "../assets/images/hero/img.png";
 import icon1 from "../assets/images/icons/bg3.png";
 import icon2 from "../assets/images/icons/bg2.png";
@@ -90,14 +90,14 @@ const AboutUs = () => {
             data-key="rightColumn"
           >
             <p className="aboutus-description">
-              GVE was founded to solve a major challenge in the UAE -
+              Global Vision Education was founded to solve a major challenge in the UAE -
               professionals wanted to study further but struggled with rigid
               classroom schedules, long commutes and work commitments. We
               created a flexible, accessible pathway that helps individuals
               upgrade their qualifications without disrupting their daily life.
               From the beginning, our focus has been simple: genuine guidance,
               an easy admission process and continuous support for working
-              learners. Today, GVE stays true to this mission, helping
+              learners. Today, Global Vision Education stays true to this mission, helping
               professionals grow with honest advice, structured processes and an
               approach that understands the realities of modern life.
             </p>
@@ -292,7 +292,7 @@ const AboutUs = () => {
               data-key="coreValue1"
               style={{ animationDelay: '0.1s' }}
             >
-              <div className="cv-icon animate-rotate-slow">
+              <div className="cv-icon">
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -306,7 +306,7 @@ const AboutUs = () => {
               data-key="coreValue2"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.1s' }}>
+              <div className="cv-icon">
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -320,7 +320,7 @@ const AboutUs = () => {
               data-key="coreValue3"
               style={{ animationDelay: '0.3s' }}
             >
-              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.2s' }}>
+              <div className="cv-icon">
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">
@@ -334,7 +334,7 @@ const AboutUs = () => {
               data-key="coreValue4"
               style={{ animationDelay: '0.4s' }}
             >
-              <div className="cv-icon animate-rotate-slow" style={{ animationDelay: '0.3s' }}>
+              <div className="cv-icon">
                 <img src={tickIcon} alt="Checkmark" />
               </div>
               <p className="cv-text">

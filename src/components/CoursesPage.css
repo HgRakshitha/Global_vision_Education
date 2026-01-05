@@ -118,10 +118,14 @@
 .courses-hero {
   background: linear-gradient(
     to bottom right,
-    #006772 0%,
-    #006772 40%,
-    rgba(251, 242, 231, 0.72) 100%
-  );
+    rgba(0, 103, 114, 0.85) 0%,
+    rgba(0, 103, 114, 0.75) 40%,
+    rgba(251, 242, 231, 0.85) 100%
+  ),
+  var(--bg-image);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
@@ -166,7 +170,7 @@
 }
 
 .courses-hero-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: #ffffff;
@@ -195,7 +199,7 @@
   border: 2px solid #006772;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -213,7 +217,7 @@
   border: 2px solid #fbf2e7;
   border-radius: 8px;
   padding: 14px 32px;
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -299,14 +303,14 @@
 }
 
 .info-icon-text {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #006772;
 }
 
 .info-text {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #006772;
@@ -349,7 +353,7 @@
 }
 
 .courses-section-heading {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1f2937;
@@ -370,7 +374,7 @@
 }
 
 .courses-section-description {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #4b5563;
@@ -386,7 +390,7 @@
 }
 
 .program-section-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
@@ -409,7 +413,7 @@
 }
 
 .program-section-subtitle {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -538,7 +542,7 @@
 }
 
 .secondary-card-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -547,7 +551,7 @@
 }
 
 .secondary-card-description {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -557,12 +561,13 @@
   text-align: left;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .secondary-card-read-more {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #08b584;
@@ -678,7 +683,7 @@
 }
 
 .undergraduate-card-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -687,7 +692,7 @@
 }
 
 .undergraduate-card-description {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -697,6 +702,7 @@
   text-align: left;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -716,7 +722,7 @@
 }
 
 .undergraduate-duration {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #6b7280;
@@ -727,7 +733,7 @@
 }
 
 .undergraduate-read-more {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #08b584;
@@ -851,7 +857,7 @@
 }
 
 .postgraduate-card-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #1f2937;
@@ -860,7 +866,7 @@
 }
 
 .postgraduate-card-description {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #6b7280;
@@ -870,6 +876,7 @@
   text-align: left;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -889,7 +896,7 @@
 }
 
 .postgraduate-duration {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #6b7280;
@@ -900,7 +907,7 @@
 }
 
 .postgraduate-read-more {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #08b584;
@@ -928,27 +935,405 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .courses-hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .courses-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .undergraduate-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .postgraduate-cards-row {
+    flex-wrap: wrap;
+  }
+
   .program-cards-grid-large {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .courses-hero {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .courses-hero::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .courses-hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .courses-hero-content {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .courses-hero-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .title-line {
+    font-size: 1.75rem;
+  }
+
+  .courses-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .courses-btn-primary,
+  .courses-btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .courses-hero-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    order: -1;
+  }
+
+  .courses-hero-image {
+    max-width: 100%;
+    transform: translateX(0);
+  }
+
+  .floating-info-box {
+    display: none;
+  }
+
+  .courses-section-top {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
   .courses-section {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1rem 3rem 1rem;
   }
 
   .courses-section-heading {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    gap: 0.5rem;
+  }
+
+  .courses-section-description {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+
+  .program-section {
+    margin-bottom: 3rem;
+  }
+
+  .program-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .program-section-subtitle {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .secondary-education-container {
+    padding: 1rem;
+  }
+
+  .secondary-education-container .program-section-title {
+    font-size: 1.5rem;
+  }
+
+  .secondary-education-container .program-section-subtitle {
+    font-size: 13px;
+  }
+
+  .secondary-education-cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .secondary-education-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 240px;
+  }
+
+  .undergraduate-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .undergraduate-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 240px;
+  }
+
+  .postgraduate-cards-container {
+    gap: 1.5rem;
+  }
+
+  .postgraduate-cards-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .postgraduate-cards-row-second {
+    padding-left: 0;
+  }
+
+  .postgraduate-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 240px;
   }
 
   .program-cards-grid,
   .program-cards-grid-large {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .secondary-card-title,
+  .undergraduate-card-title,
+  .postgraduate-card-title {
+    font-size: 18px;
+  }
+
+  .secondary-card-description,
+  .undergraduate-card-description,
+  .postgraduate-card-description {
+    font-size: 13px;
+  }
+
+  .undergraduate-card-footer,
+  .postgraduate-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .undergraduate-read-more,
+  .postgraduate-read-more {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-hero {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .courses-hero::before {
+    width: 200px;
+    height: 200px;
+  }
+
+  .courses-hero-container {
+    gap: 1.5rem;
+  }
+
+  .courses-hero-content {
+    gap: 1rem;
+  }
+
+  .courses-hero-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .title-line {
+    font-size: 1.5rem;
+  }
+
+  .courses-hero-buttons {
+    gap: 0.75rem;
+  }
+
+  .courses-btn-primary,
+  .courses-btn-secondary {
+    font-size: 13px;
+    padding: 10px 20px;
+    max-width: 100%;
+  }
+
+  .courses-section-top {
+    padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+  }
+
+  .courses-section {
+    padding: 1.5rem 0.75rem 2rem 0.75rem;
+  }
+
+  .courses-section-heading {
+    font-size: 1.5rem;
+    gap: 0.25rem;
+  }
+
+  .courses-section-description {
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .program-section {
+    margin-bottom: 2.5rem;
   }
 
   .program-section-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .program-section-subtitle {
+    font-size: 13px;
+    margin-bottom: 1.25rem;
+  }
+
+  .secondary-education-container {
+    padding: 0.75rem;
+  }
+
+  .secondary-education-container .program-section-title {
+    font-size: 1.25rem;
+  }
+
+  .secondary-education-container .program-section-subtitle {
+    font-size: 12px;
+  }
+
+  .secondary-education-cards-wrapper {
+    gap: 1.25rem;
+  }
+
+  .secondary-education-card {
+    padding: 14px;
+    min-height: 220px;
+    gap: 10px;
+  }
+
+  .secondary-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .secondary-card-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .secondary-card-title {
+    font-size: 16px;
+  }
+
+  .secondary-card-description {
+    font-size: 12px;
+  }
+
+  .secondary-card-read-more {
+    font-size: 12px;
+  }
+
+  .undergraduate-cards-grid {
+    gap: 1.25rem;
+  }
+
+  .undergraduate-card {
+    padding: 14px;
+    min-height: 220px;
+    gap: 10px;
+  }
+
+  .undergraduate-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .undergraduate-card-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .undergraduate-card-title {
+    font-size: 16px;
+  }
+
+  .undergraduate-card-description {
+    font-size: 12px;
+  }
+
+  .undergraduate-duration {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .undergraduate-read-more {
+    font-size: 12px;
+  }
+
+  .postgraduate-cards-container {
+    gap: 1.25rem;
+  }
+
+  .postgraduate-cards-row {
+    gap: 1.25rem;
+  }
+
+  .postgraduate-card {
+    padding: 14px;
+    min-height: 220px;
+    gap: 10px;
+  }
+
+  .postgraduate-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .postgraduate-card-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .postgraduate-card-title {
+    font-size: 16px;
+  }
+
+  .postgraduate-card-description {
+    font-size: 12px;
+  }
+
+  .postgraduate-duration {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .postgraduate-read-more {
+    font-size: 12px;
   }
 }
 

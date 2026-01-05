@@ -4,6 +4,7 @@ import "./CoursesPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import heroImage from "../assets/images/hero/image 26.png";
+import graduationImage from "../assets/images/hero/graduation.png";
 import tickIcon from "../assets/images/icons/SVG (3).png";
 import overlay11 from "../assets/images/course/Overlay (11).png";
 import overlay12 from "../assets/images/course/Overlay (12).png";
@@ -209,7 +210,7 @@ const CoursesPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="courses-hero">
+      <section className="courses-hero" style={{ '--bg-image': `url(${graduationImage})` }}>
         <div className="courses-hero-container">
           {/* Left Content */}
           <div 

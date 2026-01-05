@@ -3,7 +3,7 @@ import './ContactUs.css';
 import Header from './Header';
 import Footer from './Footer';
 import FAQ from './FAQ';
-import contactImage from '../assets/images/hero/team.jpg';
+import contactImage from '../assets/images/hero/contact.png';
 import twitterIcon from '../assets/images/hero/twitter (1).png';
 import facebookIcon from '../assets/images/icons/facebook.png';
 import instagramIcon from '../assets/images/hero/insta.png';
@@ -69,7 +69,7 @@ const ContactUs = () => {
                   </svg>
                 </button>
                 <div className="social-icons">
-                  <a href="https://x.com/GlobalVisionEdu" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://x.com/globalvision_34" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <img src={twitterIcon} alt="Twitter" />
                   </a>
                   <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon">
@@ -180,36 +180,33 @@ const ContactUs = () => {
           <div className="maps-container">
             <div className="map-item">
               <h3 className="map-location-title">Location 1</h3>
-              <p className="map-location-address">Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates</p>
+              <p className="map-location-address">Office No. 205, Ontario Tower, Business Bay, Dubai.</p>
               <div className="map-container">
                 <iframe
-                  src={`https://www.google.com/maps?q=Ontario+Tower+-+1604+-+Office+Building,+17+1701-22+-+Business+Bay+-+Dubai+-+United+Arab+Emirates&hl=en&z=17&output=embed`}
+                  src="https://www.google.com/maps?q=25.1861344,55.2620304&hl=en&z=17&output=embed"
                   width="100%"
-                  height="400"
+                  height="450"
                   style={{ border: 0, borderRadius: '20px' }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Our Location - Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates"
+                  title="GLOBAL VISION EDUCATION - Dubai"
                 ></iframe>
               </div>
             </div>
             <div className="map-item">
               <h3 className="map-location-title">Location 2</h3>
-              <p className="map-location-address">
-                KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33<br />
-                Building Al Salam
-              </p>
+              <p className="map-location-address">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33- Building Al Salam</p>
               <div className="map-container">
                 <iframe
-                  src="https://www.google.com/maps?q=K.M.TRADING+CORPORATE+OFFICE,+Al+Ferdous+Tower,+15th+Floor,+Room+No.+33,+Building+Al+Salam&output=embed"
+                  src="https://www.google.com/maps?q=24.4973968,54.3716999&hl=en&z=16&output=embed"
                   width="100%"
-                  height="400"
+                  height="450"
                   style={{ border: 0, borderRadius: '20px' }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Our Location - K.M. Trading Corporate Office - Al Ferdous Tower - Al Salam"
+                  title="GLOBAL VISION EDUCATION - ABU DHABI"
                 ></iframe>
               </div>
             </div>

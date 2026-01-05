@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ServicesPage.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import teamImage from "../assets/images/hero/team.jpg";
+import discussImage from "../assets/images/hero/discusss.png";
 import icon1 from "../assets/images/icons/bg1.png";
 import icon2 from "../assets/images/icons/bg2.png";
 import icon3 from "../assets/images/icons/bg3.png";
@@ -20,22 +20,6 @@ const ServicesPage = () => {
       title: "Application Support",
       row: 1,
     },
-    {
-      title: "Visa Assistance",
-      row: 1,
-    },
-    {
-      title: "Stay Support",
-      row: 2,
-    },
-    {
-      title: "Pre Departure Guidance",
-      row: 2,
-    },
-    {
-      title: "Scholarship Guidance",
-      row: 2,
-    },
   ];
 
   return (
@@ -43,26 +27,14 @@ const ServicesPage = () => {
       <Header />
 
       {/* Services Hero Section */}
-      <section className="services-hero">
-        <div className="services-hero-bg-container">
-          <img
-            src={teamImage}
-            alt="Office workspace"
-            className="services-hero-bg services-hero-bg-left"
-          />
-          <img
-            src={teamImage}
-            alt="Office workspace"
-            className="services-hero-bg services-hero-bg-right"
-          />
-        </div>
+      <section className="services-hero" style={{ backgroundImage: `url(${discussImage})` }}>
         <div className="services-hero-overlay"></div>
 
         <div className="services-hero-content">
           <h1 className="services-hero-title">Services</h1>
         </div>
 
-        {/* First Row Cards - Centered at bottom of hero */}
+        {/* First Row Cards - Right bottom of hero */}
         <div className="services-cards-container services-cards-row-1">
           {services
             .filter((service) => service.row === 1)
@@ -105,20 +77,6 @@ const ServicesPage = () => {
                       />
                     </svg>
                   )}
-                  {service.title === "Visa Assistance" && (
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z"
-                        fill="white"
-                      />
-                    </svg>
-                  )}
                 </div>
                 <h3 className="service-card-title">{service.title}</h3>
               </div>
@@ -126,102 +84,6 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Second Row Cards - Below hero section, offset */}
-      <div className="services-cards-container services-cards-row-2">
-        {services
-          .filter((service) => service.row === 2)
-          .map((service, index) => (
-            <div key={`row2-${index}`} className="service-card">
-              <div className="service-card-icon">
-                {service.title === "Stay Support" && (
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"
-                      fill="white"
-                    />
-                  </svg>
-                )}
-                {service.title === "Pre Departure Guidance" && (
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="9"
-                      cy="7"
-                      r="4"
-                      stroke="white"
-                      strokeWidth="2"
-                      fill="none"
-                    />
-                    <path
-                      d="M9 11V16"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M9 16L6 19"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <circle
-                      cx="16"
-                      cy="8"
-                      r="3"
-                      stroke="white"
-                      strokeWidth="2"
-                      fill="none"
-                    />
-                    <path
-                      d="M16 11V15"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M16 15L14 17"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M13 9L15 7"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                )}
-                {service.title === "Scholarship Guidance" && (
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                      fill="white"
-                    />
-                  </svg>
-                )}
-              </div>
-              <h3 className="service-card-title">{service.title}</h3>
-            </div>
-          ))}
-      </div>
 
       <section className="what-we-offer">
         <div className="what-we-offer-container">
@@ -331,7 +193,7 @@ const ServicesPage = () => {
               Credit Transfer
             </Link>
             <Link to="/services/equivalency-certificate" className="secondary-service-btn">
-              Equivalency Certificate Services
+              Equivalency Certificate
             </Link>
           </div>
         </div>
@@ -389,7 +251,7 @@ const ServicesPage = () => {
               <h3 className="step-title">Receive Admission Details</h3>
               <p className="step-description">
                 Once your payment is confirmed, you will get your admission
-                confirmation, student ID, and access to the learning portal.
+                confirmation and student ID.
               </p>
             </div>
 
@@ -412,9 +274,9 @@ const ServicesPage = () => {
             are here to help you choose the right program.
           </p>
           <div className="services-cta-buttons">
-            <button className="services-cta-btn-primary">
+            <Link to="/contact" className="services-cta-btn-primary">
               Get Free Consultation
-            </button>
+            </Link>
             <button className="services-cta-btn-secondary">
               Download Brochure
             </button>

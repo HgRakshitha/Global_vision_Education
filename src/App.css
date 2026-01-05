@@ -34,3 +34,59 @@
   z-index: 0;
 }
 
+/* Global Icon Clarity Enhancement */
+img,
+svg {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Icon-specific clarity improvements */
+[class*="icon"],
+[class*="Icon"],
+[class*="meta-tag"],
+[class*="about-icon"],
+[class*="checkmark"],
+[class*="tick"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+[class*="icon"] img,
+[class*="Icon"] img,
+[class*="icon"] svg,
+[class*="Icon"] svg,
+[class*="meta-tag"] img,
+[class*="about-icon"] img,
+[class*="checkmark"] img,
+[class*="tick"] img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  filter: contrast(1.15) brightness(1.05);
+}
+
+/* Specific icon class improvements */
+.meta-tag-icon,
+[class*="-about-icon"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  filter: contrast(1.15) brightness(1.05);
+}
+

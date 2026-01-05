@@ -4,7 +4,6 @@ import "./BScEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-/* UPDATED ICONS */
 import undergraduateIcon from "../assets/images/course/SVG (5).png";
 import aboutOverlay from "../assets/images/course/Overlay (26).png";
 import eligibilityOverlay from "../assets/images/course/Overlay (27).png";

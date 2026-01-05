@@ -184,3 +184,44 @@
   }
 }
 
+@media (max-width: 480px) {
+  .academic-partners {
+    padding: 1rem 0.75rem;
+  }
+  
+  .partners-headline {
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  .partners-logos {
+    gap: 1rem;
+  }
+  
+  .affiliation-item {
+    min-width: 90px;
+    gap: 0.5rem;
+  }
+  
+  .affiliation-logo-wrapper {
+    width: 90px;
+    height: 50px;
+  }
+  
+  .affiliation-logo {
+    width: 90px;
+    height: 50px;
+    max-width: 90px;
+    max-height: 50px;
+  }
+  
+  .affiliation-text-fallback {
+    font-size: 20px;
+  }
+  
+  .affiliation-name {
+    font-size: 0.7rem;
+    max-width: 100px;
+  }
+}
+

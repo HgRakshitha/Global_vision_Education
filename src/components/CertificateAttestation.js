@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './CertificateAttestation.css';
 import Header from './Header';
 import Footer from './Footer';
-import teamImage from '../assets/images/hero/team.jpg';
+import certificateImage from '../assets/images/hero/certificate.png';
 
 const CertificateAttestation = () => {
   return (
@@ -11,7 +11,7 @@ const CertificateAttestation = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="service-hero" style={{ backgroundImage: `url(${teamImage})` }}>
+      <section className="service-hero" style={{ backgroundImage: `url(${certificateImage})` }}>
         <div className="service-hero-overlay"></div>
         <div className="service-hero-content">
           <h1 className="service-hero-title">Certificate Attestation</h1>

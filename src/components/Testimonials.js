@@ -6,28 +6,28 @@ const Testimonials = () => {
     {
       quote: 'Had a great experience with Global Vision Education while completing my MBA. The process was smooth and stress-free—from enrollment to receiving my certificate UAE-attested and mark sheets. Big thanks to Mr. Shan and the team for their professional and supportive approach. Highly recommend them for anyone pursuing higher education in Dubai!',
       name: 'Nikhildas',
-      university: 'Google Review',
+      university: 'MBA Graduate',
       rating: 5,
       avatar: 'N'
     },
     {
       quote: 'I found global vision education to be affordable and very convenient. It\'s a great option for distance learning in the UAE. The materials were simple and easy to understand. Staff are very friendly and helpful.',
-      name: 'rinshad n',
-      university: 'Google Review',
+      name: 'Rinshad N',
+      university: 'Distance Learning Student',
       rating: 5,
       avatar: 'RN'
     },
     {
       quote: 'I had a great experience with Global vision. Usually the university process, exams and certificate issuing are all tiring. But these guys made it very simple like a corporate customer service. I just had to only focus on studies and rest was taken care by the team. Thanks a ton!! Highly recommended for anyone in Dubai.',
-      name: 'Nazeem kk',
-      university: 'Google Review',
+      name: 'Nazeem KK',
+      university: 'Graduate Student',
       rating: 5,
       avatar: 'NK'
     },
     {
       quote: 'I successfully completed my post graduation and Global vision helped me to reach my destiny. They have best staff with immense knowledge and they are very interactive. Go for your higher education without any difficulty by choosing them.',
       name: 'Ramya Reddy',
-      university: 'Google Review',
+      university: 'Postgraduate Student',
       rating: 5,
       avatar: 'RR'
     }
@@ -53,7 +53,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <h2 className="testimonials-heading">What our Students Say - Google Reviews</h2>
+        <h2 className="testimonials-heading">What our Students Say</h2>
         
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (

@@ -4,7 +4,6 @@ import "./MBAEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-/* UPDATED ICONS */
 import postgraduateIcon from "../assets/images/course/SVG (4).png";
 import aboutOverlay from "../assets/images/course/Overlay (26).png";
 import eligibilityOverlay from "../assets/images/course/Overlay (27).png";

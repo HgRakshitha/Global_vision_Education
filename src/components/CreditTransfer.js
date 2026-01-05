@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './CreditTransfer.css';
 import Header from './Header';
 import Footer from './Footer';
-import teamImage from '../assets/images/hero/team.jpg';
+import creditImage from '../assets/images/hero/credit.png';
 
 const CreditTransfer = () => {
   return (
@@ -11,7 +11,7 @@ const CreditTransfer = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="service-hero" style={{ backgroundImage: `url(${teamImage})` }}>
+      <section className="service-hero" style={{ backgroundImage: `url(${creditImage})` }}>
         <div className="service-hero-overlay"></div>
         <div className="service-hero-content">
           <h1 className="service-hero-title">Credit Transfer</h1>
@@ -160,6 +160,3 @@ const CreditTransfer = () => {
 };
 
 export default CreditTransfer;
-
-
-

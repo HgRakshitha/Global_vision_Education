@@ -17,7 +17,7 @@ const Services = () => {
       path: '/services/credit-transfer'
     },
     {
-      title: 'Equivalency Certificate services',
+      title: 'Equivalency Certificate',
       path: '/services/equivalency-certificate'
     }
   ];

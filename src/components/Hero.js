@@ -1,11 +1,24 @@
 import React from "react";
 import "./Hero.css";
 import heroImage from "../assets/images/hero/hero-bg.png";
+import heroVideo from "../assets/images/hero/hero2.mp4";
 
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="hero-background"></div>
+      {/* Full background video */}
+      <video
+        className="hero-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={heroImage}
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
       <div className="hero-title-overlay">
         <h1 className="hero-title">
           <span>
@@ -16,18 +29,6 @@ const Hero = () => {
           </span>
           <span>Programs</span>
         </h1>
-      </div>
-      <div className="hero-container">
-        <div className="hero-image-wrapper">
-          <img
-            src={heroImage}
-            alt="Global Vision Education - Hero Section"
-            className="hero-image"
-          />
-          <div className="hero-trust-badge">
-            <span>•</span> Trusted by 7000+ Students Worldwide
-          </div>
-        </div>
       </div>
     </section>
   );

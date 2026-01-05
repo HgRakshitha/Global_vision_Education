@@ -1,11 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import companyLogo from '../assets/images/logo 1.png';
+import ConsultationPopup from './ConsultationPopup';
 
 const Header = () => {
   const [courseDropdown, setCourseDropdown] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('.header-container')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="header">
@@ -37,16 +73,30 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={isMobileMenuOpen ? 'hamburger open' : 'hamburger'}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
         {/* Navigation */}
-        <nav className="nav-menu">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/about" className="nav-link">About</Link>
+        <nav className={`nav-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
           
           {/* Services Dropdown */}
           <div 
             className="nav-dropdown"
-            onMouseEnter={() => setServicesDropdown(true)}
-            onMouseLeave={() => setServicesDropdown(false)}
+            onMouseEnter={() => !isMobile && setServicesDropdown(true)}
+            onMouseLeave={() => !isMobile && setServicesDropdown(false)}
+            onClick={() => isMobile && setServicesDropdown(!servicesDropdown)}
           >
             <Link 
               to="/services" 
@@ -60,14 +110,14 @@ const Header = () => {
             {servicesDropdown && (
               <div 
                 className="dropdown-menu"
-                onMouseEnter={() => setServicesDropdown(true)}
-                onMouseLeave={() => setServicesDropdown(false)}
+                onMouseEnter={() => !isMobile && setServicesDropdown(true)}
+                onMouseLeave={() => !isMobile && setServicesDropdown(false)}
                 onClick={(e) => e.stopPropagation()}
               >
-                <Link to="/services/distance-education" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Distance education</Link>
-                <Link to="/services/certificate-attestation" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Certificate attestation</Link>
-                <Link to="/services/credit-transfer" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Credit transfer</Link>
-                <Link to="/services/equivalency-certificate" className="dropdown-item" onClick={() => setServicesDropdown(false)}>Equivalency Certificate services</Link>
+                <Link to="/services/distance-education" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Distance education</Link>
+                <Link to="/services/certificate-attestation" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Certificate attestation</Link>
+                <Link to="/services/credit-transfer" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Credit transfer</Link>
+                <Link to="/services/equivalency-certificate" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Equivalency Certificate</Link>
               </div>
             )}
           </div>
@@ -75,8 +125,9 @@ const Header = () => {
           {/* Course Dropdown */}
           <div 
             className="nav-dropdown"
-            onMouseEnter={() => setCourseDropdown(true)}
-            onMouseLeave={() => setCourseDropdown(false)}
+            onMouseEnter={() => !isMobile && setCourseDropdown(true)}
+            onMouseLeave={() => !isMobile && setCourseDropdown(false)}
+            onClick={() => isMobile && setCourseDropdown(!courseDropdown)}
           >
             <Link 
               to="/courses" 
@@ -90,28 +141,29 @@ const Header = () => {
             {courseDropdown && (
               <div 
                 className="dropdown-menu"
-                onMouseEnter={() => setCourseDropdown(true)}
-                onMouseLeave={() => setCourseDropdown(false)}
+                onMouseEnter={() => !isMobile && setCourseDropdown(true)}
+                onMouseLeave={() => !isMobile && setCourseDropdown(false)}
                 onClick={(e) => e.stopPropagation()}
               >
-                <Link to="/courses#bachelors" className="dropdown-item" onClick={() => setCourseDropdown(false)}>
+                <Link to="/courses#bachelors" className="dropdown-item" onClick={() => { setCourseDropdown(false); setIsMobileMenuOpen(false); }}>
                   Bachelors
                 </Link>
-                <Link to="/courses#masters" className="dropdown-item" onClick={() => setCourseDropdown(false)}>
+                <Link to="/courses#masters" className="dropdown-item" onClick={() => { setCourseDropdown(false); setIsMobileMenuOpen(false); }}>
                   Masters
                 </Link>
               </div>
             )}
           </div>
 
-          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
         </nav>
 
         {/* Action Buttons */}
         <div className="header-actions">
-          <button className="btn-consultation">Free Consultation</button>
+          <button className="btn-consultation" onClick={() => setIsPopupOpen(true)}>Free Consultation</button>
         </div>
       </div>
+      <ConsultationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </header>
   );
 };

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './DistanceEducation.css';
 import Header from './Header';
 import Footer from './Footer';
-import teamImage from '../assets/images/hero/team.jpg';
+import distanceImage from '../assets/images/hero/distance.png';
 
 const DistanceEducation = () => {
   return (
@@ -11,7 +11,7 @@ const DistanceEducation = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="service-hero" style={{ backgroundImage: `url(${teamImage})` }}>
+      <section className="service-hero" style={{ backgroundImage: `url(${distanceImage})` }}>
         <div className="service-hero-overlay"></div>
         <div className="service-hero-content">
           <h1 className="service-hero-title">Distance Education</h1>

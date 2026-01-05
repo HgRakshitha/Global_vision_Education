@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './EquivalencyCertificate.css';
 import Header from './Header';
 import Footer from './Footer';
-import teamImage from '../assets/images/hero/team.jpg';
+import equivalenceImage from '../assets/images/hero/equivalence.png';
 
 const EquivalencyCertificate = () => {
   return (
@@ -11,10 +11,10 @@ const EquivalencyCertificate = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="service-hero" style={{ backgroundImage: `url(${teamImage})` }}>
+      <section className="service-hero" style={{ backgroundImage: `url(${equivalenceImage})` }}>
         <div className="service-hero-overlay"></div>
         <div className="service-hero-content">
-          <h1 className="service-hero-title">Equivalency Certificate Services</h1>
+          <h1 className="service-hero-title">Equivalency Certificate</h1>
           <p className="service-hero-subtitle">Get Your Foreign Qualifications Recognized in the UAE</p>
         </div>
       </section>
@@ -163,6 +163,3 @@ const EquivalencyCertificate = () => {
 };
 
 export default EquivalencyCertificate;
-
-
-

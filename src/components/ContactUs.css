@@ -8,13 +8,34 @@
   position: relative;
   width: 100%;
   height: 400px;
-  background-size: cover;
-  background-position: center;
+  background-size: 105%;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #fbf2e7;
+  animation: heroFadeIn 1s ease-in-out, heroImageZoom 20s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroImageZoom {
+  0%, 100% {
+    background-size: 105%;
+  }
+  50% {
+    background-size: 110%;
+  }
 }
 
 .contact-banner-overlay {
@@ -34,7 +55,7 @@
 }
 
 .contact-banner-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #fbf2e7;
@@ -80,7 +101,7 @@
 }
 
 .contact-form-heading {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #0f242e;
@@ -88,7 +109,7 @@
 }
 
 .contact-form-subtitle {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #526d7a;
@@ -114,7 +135,7 @@
 }
 
 .form-label {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #0f242e;
@@ -122,7 +143,7 @@
 
 .form-input,
 .form-textarea {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   padding: 12px 16px;
   border: none;
@@ -158,7 +179,7 @@
 }
 
 .contact-submit-btn {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
@@ -225,7 +246,7 @@
 }
 
 .contact-info-heading {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
@@ -258,6 +279,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: contrast(1.15) brightness(1.05);
 }
 
 .contact-info-content {
@@ -265,7 +287,7 @@
 }
 
 .contact-info-label {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #ffffff;
@@ -273,7 +295,7 @@
 }
 
 .contact-info-text {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
@@ -294,7 +316,7 @@
 }
 
 .quick-connect-heading {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #0f242e;
@@ -342,10 +364,11 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: contrast(1.15) brightness(1.05);
 }
 
 .quick-connect-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #0f242e;
@@ -353,7 +376,7 @@
 }
 
 .quick-connect-subtitle {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #526d7a;
@@ -383,7 +406,7 @@
 }
 
 .find-us-button {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: #ffffff;
@@ -403,7 +426,7 @@
 }
 
 .our-location-heading {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #0f242e;
@@ -411,7 +434,7 @@
 }
 
 .our-location-description {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #526d7a;
@@ -424,22 +447,27 @@
 .maps-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 2rem;
   width: 100%;
-  align-items: start;
+  align-items: stretch;
+  grid-auto-columns: 1fr;
 }
 
 .map-item {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: flex-start;
   width: 100%;
+  height: 100%;
+  min-height: fit-content;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .map-location-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #0f242e;
@@ -449,7 +477,7 @@
 }
 
 .map-location-address {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #526d7a;
@@ -457,11 +485,17 @@
   text-align: left;
   line-height: 1.6;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .map-item .map-container {
   width: 100%;
-  min-height: 400px;
+  height: 450px;
+  flex: 1;
+  min-height: 450px;
 }
 
 .map-container {
@@ -471,6 +505,8 @@
 .map-container iframe {
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
 }
 
 /* FAQ Section */
@@ -545,24 +581,43 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-main-container {
+    width: 95%;
+  }
+  
+  .contact-form-left {
+    width: 550px;
+  }
+  
+  .contact-info-right {
+    left: 620px;
+    width: 320px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-banner {
-    height: 300px;
+    height: 250px;
+    background-size: cover;
   }
 
   .contact-banner-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
   }
 
   .contact-form-section {
-    margin-top: -80px;
-    padding: 3rem 1.5rem;
+    margin-top: -60px;
+    padding: 2rem 1rem;
   }
 
   .contact-main-container {
     width: 100%;
     height: auto;
-    min-height: 680px;
+    min-height: auto;
+    border-radius: 30px;
+    padding: 1.5rem;
   }
 
   .contact-form-left {
@@ -571,7 +626,22 @@
     left: auto;
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 30px;
+    padding: 1.5rem;
+  }
+
+  .contact-form-heading {
+    font-size: 1.25rem;
+  }
+
+  .contact-form-subtitle {
+    font-size: 13px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .contact-info-right {
@@ -580,14 +650,38 @@
     left: auto;
     width: 100%;
     height: auto;
+    border-radius: 30px;
+    padding: 1.5rem;
+  }
+
+  .contact-info-heading {
+    font-size: 1.1rem;
+  }
+
+  .quick-connect-section {
+    padding: 2rem 1rem;
   }
 
   .quick-connect-cards {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .quick-connect-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .our-location-section {
+    padding: 2rem 1rem;
   }
 
   .our-location-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .our-location-description {
+    font-size: 13px;
   }
 
   .maps-container {
@@ -595,8 +689,153 @@
     gap: 2rem;
   }
 
+  .map-item {
+    width: 100%;
+  }
+
+  .map-location-title {
+    font-size: 1.1rem;
+  }
+
+  .map-location-address {
+    font-size: 13px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .map-item .map-container {
+    height: 300px;
+  }
+
   .map-container iframe {
-    height: 350px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-banner {
+    height: 200px;
+  }
+
+  .contact-banner-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-form-section {
+    margin-top: -40px;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .contact-main-container {
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .contact-form-left {
+    border-radius: 20px;
+    padding: 1.25rem;
+  }
+
+  .contact-form-heading {
+    font-size: 1.1rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .contact-submit-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  .contact-info-right {
+    border-radius: 20px;
+    padding: 1.25rem;
+  }
+
+  .contact-info-item {
+    gap: 0.5rem;
+  }
+
+  .contact-info-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-info-label {
+    font-size: 11px;
+  }
+
+  .contact-info-text {
+    font-size: 11px;
+  }
+
+  .quick-connect-card {
+    padding: 0.75rem 1rem;
+    height: auto;
+  }
+
+  .quick-connect-title {
+    font-size: 14px;
+  }
+
+  .quick-connect-subtitle {
+    font-size: 11px;
+  }
+
+  .map-item .map-container {
+    height: 250px;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+
+  .our-location-heading {
+    font-size: 1.25rem;
+  }
+
+  .our-location-description {
+    font-size: 12px;
+  }
+
+  .map-location-title {
+    font-size: 1rem;
+  }
+
+  .map-location-address {
+    font-size: 12px;
+  }
+
+  .contact-form-subtitle {
+    font-size: 12px;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    font-size: 13px;
+  }
+
+  .contact-info-heading {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .quick-connect-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .quick-connect-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .our-location-section {
+    padding: 1.5rem 0.75rem;
   }
 }
 

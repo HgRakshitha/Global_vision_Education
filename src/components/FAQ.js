@@ -110,16 +110,6 @@ const FAQ = () => {
             })}
           </div>
         </div>
-        
-        <div className="faq-view-all">
-          <Link to="/contact" className="view-all-btn">
-            <span>View all</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" fill="white"/>
-              <path d="M10 8L14 12L10 16" stroke="#006772" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </div>
       </div>
     </section>
   );

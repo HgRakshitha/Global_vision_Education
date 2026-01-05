@@ -191,11 +191,13 @@
 @media (max-width: 1024px) {
   .services-heading {
     font-size: 2rem;
+    line-height: 1.3;
   }
 
   .application-process-heading {
     font-size: 2rem;
     margin-bottom: 2rem;
+    line-height: 1.3;
   }
 
   .services-upper-content {
@@ -203,10 +205,21 @@
     border-radius: 0 0 50% 50%;
   }
 
+  .services-upper-inner {
+    padding: 0 0.75rem;
+  }
+
+  .services-label {
+    font-size: 0.7rem;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+
   .application-process-grid {
-    grid-template-columns: repeat(2, 280px);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     padding: 0 1rem;
+    max-width: 100%;
   }
 
   .services-upper {
@@ -219,29 +232,33 @@
   }
 
   .application-process-card {
-    width: 280px;
-    height: 200px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 180px;
     padding: 1.5rem 1.25rem;
+    box-sizing: border-box;
   }
 
   .application-process-icon-wrapper {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1.25rem;
-  }
-
-  .application-process-icon-svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .application-process-title {
-    font-size: 1.1rem;
+    width: 60px;
+    height: 60px;
     margin-bottom: 1rem;
   }
 
+  .application-process-icon-svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .application-process-title {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+
   .application-process-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
   }
 }
@@ -249,11 +266,15 @@
 @media (max-width: 768px) {
   .services-heading {
     font-size: 1.75rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .application-process-heading {
     font-size: 1.75rem;
     margin-bottom: 2rem;
+    line-height: 1.3;
   }
 
   .services-description {
@@ -265,11 +286,22 @@
     border-radius: 0 0 50% 50%;
   }
 
+  .services-upper-inner {
+    padding: 0 0.5rem;
+  }
+
+  .services-label {
+    font-size: 0.65rem;
+    padding: 0.35rem 1rem;
+    margin-bottom: 0.875rem;
+  }
+
   .application-process-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-content: center;
     padding: 0 1rem;
+    max-width: 100%;
   }
 
   .services-upper {
@@ -283,27 +315,107 @@
 
   .application-process-card {
     width: 100%;
-    max-width: 280px;
-    height: 200px;
+    max-width: 100%;
+    height: auto;
+    min-height: 180px;
     padding: 1.5rem 1.25rem;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
 
   .application-process-icon-wrapper {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1.25rem;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1rem;
   }
 
   .application-process-icon-svg {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .application-process-title {
-    font-size: 1.1rem;
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 0.75rem;
     margin-bottom: 0;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-heading {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .application-process-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .services-description {
+    font-size: 0.85rem;
+  }
+  
+  .services-upper-content {
+    padding: 1.5rem 0.75rem 2rem;
+    border-radius: 0 0 40% 40%;
+  }
+
+  .services-upper-inner {
+    padding: 0 0.25rem;
+  }
+
+  .services-label {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .services-lower {
+    padding: 3.5rem 0.75rem 1.5rem;
+    margin-top: -40px;
+  }
+
+  .application-process-grid {
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+  }
+  
+  .application-process-card {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    padding: 1.25rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  .application-process-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.875rem;
+  }
+  
+  .application-process-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .application-process-title {
+    font-size: 0.95rem;
+    margin-top: 0.625rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .application-process-description {
+    font-size: 0.8rem;
   }
 }
 

@@ -31,13 +31,13 @@ const WelcomeSection = () => {
               </h2>
             </div>
             <p>
-              GVE was established to address a growing challenge in the UAE. Many professionals wanted to continue their education, but traditional classroom schedules, long commutes and work commitments made it difficult to pursue higher studies. We recognised this gap and set out to create a streamlined pathway that allows individuals to upgrade their qualifications without disrupting their daily responsibilities.
+              Global Vision Education was established to address a growing challenge in the UAE. Many professionals wanted to continue their education, but traditional classroom schedules, long commutes and work commitments made it difficult to pursue higher studies. We recognised this gap and set out to create a streamlined pathway that allows individuals to upgrade their qualifications without disrupting their daily responsibilities.
             </p>
             <p>
               Our journey began with a clear goal, to make education more flexible, accessible and easier to manage for people balancing work, family and career growth. From the start, we focused on offering dependable guidance, a simple admission process and continuous support that keeps learners confident throughout their academic journey.
             </p>
             <p>
-              Today, GVE remains committed to this purpose. We continue to help learners achieve their goals by providing honest advice, structured processes and an approach that respects the realities of modern professional life.
+              Today, Global Vision Education remains committed to this purpose. We continue to help learners achieve their goals by providing honest advice, structured processes and an approach that respects the realities of modern professional life.
             </p>
           </div>
         </div>
