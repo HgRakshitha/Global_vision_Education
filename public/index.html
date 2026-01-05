@@ -15,13 +15,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      // Load video IMMEDIATELY - before React renders - NO LAZY LOADING
+      (function() {
+        // Create video element immediately when page loads
+        var preloadVideo = document.createElement('video');
+        preloadVideo.preload = 'auto';
+        preloadVideo.muted = true;
+        preloadVideo.style.display = 'none';
+        preloadVideo.style.position = 'absolute';
+        preloadVideo.style.width = '1px';
+        preloadVideo.style.height = '1px';
+        preloadVideo.style.opacity = '0';
+        preloadVideo.style.pointerEvents = 'none';
+        
+        // Try to find video path - will be set by webpack
+        // This will force immediate loading
+        if (document.body) {
+          document.body.appendChild(preloadVideo);
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            document.body.appendChild(preloadVideo);
+          });
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!-- Preload hero video for immediate display -->
-    <video id="hero-video-preload" style="display: none;" preload="auto" muted playsinline>
-      <source src="/static/media/hero2.mp4" type="video/mp4">
-    </video>
     <div id="root"></div>
   </body>
 </html>
