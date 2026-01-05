@@ -1,6 +1,5 @@
 import React from "react";
 import "./Hero.css";
-import heroImage from "../assets/images/hero/hero-bg.png";
 import heroVideo from "../assets/images/hero/hero2.mp4";
 
 const Hero = () => {
@@ -13,7 +12,6 @@ const Hero = () => {
         loop
         muted
         playsInline
-        poster={heroImage}
       >
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
