@@ -32,12 +32,15 @@ const BBAEducation = () => {
       });
     }, observerOptions);
 
-    Object.values(elementsRef.current).forEach((el) => {
+    // Copy ref value to avoid stale closure
+    const currentElements = elementsRef.current;
+
+    Object.values(currentElements).forEach((el) => {
       if (el) observer.observe(el);
     });
 
     return () => {
-      Object.values(elementsRef.current).forEach((el) => {
+      Object.values(currentElements).forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };

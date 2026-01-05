@@ -1,14 +1,16 @@
 .hero {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   padding: 0 0 3rem 0;
   margin: 0;
   background-color: #006772;
   min-height: 500px;
+  height: auto;
+  isolation: isolate;
 }
 
-/* Full background video - extends to cover statistics section */
+/* Full background video - extends to cover statistics section - loads first */
 .hero-video {
   position: absolute;
   top: 0;
@@ -21,6 +23,14 @@
   display: block;
   z-index: 0;
   pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  will-change: opacity;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Ensure video loads and displays immediately */
+  content-visibility: auto;
+  contain: layout style paint;
 }
 
 .hero-title-overlay {
@@ -29,6 +39,12 @@
   left: 7rem;
   z-index: 20;
   max-width: 500px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.hero-title-overlay.visible {
+  opacity: 1;
   animation: titleEntrance 1s ease-out;
 }
 

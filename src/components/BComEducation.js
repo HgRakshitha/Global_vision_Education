@@ -4,7 +4,6 @@ import "./BComEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import undergraduateIcon from "../assets/images/course/SVG (4).png";
 import aboutOverlay from "../assets/images/course/Overlay (26).png";
 import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
 import careerOverlay from "../assets/images/course/Overlay (28).png";
@@ -31,12 +30,15 @@ const BComEducation = () => {
       });
     }, observerOptions);
 
-    Object.values(elementsRef.current).forEach((el) => {
+    // Copy ref value to avoid stale closure
+    const currentElements = elementsRef.current;
+
+    Object.values(currentElements).forEach((el) => {
       if (el) observer.observe(el);
     });
 
     return () => {
-      Object.values(elementsRef.current).forEach((el) => {
+      Object.values(currentElements).forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };

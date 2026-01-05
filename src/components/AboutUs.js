@@ -35,13 +35,16 @@ const AboutUs = () => {
       });
     }, observerOptions);
 
+    // Copy ref value to avoid stale closure
+    const currentElements = elementsRef.current;
+
     // Observe all elements with data-key attribute
-    Object.values(elementsRef.current).forEach((el) => {
+    Object.values(currentElements).forEach((el) => {
       if (el) observer.observe(el);
     });
 
     return () => {
-      Object.values(elementsRef.current).forEach((el) => {
+      Object.values(currentElements).forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };
@@ -149,7 +152,7 @@ const AboutUs = () => {
           ref={(el) => (elementsRef.current.image = el)}
           data-key="image"
         >
-          <img src={heroImg} alt="Hero image" className="aboutus-image" />
+          <img src={heroImg} alt="About Us" className="aboutus-image" />
         </div>
       </section>
 
