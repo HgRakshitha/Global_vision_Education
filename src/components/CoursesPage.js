@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import heroImage from "../assets/images/hero/image 26.png";
 import graduationImage from "../assets/images/hero/graduation.png";
-import tickIcon from "../assets/images/icons/SVG (3).png";
+import tickIcon from "../assets/images/icons/circle-check-big.png";
 import overlay11 from "../assets/images/course/Overlay (11).png";
 import overlay12 from "../assets/images/course/Overlay (12).png";
 import overlay13 from "../assets/images/course/Overlay (13).png";
@@ -90,7 +90,7 @@ const CoursesPage = () => {
     };
   }, []);
 
-  const secondaryOverlays = [overlay11, overlay12];
+  const secondaryOverlays = [overlay12, overlay11];
   const undergraduateOverlays = [
     overlay13,
     overlay14,
@@ -111,15 +111,15 @@ const CoursesPage = () => {
 
   const secondaryPrograms = [
     {
-      title: "12th Grade / +2",
-      description:
-        "Academic milestone preparing students for undergraduate studies in Science.",
-      duration: "2 Years",
-    },
-    {
       title: "10th Grade",
       description:
         "Foundation for higher education with essential knowledge in languages,…",
+      duration: "2 Years",
+    },
+    {
+      title: "12th Grade / +2",
+      description:
+        "Academic milestone preparing students for undergraduate studies in Science.",
       duration: "2 Years",
     },
   ];

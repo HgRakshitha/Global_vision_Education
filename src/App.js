@@ -4,7 +4,6 @@ import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Statistics from "./components/Statistics";
 import AcademicPartners from "./components/AcademicPartners";
 import WelcomeSection from "./components/WelcomeSection";
 import Services from "./components/Services";
@@ -41,7 +40,6 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <Statistics />
       <AcademicPartners />
       <WelcomeSection />
       <Services />

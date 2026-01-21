@@ -32,14 +32,15 @@ const Header = () => {
 
     if (isMobileMenuOpen) {
       document.addEventListener('click', handleClickOutside);
-      document.body.style.overflow = 'hidden';
+      // Lock vertical scroll only while the mobile menu is open
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     }
 
     return () => {
       document.removeEventListener('click', handleClickOutside);
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     };
   }, [isMobileMenuOpen]);
 
@@ -156,6 +157,18 @@ const Header = () => {
           </div>
 
           <Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+
+          {/* Mobile-only CTA inside menu */}
+          <button
+            type="button"
+            className="nav-consultation-btn mobile-only"
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsPopupOpen(true);
+            }}
+          >
+            Free Consultation
+          </button>
         </nav>
 
         {/* Action Buttons */}

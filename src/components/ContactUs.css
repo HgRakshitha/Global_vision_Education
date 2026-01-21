@@ -226,6 +226,28 @@
     hue-rotate(154deg) brightness(94%) contrast(89%);
 }
 
+.contact-form-left .social-icon.social-icon-twitter img {
+  /* twitr.svg is already colored and has no background */
+  filter: none;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-form-left .social-icon.social-icon-facebook img {
+  /* facebk.svg is already colored and has no background */
+  filter: none;
+}
+
+.contact-form-left .social-icon.social-icon-linkedin img {
+  /* linked.svg is already colored and has no background */
+  filter: none;
+}
+
+.contact-form-left .social-icon.social-icon-instagram img {
+  /* insta.svg is already colored and has no background */
+  filter: none;
+}
+
 .contact-form-left .social-icon:hover {
   opacity: 0.9;
   transform: translateY(-2px);
@@ -251,6 +273,70 @@
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 1.5rem 0;
+}
+
+/* Separate Address Section */
+.address-section {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.address-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.address-icon-wrapper {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(6, 183, 149, 0.12); /* light badge like screenshot */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.address-icon-wrapper img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  /* Make map-pin icon white */
+  filter: brightness(0) invert(1);
+}
+
+.address-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.address-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.address-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
 }
 
 .contact-info-list {
@@ -358,13 +444,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(6, 183, 149, 0.14); /* light badge like screenshot */
+  border-radius: 12px;
 }
 
 .quick-connect-icon img {
-  width: 100%;
-  height: 100%;
+  width: 12px;
+  height: 22px;
   object-fit: contain;
-  filter: contrast(1.15) brightness(1.05);
+  filter: none;
 }
 
 .quick-connect-title {
@@ -391,6 +479,7 @@
   flex: 1;
   gap: 0.25rem;
 }
+
 
 /* Our Location Section */
 .our-location-section {
@@ -447,7 +536,7 @@
 .maps-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 2rem;
   width: 100%;
   align-items: stretch;
@@ -460,8 +549,7 @@
   gap: 1.5rem;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
-  min-height: fit-content;
+  height: auto;
   min-width: 0;
   box-sizing: border-box;
 }
@@ -485,17 +573,22 @@
   text-align: left;
   line-height: 1.6;
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  word-wrap: break-word;
   box-sizing: border-box;
+}
+
+.map-item:nth-child(2) .map-location-address {
+  white-space: nowrap;
 }
 
 .map-item .map-container {
   width: 100%;
-  height: 450px;
-  flex: 1;
-  min-height: 450px;
+  height: 400px !important;
+  min-height: 400px !important;
+  max-height: 400px !important;
+  flex-shrink: 0;
 }
 
 .map-container {
@@ -506,7 +599,9 @@
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%;
+  height: 400px !important;
+  min-height: 400px !important;
+  max-height: 400px !important;
 }
 
 /* FAQ Section */
@@ -658,6 +753,27 @@
     font-size: 1.1rem;
   }
 
+  .address-section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-width: 2px;
+  }
+
+  .address-section-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom-width: 2px;
+  }
+
+  .address-section-title {
+    font-size: 13px;
+  }
+
+  .address-text {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
   .quick-connect-section {
     padding: 2rem 1rem;
   }
@@ -704,8 +820,20 @@
     text-overflow: unset;
   }
 
+  .map-item:nth-child(2) .map-location-address {
+    white-space: nowrap;
+  }
+
   .map-item .map-container {
-    height: 300px;
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
+  }
+
+  .map-container iframe {
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
   }
 
   .map-container iframe {
@@ -774,6 +902,37 @@
     font-size: 11px;
   }
 
+  .address-section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-width: 2px;
+  }
+
+  .address-section-header {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom-width: 2px;
+  }
+
+  .address-icon-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+
+  .address-section-title {
+    font-size: 13px;
+  }
+
+  .address-content {
+    gap: 1rem;
+  }
+
+  .address-text {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
   .quick-connect-card {
     padding: 0.75rem 1rem;
     height: auto;
@@ -788,11 +947,15 @@
   }
 
   .map-item .map-container {
-    height: 250px;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
   }
 
   .map-container iframe {
-    height: 250px;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
   }
 
   .our-location-heading {
@@ -894,10 +1057,6 @@
     transform: translateY(0);
   }
 }
-
-/* ===============================
-   FORM – gentle breathing
-================================ */
 .contact-form-left {
   animation: formBreath 6s ease-in-out infinite;
 }

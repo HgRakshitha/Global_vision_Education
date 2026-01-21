@@ -4,11 +4,11 @@ import "./TenthStandardEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import secondaryIcon from "../assets/images/course/SVG (4).png";
-import aboutOverlay from "../assets/images/course/Overlay (26).png";
-import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
-import careerOverlay from "../assets/images/course/Overlay (28).png";
-import checkIcon from "../assets/images/icons/SVG (3).png";
+import secondaryIcon from "../assets/images/course/book-open.png";
+import aboutOverlay from "../assets/images/course/book-open.png";
+import eligibilityOverlay from "../assets/images/course/users-round.png";
+import careerOverlay from "../assets/images/course/trending-up.png";
+import checkIcon from "../assets/images/icons/circle-check-big.png";
 
 const TenthStandardEducation = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -122,7 +122,7 @@ const TenthStandardEducation = () => {
                   <img
                     src={aboutOverlay}
                     alt="Program Icon"
-                    className="tenth-about-icon"
+                    className="tenth-about-icon education-about-icon"
                   />
                   <h3 className="tenth-about-card-title">About This Program</h3>
                 </div>
@@ -142,7 +142,7 @@ const TenthStandardEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="tenth-about-icon no-bg-icon animate-bounce-subtle"
+                    className="tenth-about-icon no-bg-icon animate-bounce-subtle education-career-icon"
                   />
                   <h3 className="tenth-about-card-title">Career Prospects</h3>
                 </div>
@@ -181,7 +181,7 @@ const TenthStandardEducation = () => {
                   <img
                     src={eligibilityOverlay}
                     alt="Eligibility Icon"
-                    className="tenth-about-icon small-icon"
+                    className="tenth-about-icon small-icon education-eligibility-icon"
                   />
                   <h3 className="tenth-about-card-title small-title">
                     Eligibility
@@ -197,7 +197,6 @@ const TenthStandardEducation = () => {
                   <Link to="/contact" className="tenth-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="tenth-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
             </div>

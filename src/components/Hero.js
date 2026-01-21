@@ -172,6 +172,28 @@ const Hero = () => {
           <span>Programs</span>
         </h1>
       </div>
+
+      {/* Credibility stats overlay */}
+      <div className="hero-stats-overlay" aria-label="Credibility statistics">
+        <div className="hero-stats-card">
+          <div className="hero-stat">
+            <div className="hero-stat-value">7000+</div>
+            <div className="hero-stat-label">Enrolled Students</div>
+          </div>
+          <div className="hero-stat">
+            <div className="hero-stat-value">4000+</div>
+            <div className="hero-stat-label">Graduated Students</div>
+          </div>
+          <div className="hero-stat">
+            <div className="hero-stat-value">9+</div>
+            <div className="hero-stat-label">Academic Partners</div>
+          </div>
+          <div className="hero-stat">
+            <div className="hero-stat-value">90%</div>
+            <div className="hero-stat-label">Student Satisfaction</div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

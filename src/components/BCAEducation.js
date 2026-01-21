@@ -4,11 +4,11 @@ import "./BCAEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import undergraduateIcon from "../assets/images/course/SVG (5).png";
-import aboutOverlay from "../assets/images/course/Overlay (26).png";
-import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
-import careerOverlay from "../assets/images/course/Overlay (28).png";
-import checkIcon from "../assets/images/icons/SVG (3).png";
+import undergraduateIcon from "../assets/images/course/briefcase.svg";
+import aboutOverlay from "../assets/images/course/book-open.png";
+import eligibilityOverlay from "../assets/images/course/users-round.png";
+import careerOverlay from "../assets/images/course/trending-up.png";
+import checkIcon from "../assets/images/icons/circle-check-big.png";
 
 const BCAEducation = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -140,7 +140,7 @@ const BCAEducation = () => {
                   <img
                     src={aboutOverlay}
                     alt="Program Icon"
-                    className="bca-about-icon"
+                    className="bca-about-icon education-about-icon"
                   />
                   <h3 className="bca-about-card-title">About This Program</h3>
                 </div>
@@ -161,7 +161,7 @@ const BCAEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="bca-about-icon no-bg-icon animate-bounce-subtle"
+                    className="bca-about-icon no-bg-icon animate-bounce-subtle education-career-icon"
                   />
                   <h3 className="bca-about-card-title">Career Prospects</h3>
                 </div>
@@ -212,7 +212,7 @@ const BCAEducation = () => {
                   <img
                     src={eligibilityOverlay}
                     alt="Eligibility Icon"
-                    className="bca-about-icon small-icon"
+                    className="bca-about-icon small-icon education-eligibility-icon"
                   />
                   <h3 className="bca-about-card-title small-title">
                     Eligibility
@@ -229,7 +229,6 @@ const BCAEducation = () => {
                   <Link to="/contact" className="bca-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="bca-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
 
@@ -247,7 +246,7 @@ const BCAEducation = () => {
                   </div>
                   <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <span className="quick-fact-label">Mode</span>
-                    <span className="quick-fact-value">Full-time</span>
+                    <span className="quick-fact-value">Online</span>
                   </div>
                 </div>
               </div>

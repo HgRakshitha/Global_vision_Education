@@ -385,6 +385,30 @@
   .nav-link:last-child {
     border-bottom: none;
   }
+
+  /* Move CTA into the menu to avoid cramped header row */
+  .header-actions {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .nav-consultation-btn {
+    width: calc(100% - 0.5rem);
+    margin: 1rem 0.25rem 0.25rem 0.25rem;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #006772 0%, #06B795 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 103, 114, 0.25);
+  }
   
   .nav-dropdown {
     width: 100%;
@@ -434,5 +458,10 @@
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
+}
+
+/* Default: hide mobile-only elements on desktop */
+.mobile-only {
+  display: none;
 }
 

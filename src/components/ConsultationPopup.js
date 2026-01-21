@@ -11,12 +11,13 @@ const ConsultationPopup = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      // Lock vertical scroll only while the modal is open
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = '';
     };
   }, [isOpen]);
 

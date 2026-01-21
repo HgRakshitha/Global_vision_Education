@@ -9,28 +9,34 @@ import engineeringImg from '../assets/images/programs/eng.png';
 const PopularPrograms = () => {
   const programs = [
     {
-      image: managementImg,
-      name: 'BBA'
+      image: accountingImg,
+      name: 'B.Com',
+      path: '/courses/bcom'
     },
     {
-      image: accountingImg,
-      name: 'B.Com'
+      image: managementImg,
+      name: 'BBA',
+      path: '/courses/bba'
     },
     {
       image: artsMediaImg,
-      name: 'B.Ed'
+      name: 'B.Ed',
+      path: '/courses/bed'
     },
     {
       image: accountingImg,
-      name: 'M.Com'
+      name: 'M.Com',
+      path: '/courses/mcom'
     },
     {
       image: managementImg,
-      name: 'MBA'
+      name: 'MBA',
+      path: '/courses/mba'
     },
     {
       image: engineeringImg,
-      name: 'M.Sc'
+      name: 'M.Sc',
+      path: '/courses/msc'
     }
   ];
 
@@ -40,7 +46,7 @@ const PopularPrograms = () => {
       <div className="programs-container">
         <div className="programs-grid">
           {programs.map((program, index) => (
-            <Link key={index} to="/courses" className="program-image-wrapper">
+            <Link key={index} to={program.path} className="program-image-wrapper">
               {program.image ? (
                 <img 
                   src={program.image} 

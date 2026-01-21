@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "clean": "node -e \"const fs=require('fs'); const rm=p=>{try{fs.rmSync(p,{recursive:true,force:true});}catch(e){}}; ['build','dist','.cache','.parcel-cache','node_modules/.cache','.eslintcache'].forEach(rm); console.log('Cleaned build/tool caches.');\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

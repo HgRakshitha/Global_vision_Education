@@ -4,17 +4,17 @@ import Header from './Header';
 import Footer from './Footer';
 import FAQ from './FAQ';
 import contactImage from '../assets/images/hero/contact.png';
-import twitterIcon from '../assets/images/hero/twitter (1).png';
-import facebookIcon from '../assets/images/icons/facebook.png';
-import instagramIcon from '../assets/images/hero/insta.png';
-import linkedinIcon from '../assets/images/icons/linkedin.png';
+import twitterIcon from '../assets/images/hero/twitr.svg';
+import facebookIcon from '../assets/images/hero/facebk.svg';
+import instagramIcon from '../assets/images/hero/insta.svg';
+import linkedinIcon from '../assets/images/hero/linked.svg';
 import overlay4 from '../assets/images/icons/Overlay (4).png';
 import overlay5 from '../assets/images/icons/Overlay (5).png';
 import overlay6 from '../assets/images/icons/Overlay (6).png';
-import overlay7 from '../assets/images/icons/Overlay (7).png';
-import overlay8Icon from '../assets/images/icons/Overlay (8).png';
-import overlay9Icon from '../assets/images/icons/Overlay (9).png';
-import overlay10Icon from '../assets/images/icons/Overlay (10).png';
+import overlay7 from '../assets/images/icons/map-pin.png';
+import messageSquareIcon from '../assets/images/icons/message-square.svg';
+import campusIcon from '../assets/images/icons/campus.svg';
+import virtualIcon from '../assets/images/icons/virtual.svg';
 
 const ContactUs = () => {
   return (
@@ -69,16 +69,21 @@ const ContactUs = () => {
                   </svg>
                 </button>
                 <div className="social-icons">
-                  <a href="https://x.com/globalvision_34" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a
+                    href="https://x.com/globalvision_34"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon social-icon-twitter"
+                  >
                     <img src={twitterIcon} alt="Twitter" />
                   </a>
-                  <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-facebook">
                     <img src={facebookIcon} alt="Facebook" />
                   </a>
-                  <a href="https://www.instagram.com/globaleducation.ae/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://www.instagram.com/globaleducation.ae/" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-instagram">
                     <img src={instagramIcon} alt="Instagram" />
                   </a>
-                  <a href="https://www.linkedin.com/in/global-vision-education-107978180/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://www.linkedin.com/in/global-vision-education-107978180/" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-linkedin">
                     <img src={linkedinIcon} alt="LinkedIn" />
                   </a>
                 </div>
@@ -89,17 +94,23 @@ const ContactUs = () => {
           {/* Right Contact Information Section */}
           <div className="contact-info-right">
             <h3 className="contact-info-heading">Contact Information</h3>
-            <div className="contact-info-list">
-              <div className="contact-info-item">
-                <div className="contact-info-icon">
+            
+            {/* Separate Address Section */}
+            <div className="address-section">
+              <div className="address-section-header">
+                <div className="address-icon-wrapper">
                   <img src={overlay7} alt="Location" />
                 </div>
-                <div className="contact-info-content">
-                  <div className="contact-info-label">Our Address</div>
-                  <div className="contact-info-text">Office No. 205, Ontario Tower, Business Bay, Dubai.</div>
-                  <div className="contact-info-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33- Building Al Salam</div>
-                </div>
+                <h4 className="address-section-title">Our Address</h4>
               </div>
+              <div className="address-content">
+                <div className="address-text">Office No. 205, Ontario Tower, Business Bay, Dubai.</div>
+                <div className="address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</div>
+              </div>
+            </div>
+
+            {/* Other Contact Information */}
+            <div className="contact-info-list">
               <div className="contact-info-item">
                 <div className="contact-info-icon">
                   <img src={overlay4} alt="Phone" />
@@ -140,7 +151,7 @@ const ContactUs = () => {
           <div className="quick-connect-cards">
             <div className="quick-connect-card">
               <div className="quick-connect-icon">
-                <img src={overlay8Icon} alt="Live Chat" />
+                <img src={messageSquareIcon} alt="Live Chat" />
               </div>
               <div>
                 <h3 className="quick-connect-title">Live Chat</h3>
@@ -149,7 +160,7 @@ const ContactUs = () => {
             </div>
             <div className="quick-connect-card">
               <div className="quick-connect-icon">
-                <img src={overlay9Icon} alt="Visit Campus" />
+                <img src={campusIcon} alt="Visit Campus" />
               </div>
               <div>
                 <h3 className="quick-connect-title">Visit Campus</h3>
@@ -158,7 +169,7 @@ const ContactUs = () => {
             </div>
             <div className="quick-connect-card">
               <div className="quick-connect-icon">
-                <img src={overlay10Icon} alt="Virtual Tour" />
+                <img src={virtualIcon} alt="Virtual Tour" />
               </div>
               <div>
                 <h3 className="quick-connect-title">Virtual Tour</h3>
@@ -179,13 +190,13 @@ const ContactUs = () => {
           </p>
           <div className="maps-container">
             <div className="map-item">
-              <h3 className="map-location-title">Location 1</h3>
+              <h3 className="map-location-title">Dubai Office</h3>
               <p className="map-location-address">Office No. 205, Ontario Tower, Business Bay, Dubai.</p>
               <div className="map-container">
                 <iframe
                   src="https://www.google.com/maps?q=25.1861344,55.2620304&hl=en&z=17&output=embed"
                   width="100%"
-                  height="450"
+                  height="400"
                   style={{ border: 0, borderRadius: '20px' }}
                   allowFullScreen=""
                   loading="lazy"
@@ -195,13 +206,13 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="map-item">
-              <h3 className="map-location-title">Location 2</h3>
-              <p className="map-location-address">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33- Building Al Salam</p>
+              <h3 className="map-location-title">Abu Dhabi Office</h3>
+              <p className="map-location-address">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</p>
               <div className="map-container">
                 <iframe
                   src="https://www.google.com/maps?q=24.4973968,54.3716999&hl=en&z=16&output=embed"
                   width="100%"
-                  height="450"
+                  height="400"
                   style={{ border: 0, borderRadius: '20px' }}
                   allowFullScreen=""
                   loading="lazy"

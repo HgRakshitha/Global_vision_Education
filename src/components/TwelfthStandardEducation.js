@@ -4,11 +4,11 @@ import "./TwelfthStandardEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import higherSecondaryIcon from "../assets/images/course/SVG (4).png";
-import aboutOverlay from "../assets/images/course/Overlay (26).png";
-import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
-import careerOverlay from "../assets/images/course/Overlay (28).png";
-import checkIcon from "../assets/images/icons/SVG (3).png";
+import higherSecondaryIcon from "../assets/images/course/book-open.png";
+import aboutOverlay from "../assets/images/course/book-open.png";
+import eligibilityOverlay from "../assets/images/course/users-round.png";
+import careerOverlay from "../assets/images/course/trending-up.png";
+import checkIcon from "../assets/images/icons/circle-check-big.png";
 
 const TwelfthStandardEducation = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -124,7 +124,7 @@ const TwelfthStandardEducation = () => {
                   <img
                     src={aboutOverlay}
                     alt="Program Icon"
-                    className="twelfth-about-icon"
+                    className="twelfth-about-icon education-about-icon"
                   />
                   <h3 className="twelfth-about-card-title">
                     About This Program
@@ -147,7 +147,7 @@ const TwelfthStandardEducation = () => {
                   <img
                     src={careerOverlay}
                     alt="Career Icon"
-                    className="twelfth-about-icon no-bg-icon animate-bounce-subtle"
+                    className="twelfth-about-icon no-bg-icon animate-bounce-subtle education-career-icon"
                   />
                   <h3 className="twelfth-about-card-title">Career Prospects</h3>
                 </div>
@@ -186,7 +186,7 @@ const TwelfthStandardEducation = () => {
                   <img
                     src={eligibilityOverlay}
                     alt="Eligibility Icon"
-                    className="twelfth-about-icon small-icon"
+                    className="twelfth-about-icon small-icon education-eligibility-icon"
                   />
                   <h3 className="twelfth-about-card-title small-title">
                     Eligibility
@@ -203,7 +203,6 @@ const TwelfthStandardEducation = () => {
                   <Link to="/contact" className="twelfth-btn-apply animate-pulse-button">
                     Apply Now
                   </Link>
-                  <button className="twelfth-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
             </div>

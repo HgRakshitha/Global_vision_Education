@@ -15,14 +15,22 @@
   width: 100%;
 }
 
+.services-page,
+.services-page *,
+.services-page *::before,
+.services-page *::after {
+  box-sizing: border-box;
+}
+
 /* Services Hero Section */
 .services-hero {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: 400px;
   overflow: hidden;
   background-size: cover;
-  background-position: center;
+  /* Move image a little more up */
+  background-position: center 40%;
   background-repeat: no-repeat;
   background-color: #006772;
   animation: heroFadeIn 1s ease-in-out, heroImageZoom 20s ease-in-out infinite;
@@ -43,7 +51,8 @@
     background-size: cover;
   }
   50% {
-    background-size: 110%;
+    /* Less zoom so image looks smaller */
+    background-size: 105%;
   }
 }
 
@@ -54,12 +63,31 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  /* Match Courses page hero shade (blue gradient) */
   background: linear-gradient(
-    135deg,
-    rgba(0, 103, 114, 0.7) 0%,
-    rgba(0, 139, 122, 0.6) 50%,
-    rgba(6, 183, 149, 0.7) 100%
+    to bottom right,
+    rgba(0, 103, 114, 0.85) 0%,
+    rgba(0, 103, 114, 0.75) 40%,
+    rgba(251, 242, 231, 0.85) 100%
   );
+  pointer-events: none;
+}
+
+/* Subtle blue glow like Courses hero */
+.services-hero-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 103, 114, 0.6) 0%,
+    rgba(0, 103, 114, 0.3) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .services-hero-content {
@@ -317,7 +345,7 @@
 /* Secondary Services Buttons */
 .secondary-services {
   display: grid;
-  grid-template-columns: repeat(4, 280px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
   justify-content: center;
   margin-bottom: 40px;
@@ -327,8 +355,8 @@
 }
 
 .secondary-service-btn {
-  width: 280px;
-  height: 95px;
+  width: 100%;
+  min-height: 95px;
   background: linear-gradient(135deg, #ffffff 0%, #fdf8f2 100%);
   border: 1px solid #e5e7eb;
   border-radius: 20px;
@@ -414,17 +442,19 @@
 
 .enrollment-steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 960px;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   justify-content: center;
 }
 
 .enrollment-step-card {
   background-color: #ffffff;
-  width: 300px;
-  height: 240px;
+  width: 100%;
+  min-height: 240px;
+  height: auto;
   border-radius: 24px;
   border: 1px solid #e5e7eb;
   padding: 28px 24px;
@@ -515,10 +545,18 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.services-cta-btn-primary:visited,
+.services-cta-btn-primary:active {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .services-cta-btn-primary:hover {
   background-color: #004d55;
+  text-decoration: none;
 }
 
 .services-cta-btn-secondary {
@@ -554,7 +592,7 @@
 @media (max-width: 900px) {
   .services-hero {
     height: auto;
-    min-height: 440px;
+    min-height: 400px;
   }
 
   .what-we-offer-cards {
@@ -562,8 +600,6 @@
   }
 
   .secondary-services {
-    flex-direction: column;
-    align-items: center;
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 0 1rem;
@@ -610,13 +646,15 @@
 
 @media (max-width: 768px) {
   .services-hero {
-    height: 350px;
-    min-height: 350px;
+    height: auto;
+    min-height: 320px;
   }
 
   .services-hero-content {
-    bottom: 30px;
-    left: 30px;
+    bottom: auto;
+    left: auto;
+    padding: 32px 1rem 12px;
+    text-align: center;
   }
 
   .services-hero-title {
@@ -624,8 +662,9 @@
   }
 
   .services-cards-row-1 {
-    bottom: 30px;
-    right: 30px;
+    bottom: auto;
+    right: auto;
+    padding: 0 1rem 24px;
     gap: 8px;
   }
 
@@ -745,14 +784,15 @@
 
 @media (max-width: 480px) {
   .services-hero {
-    height: 280px;
+    height: auto;
     min-height: 280px;
   }
 
   .services-hero-content {
-    bottom: 15px;
-    left: 15px;
-    padding: 0;
+    bottom: auto;
+    left: auto;
+    padding: 24px 0.75rem 10px;
+    text-align: center;
   }
 
   .services-hero-title {
@@ -762,8 +802,9 @@
   }
 
   .services-cards-row-1 {
-    bottom: 15px;
-    right: 15px;
+    bottom: auto;
+    right: auto;
+    padding: 0 0.75rem 20px;
     gap: 4px;
   }
 

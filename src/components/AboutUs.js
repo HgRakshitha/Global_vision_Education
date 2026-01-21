@@ -8,7 +8,7 @@ import heroImg from "../assets/images/hero/img.png";
 import icon1 from "../assets/images/icons/bg3.png";
 import icon2 from "../assets/images/icons/bg2.png";
 import icon3 from "../assets/images/icons/bg1.png";
-import tickIcon from "../assets/images/icons/SVG (3).png";
+import tickIcon from "../assets/images/icons/circle-check-big.png";
 import overlayIcon1 from "../assets/images/icons/Overlay.png";
 import overlayIcon2 from "../assets/images/icons/Overlay (1).png";
 import overlayIcon3 from "../assets/images/icons/Overlay (2).png";
@@ -93,16 +93,13 @@ const AboutUs = () => {
             data-key="rightColumn"
           >
             <p className="aboutus-description">
-              Global Vision Education was founded to solve a major challenge in the UAE -
-              professionals wanted to study further but struggled with rigid
-              classroom schedules, long commutes and work commitments. We
-              created a flexible, accessible pathway that helps individuals
-              upgrade their qualifications without disrupting their daily life.
-              From the beginning, our focus has been simple: genuine guidance,
-              an easy admission process and continuous support for working
-              learners. Today, Global Vision Education stays true to this mission, helping
-              professionals grow with honest advice, structured processes and an
-              approach that understands the realities of modern life.
+              Global Vision Education was established to address a growing need in the UAE where working professionals seek higher education without the limitations of traditional classroom learning. Many individuals aspire to enhance their qualifications, but fixed schedules, long commutes, and demanding work commitments often create barriers. We provide flexible distance education solutions that allow learners to progress academically without interrupting their professional or personal responsibilities.
+            </p>
+            <p className="aboutus-description">
+              As a trusted distance education provider in the UAE, we offer accessible learning pathways designed specifically for working professionals. Our approach focuses on clear academic guidance, a simplified admission process, and continuous student support throughout the learning journey. Every program is structured to help learners achieve academic growth while maintaining balance in their daily lives.
+            </p>
+            <p className="aboutus-description">
+              From the beginning, our mission has remained consistent. We aim to deliver honest counseling, transparent processes, and dependable academic assistance that aligns with the realities of today's workforce. Whether your goal is career advancement, qualification upgrade, or professional transition, Global Vision Education is committed to supporting your success through reliable and flexible online education in the UAE.
             </p>
           </div>
         </div>

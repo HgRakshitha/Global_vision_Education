@@ -1,6 +1,6 @@
 import React from 'react';
 import './WelcomeSection.css';
-import graduatesImage from '../assets/images/welcome/Group 24.png';
+import graduatesImage from '../assets/images/welcome/grp.png';
 
 const WelcomeSection = () => {
   return (
@@ -11,7 +11,7 @@ const WelcomeSection = () => {
           <div className="image-wrapper">
             <img 
               src={graduatesImage} 
-              alt="Graduates celebrating together" 
+              alt="Students celebrating graduation and academic achievement" 
               className="welcome-img"
               onError={(e) => {
                 e.target.style.display = 'none';

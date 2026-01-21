@@ -124,7 +124,8 @@
   ),
   var(--bg-image);
   background-size: cover, cover;
-  background-position: center, center;
+  /* Keep gradient centered; position the image slightly lower than center */
+  background-position: center, center 35%;
   background-repeat: no-repeat, no-repeat;
   padding: 4rem 2rem;
   position: relative;
@@ -240,13 +241,15 @@
 }
 
 .courses-hero-image {
-  width: 100%;
-  max-width: 750px;
+  /* Slightly enlarge the hero image visually (some PNGs have built-in padding) */
+  width: 110%;
+  max-width: none;
   height: auto;
   object-fit: contain;
   position: relative;
   z-index: 1;
-  transform: translateX(-50px);
+  /* move a bit more to the right (avoid transform so it doesn't conflict with float animation) */
+  left: 40px;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -276,7 +279,7 @@
 }
 
 .floating-box-1 {
-  top: 20px;
+  top: 55px;
   right: 20px;
   animation-delay: 0.8s;
   width: 160px;
@@ -285,7 +288,7 @@
 }
 
 .floating-box-2 {
-  bottom: 40px;
+  bottom: -20px;
   left: 100px;
   animation-delay: 1s;
 }
@@ -945,6 +948,16 @@
     font-size: 2.5rem;
   }
 
+  /* Keep the hero image enlargement a bit more subtle on tablet widths */
+  .courses-hero-image {
+    width: 105%;
+    left: 0;
+  }
+
+  .floating-box-1 {
+    top: 50px;
+  }
+
   .undergraduate-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1015,7 +1028,8 @@
 
   .courses-hero-image {
     max-width: 100%;
-    transform: translateX(0);
+    width: 100%;
+    left: 0;
   }
 
   .floating-info-box {

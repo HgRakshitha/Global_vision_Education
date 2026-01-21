@@ -178,6 +178,17 @@
   filter: contrast(1.15) brightness(1.05);
 }
 
+.footer-icon-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: rgba(6, 183, 149, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 /* Footer Contact Information */
 .footer-contact-info {
   display: flex;
@@ -235,14 +246,15 @@
 }
 
 .footer-address-link .footer-icon {
-  width: 18px;
-  height: 18px;
+  width: 9px;
+  height: 9px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
+  margin-right: 0;
   filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(142deg) brightness(96%) contrast(101%);
 }
 
-.footer-address-link span {
+.footer-address-link .footer-address-text {
   flex: 1;
 }
 

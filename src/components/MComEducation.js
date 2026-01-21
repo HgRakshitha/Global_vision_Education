@@ -4,11 +4,11 @@ import "./MComEducation.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import postgraduateIcon from "../assets/images/course/SVG (4).png";
-import aboutOverlay from "../assets/images/course/Overlay (26).png";
-import eligibilityOverlay from "../assets/images/course/Overlay (27).png";
-import careerOverlay from "../assets/images/course/Overlay (28).png";
-import checkIcon from "../assets/images/icons/SVG (3).png";
+import postgraduateIcon from "../assets/images/course/book-open.png";
+import aboutOverlay from "../assets/images/course/book-open.png";
+import eligibilityOverlay from "../assets/images/course/users-round.png";
+import careerOverlay from "../assets/images/course/trending-up.png";
+import checkIcon from "../assets/images/icons/circle-check-big.png";
 
 const MComEducation = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -104,8 +104,8 @@ const MComEducation = () => {
               data-key="leftColumn"
             >
               <div className="mcom-about-program-card">
-                <div className="mcom-about-card-header">
-                  <img src={aboutOverlay} alt="Program Icon" className="mcom-about-icon" />
+              <div className="mcom-about-card-header">
+                <img src={aboutOverlay} alt="Program Icon" className="mcom-about-icon education-about-icon" />
                   <h3 className="mcom-about-card-title">About This Program</h3>
                 </div>
                 <p className="mcom-about-card-description">
@@ -114,7 +114,7 @@ const MComEducation = () => {
               </div>
               <div className="mcom-info-card career-prospects-card">
                 <div className="mcom-about-card-header">
-                  <img src={careerOverlay} alt="Career Icon" className="mcom-about-icon no-bg-icon animate-bounce-subtle" />
+                  <img src={careerOverlay} alt="Career Icon" className="mcom-about-icon no-bg-icon animate-bounce-subtle education-career-icon" />
                   <h3 className="mcom-about-card-title">Career Prospects</h3>
                 </div>
                 <div className="education-grid">
@@ -143,8 +143,8 @@ const MComEducation = () => {
               data-key="rightColumn"
             >
               <div className="mcom-info-card">
-                <div className="mcom-about-card-header">
-                  <img src={eligibilityOverlay} alt="Eligibility Icon" className="mcom-about-icon small-icon" />
+              <div className="mcom-about-card-header">
+                <img src={eligibilityOverlay} alt="Eligibility Icon" className="mcom-about-icon small-icon education-eligibility-icon" />
                   <h3 className="mcom-about-card-title small-title">Eligibility</h3>
                 </div>
                 <p className="mcom-about-card-description">
@@ -152,7 +152,6 @@ const MComEducation = () => {
                 </p>
                 <div className="mcom-card-buttons">
                   <Link to="/contact" className="mcom-btn-apply animate-pulse-button">Apply Now</Link>
-                  <button className="mcom-btn-info animate-pulse-button" style={{ animationDelay: '0.1s' }}>Get More Info</button>
                 </div>
               </div>
               <div className="mcom-quick-facts">
@@ -168,7 +167,7 @@ const MComEducation = () => {
                   </div>
                   <div className="quick-fact-item animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     <span className="quick-fact-label">Mode</span>
-                    <span className="quick-fact-value">Full-time</span>
+                    <span className="quick-fact-value">Online</span>
                   </div>
                 </div>
               </div>

@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import companyLogo from '../assets/images/logo 1.png';
-import twitterIcon from '../assets/images/icons/twitter.png';
-import facebookIcon from '../assets/images/icons/facebook.png';
-import instagramIcon from '../assets/images/icons/instagram-fill.png';
-import linkedinIcon from '../assets/images/icons/linkedin.png';
+import twitterIcon from '../assets/images/icons/twitter (1).png';
+import facebookIcon from '../assets/images/icons/facebook (2).png';
+import instagramIcon from '../assets/images/icons/instagram.png';
+import linkedinIcon from '../assets/images/icons/linkedin (1).png';
 import phoneIcon from '../assets/images/icons/Overlay (4).png';
-import locationIcon from '../assets/images/icons/Overlay (7).png';
+import locationIcon from '../assets/images/icons/map-pin.png';
 
 const Footer = () => {
   return (
@@ -86,8 +86,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="footer-address-link"
               >
-                <img src={locationIcon} alt="Location" className="footer-icon" />
-                <span>Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates</span>
+                <span className="footer-icon-badge">
+                  <img src={locationIcon} alt="Location" className="footer-icon" />
+                </span>
+                <span className="footer-address-text">Ontario Tower - 1604 - Office Building, 17 1701-22 - Business Bay - Dubai - United Arab Emirates</span>
               </a>
               <a 
                 href="https://maps.app.goo.gl/S8J3rN54mYGpyQdw8" 
@@ -95,8 +97,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="footer-address-link"
               >
-                <img src={locationIcon} alt="Location" className="footer-icon" />
-                <span>KM Trading, Al Ferdous Tower - 15th Floor, Room No. 33- Building Al Salam</span>
+                <span className="footer-icon-badge">
+                  <img src={locationIcon} alt="Location" className="footer-icon" />
+                </span>
+                <span className="footer-address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</span>
               </a>
             </div>
           </div>
@@ -112,8 +116,8 @@ const Footer = () => {
             © Global Vision Education. All Rights Reserved.
           </div>
           <div className="footer-social">
-            <a href="https://x.com/GlobalVisionEdu" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-twitter" aria-label="Twitter">
-              <img src={twitterIcon} alt="WhatsApp" />
+            <a href="https://x.com/globalvision_34" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-twitter" aria-label="Twitter">
+              <img src={twitterIcon} alt="Twitter" />
             </a>
             <a href="https://www.facebook.com/GLOBALVISIONEDUCATIONUAE" target="_blank" rel="noopener noreferrer" className="social-icon social-icon-facebook" aria-label="Facebook">
               <img src={facebookIcon} alt="Facebook" />
