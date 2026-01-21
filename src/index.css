@@ -12,6 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FBF2E7;
+  /* Ensure scrolling works reliably on trackpads/touch */
+  overflow-y: auto;
 }
 
 code {

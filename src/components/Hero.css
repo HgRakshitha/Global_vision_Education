@@ -418,7 +418,4 @@
   }
 }
 
-html,
-body {
-  overscroll-behavior: none;
-}
+/* Avoid applying global overscroll rules; they can interfere with trackpad/touch scrolling in some environments. */

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ConsultationPopup.css';
+import { lockBodyScroll } from '../utils/bodyScrollLock';
 
 const ConsultationPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -12,13 +13,13 @@ const ConsultationPopup = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       // Lock vertical scroll only while the modal is open
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = '';
+      const unlock = lockBodyScroll();
+      return () => {
+        unlock();
+      };
     }
-    return () => {
-      document.body.style.overflowY = '';
-    };
+
+    return undefined;
   }, [isOpen]);
 
   const handleChange = (e) => {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import companyLogo from '../assets/images/logo 1.png';
 import ConsultationPopup from './ConsultationPopup';
+import { lockBodyScroll } from '../utils/bodyScrollLock';
 
 const Header = () => {
   const [courseDropdown, setCourseDropdown] = useState(false);
@@ -33,14 +34,15 @@ const Header = () => {
     if (isMobileMenuOpen) {
       document.addEventListener('click', handleClickOutside);
       // Lock vertical scroll only while the mobile menu is open
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = '';
+      const unlock = lockBodyScroll();
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+        unlock();
+      };
     }
 
     return () => {
       document.removeEventListener('click', handleClickOutside);
-      document.body.style.overflowY = '';
     };
   }, [isMobileMenuOpen]);
 
