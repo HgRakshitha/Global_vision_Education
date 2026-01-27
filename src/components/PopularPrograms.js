@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PopularPrograms.css';
-import managementImg from '../assets/images/programs/manage.png';
-import accountingImg from '../assets/images/programs/account.png';
-import artsMediaImg from '../assets/images/programs/arts.png';
-import engineeringImg from '../assets/images/programs/eng.png';
+import accountingImg from '../assets/images/programs/b_com.png';
+import artsImg from '../assets/images/programs/b_ed.png';
+import bbaImg from '../assets/images/programs/bba.png';
+import bscImg from '../assets/images/programs/bs_c.png';
+import engImg from '../assets/images/programs/eng.png';
+import mbaImg from '../assets/images/programs/mba.png';
 
 const PopularPrograms = () => {
   const programs = [
@@ -14,30 +16,30 @@ const PopularPrograms = () => {
       path: '/courses/bcom'
     },
     {
-      image: managementImg,
+      image: bbaImg,
       name: 'BBA',
       path: '/courses/bba'
     },
     {
-      image: artsMediaImg,
+      image: bscImg,
+      name: 'B.Sc',
+      path: '/courses/bsc'
+    },
+    {
+      image: artsImg,
       name: 'B.Ed',
       path: '/courses/bed'
     },
     {
-      image: accountingImg,
+      image: engImg,
       name: 'M.Com',
       path: '/courses/mcom'
     },
     {
-      image: managementImg,
+      image: mbaImg,
       name: 'MBA',
       path: '/courses/mba'
     },
-    {
-      image: engineeringImg,
-      name: 'M.Sc',
-      path: '/courses/msc'
-    }
   ];
 
   return (

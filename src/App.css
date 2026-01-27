@@ -49,6 +49,20 @@ section[class*="-hero-section"],
   overflow: hidden;
 }
 
+/* =========================
+   Mobile text justification
+   (Courses listing + course detail pages)
+   ========================= */
+@media (max-width: 768px) {
+  /* Course detail pages like .bba-standard-page, .ba-standard-page, etc. */
+  [class$="-standard-page"] [class$="-about-card-description"] {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    hyphens: auto;
+  }
+}
+
 /* Let pill/tag rows wrap on small screens */
 [class*="meta-tags"] {
   flex-wrap: wrap;

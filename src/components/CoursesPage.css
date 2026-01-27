@@ -972,6 +972,18 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile: justify longer text blocks for readability */
+  .courses-section-description,
+  .program-section-subtitle,
+  .secondary-card-description,
+  .undergraduate-card-description,
+  .postgraduate-card-description {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    hyphens: auto;
+  }
+
   .courses-hero {
     padding: 2rem 1rem;
     min-height: auto;

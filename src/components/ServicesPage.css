@@ -645,6 +645,18 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile: justify paragraph text for better readability */
+  .what-we-offer-description,
+  .program-card-description,
+  .enrollment-process-description,
+  .step-description,
+  .services-cta-description {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    hyphens: auto;
+  }
+
   .services-hero {
     height: auto;
     min-height: 320px;

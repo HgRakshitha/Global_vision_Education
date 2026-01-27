@@ -104,8 +104,14 @@ const ContactUs = () => {
                 <h4 className="address-section-title">Our Address</h4>
               </div>
               <div className="address-content">
-                <div className="address-text">Office No. 205, Ontario Tower, Business Bay, Dubai.</div>
-                <div className="address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</div>
+                <div className="address-item">
+                  <div className="address-item-title">Dubai Office</div>
+                  <div className="address-text">Office No. 205, Ontario Tower, Business Bay, Dubai.</div>
+                </div>
+                <div className="address-item">
+                  <div className="address-item-title">Abu Dhabi Office</div>
+                  <div className="address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</div>
+                </div>
               </div>
             </div>
 
@@ -190,8 +196,10 @@ const ContactUs = () => {
           </p>
           <div className="maps-container">
             <div className="map-item">
-              <h3 className="map-location-title">Dubai Office</h3>
-              <p className="map-location-address">Office No. 205, Ontario Tower, Business Bay, Dubai.</p>
+              <div className="map-location-header">
+                <h3 className="map-location-title">Dubai Office</h3>
+                <p className="map-location-address">Office No. 205, Ontario Tower, Business Bay, Dubai.</p>
+              </div>
               <div className="map-container">
                 <iframe
                   src="https://www.google.com/maps?q=25.1861344,55.2620304&hl=en&z=17&output=embed"
@@ -206,8 +214,10 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="map-item">
-              <h3 className="map-location-title">Abu Dhabi Office</h3>
-              <p className="map-location-address">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</p>
+              <div className="map-location-header">
+                <h3 className="map-location-title">Abu Dhabi Office</h3>
+                <p className="map-location-address">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</p>
+              </div>
               <div className="map-container">
                 <iframe
                   src="https://www.google.com/maps?q=24.4973968,54.3716999&hl=en&z=16&output=embed"

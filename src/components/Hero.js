@@ -14,58 +14,6 @@ const Hero = () => {
     setVideoLoaded(true);
   }, []);
 
-  // Preload video IMMEDIATELY - NO LAZY LOADING - Execute synchronously
-  useEffect(() => {
-    const videoPath = VIDEO_PATH;
-    
-    // Add preload link to head for immediate video loading - highest priority
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'video';
-    link.href = videoPath;
-    link.setAttribute('fetchpriority', 'high');
-    link.setAttribute('crossorigin', 'anonymous');
-    document.head.insertBefore(link, document.head.firstChild);
-    
-    // Create preload video element to force immediate loading
-    const preloadVideo1 = document.createElement('video');
-    preloadVideo1.preload = 'auto';
-    preloadVideo1.muted = true;
-    preloadVideo1.autoplay = true;
-    preloadVideo1.playsInline = true;
-    preloadVideo1.style.display = 'none';
-    preloadVideo1.style.position = 'absolute';
-    preloadVideo1.style.width = '1px';
-    preloadVideo1.style.height = '1px';
-    preloadVideo1.style.opacity = '0';
-    preloadVideo1.style.pointerEvents = 'none';
-    preloadVideo1.style.zIndex = '-9999';
-    preloadVideo1.src = videoPath;
-    document.body.appendChild(preloadVideo1);
-    
-    // Force immediate load and play
-    preloadVideo1.load();
-    preloadVideo1.play().catch(() => {});
-    
-    // Also set up the main video immediately
-    if (videoRef.current) {
-      const video = videoRef.current;
-      video.src = videoPath;
-      video.load();
-      video.play().catch(() => {});
-    }
-    
-    return () => {
-      // Cleanup
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
-      }
-      if (document.body.contains(preloadVideo1)) {
-        document.body.removeChild(preloadVideo1);
-      }
-    };
-  }, []);
-
   useEffect(() => {
     // Ensure video loads and plays immediately when component mounts - NO LAZY LOADING
     if (videoRef.current) {
@@ -79,12 +27,6 @@ const Hero = () => {
       video.setAttribute('preload', 'auto');
       video.removeAttribute('loading');
       
-      // Set fetchpriority if supported - HIGHEST PRIORITY
-      if ('fetchPriority' in video) {
-        video.fetchPriority = 'high';
-      }
-      video.setAttribute('fetchpriority', 'high');
-      
       // Explicitly disable lazy loading
       if ('loading' in video) {
         video.loading = 'eager';
@@ -93,9 +35,6 @@ const Hero = () => {
       // Remove any data attributes that might cause lazy loading
       video.removeAttribute('data-loading');
       video.removeAttribute('loading');
-      
-      // CRITICAL: Force immediate load FIRST - before event listeners
-      video.load();
       
       const handleLoadedData = () => {
         setVideoLoaded(true);
@@ -117,16 +56,8 @@ const Hero = () => {
       // Set currentTime to 0 to force immediate load
       video.currentTime = 0;
       
-      // Force network request immediately - call load() multiple times
+      // Force initial network request
       video.load();
-      setTimeout(() => {
-        video.load();
-        video.play().catch(() => {});
-      }, 0);
-      setTimeout(() => {
-        video.load();
-        video.play().catch(() => {});
-      }, 10);
       
       // Try to play immediately
       const playPromise = video.play();
@@ -154,7 +85,6 @@ const Hero = () => {
         muted
         playsInline
         preload="auto"
-        fetchPriority="high"
       >
         <source src={VIDEO_PATH} type="video/mp4" />
         Your browser does not support the video tag.

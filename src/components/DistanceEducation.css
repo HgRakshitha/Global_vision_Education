@@ -322,6 +322,16 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile: justify longer content text */
+  .service-intro p,
+  .benefit-card p,
+  .step-item p {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    hyphens: auto;
+  }
+
   .service-hero {
     height: 300px;
   }
