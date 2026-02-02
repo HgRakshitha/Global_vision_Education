@@ -110,7 +110,7 @@ const ContactUs = () => {
                 </div>
                 <div className="address-item">
                   <div className="address-item-title">Abu Dhabi Office</div>
-                  <div className="address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</div>
+                  <div className="address-text">KM Trading, Al Ferdous Tower - 15th Floor, Office No. 27- Building Al Salam</div>
                 </div>
               </div>
             </div>
