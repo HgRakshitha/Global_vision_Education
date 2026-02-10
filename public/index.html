@@ -44,6 +44,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      // Fallback for react-snap
+      if (typeof window !== 'undefined' && window.snapSaveState) {
+        window.snapSaveState();
+      }
+    </script>
   </body>
 </html>
 

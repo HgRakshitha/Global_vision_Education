@@ -193,7 +193,7 @@ const ServicesPage = () => {
               Credit Transfer
             </Link>
             <Link to="/services/equivalency-certificate" className="secondary-service-btn">
-              Equivalency Certificate
+              Equivalency Services
             </Link>
           </div>
         </div>

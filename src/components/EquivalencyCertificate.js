@@ -14,7 +14,7 @@ const EquivalencyCertificate = () => {
       <section className="service-hero" style={{ backgroundImage: `url(${equivalenceImage})` }}>
         <div className="service-hero-overlay"></div>
         <div className="service-hero-content">
-          <h1 className="service-hero-title">Equivalency Certificate</h1>
+          <h1 className="service-hero-title">Equivalency Services</h1>
           <p className="service-hero-subtitle">Get Your Foreign Qualifications Recognized in the UAE</p>
         </div>
       </section>

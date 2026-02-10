@@ -7,11 +7,11 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'Can international students enroll in distance education programs?',
-      answer: 'Yes — many accredited distance education programs are available to students worldwide, allowing global access without relocating.'
+      answer: 'Yes - many accredited distance education programs are available to students worldwide, allowing global access without relocating.'
     },
     {
       question: 'Are distance education courses recognized by employers?',
-      answer: 'Yes — as long as the degree or certificate is from an accredited institution, it is widely accepted by employers and for further studies.'
+      answer: 'Yes - as long as the degree or certificate is from an accredited institution, it is widely accepted by employers and for further studies.'
     },
     {
       question: 'Are exams in distance education conducted online or offline?',
@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: 'Can I balance work and studies if I choose distance learning?',
-      answer: 'Yes — one of the main advantages of distance learning is flexibility, allowing you to study on your own schedule while working full-time or attending to other responsibilities.'
+      answer: 'Yes - one of the main advantages of distance learning is flexibility, allowing you to study on your own schedule while working full-time or attending to other responsibilities.'
     },
     {
       question: 'What should I check before enrolling in a distance education program?',

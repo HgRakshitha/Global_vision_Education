@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactUs.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -17,6 +17,87 @@ import campusIcon from '../assets/images/icons/campus.svg';
 import virtualIcon from '../assets/images/icons/virtual.svg';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setSubmitStatus('error');
+      setSubmitMessage('Please fill in all required fields.');
+      return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setSubmitMessage('Please enter a valid email address.');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      // API endpoint - adjust this URL based on your deployment
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(data.message || 'Thank you for your message! We will respond within 24 hours.');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(data.message || 'Failed to send your message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // Provide more specific error messages
+      let errorMessage = 'Network error. Please check your connection and try again.';
+      
+      if (error.message && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError'))) {
+        errorMessage = 'Cannot connect to server. Please make sure the backend server is running on port 5000.';
+      } else if (error.message && error.message.includes('CORS')) {
+        errorMessage = 'CORS error. Please check server configuration.';
+      }
+      
+      setSubmitStatus('error');
+      setSubmitMessage(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="contact-us-page">
       <Header />
@@ -36,37 +117,91 @@ const ContactUs = () => {
           <div className="contact-form-left">
             <h2 className="contact-form-heading">Send Us a Message</h2>
             <p className="contact-form-subtitle">Fill out the form below and we'll respond within 24 hours.</p>
-            <form className="contact-form">
+            <form 
+              className="contact-form" 
+              onSubmit={handleSubmit}
+              noValidate
+            >
+              {submitStatus && (
+                <div className={`contact-form-message ${submitStatus === 'success' ? 'success' : 'error'}`}>
+                  {submitMessage}
+                </div>
+              )}
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Full Name *</label>
-                  <input type="text" className="form-input" placeholder="Enter your full name" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    className="form-input" 
+                    placeholder="Enter your full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Email Address *</label>
-                  <input type="email" className="form-input" placeholder="Enter your email address" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    className="form-input" 
+                    placeholder="Enter your email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Phone Number</label>
-                  <input type="tel" className="form-input" placeholder="Enter your phone number" />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    className="form-input" 
+                    placeholder="Enter your phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="form-group">
                   <label className="form-label">Subject *</label>
-                  <input type="text" className="form-input" placeholder="How can we help?" />
+                  <input 
+                    type="text" 
+                    name="subject"
+                    className="form-input" 
+                    placeholder="How can we help?"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
               </div>
               <div className="form-group">
                 <label className="form-label">Your Message *</label>
-                <textarea className="form-textarea" rows="6" placeholder="Tell us more about your inquiry..."></textarea>
+                <textarea 
+                  className="form-textarea" 
+                  name="message"
+                  rows="6" 
+                  placeholder="Tell us more about your inquiry..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
               </div>
               <div className="form-actions">
-                <button type="submit" className="contact-submit-btn">
-                  Send Message
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
-                    <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="white"/>
-                  </svg>
+                <button 
+                  type="submit" 
+                  className="contact-submit-btn"
+                  disabled={isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                      <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="white"/>
+                    </svg>
+                  )}
                 </button>
                 <div className="social-icons">
                   <a

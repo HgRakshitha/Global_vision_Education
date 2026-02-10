@@ -1,11 +1,13 @@
 import React from 'react';
 import './AcademicPartners.css';
-import ugcLogo from '../assets/images/partners/ugc.png';
+import ugcLogo from '../assets/images/partners/UGC.jpg';
 import upscLogo from '../assets/images/partners/upsc.jpg';
-import debLogo from '../assets/images/partners/DEB.jpg';
+import debLogo from '../assets/images/partners/DEB.png';
 import aiuLogo from '../assets/images/partners/aiu.webp';
-import naacLogo from '../assets/images/partners/NAAC.jpg';
+import naacLogo from '../assets/images/partners/NAAC.png';
 import aicteLogo from '../assets/images/partners/aicte.jpg';
+import wesLogo from '../assets/images/partners/WES.svg';
+import ecctisLogo from '../assets/images/partners/ecctis.svg';
 
 const AcademicPartners = () => {
   const affiliations = [
@@ -38,6 +40,16 @@ const AcademicPartners = () => {
       name: 'AICTE', 
       fullName: 'All India Council for Technical Education',
       logo: aicteLogo
+    },
+    { 
+      name: 'WES', 
+      fullName: 'World Education Services',
+      logo: wesLogo
+    },
+    { 
+      name: 'UK NARIC', 
+      fullName: 'UK NARIC (Ecctis)',
+      logo: ecctisLogo
     }
   ];
 

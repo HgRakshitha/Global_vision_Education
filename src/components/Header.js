@@ -120,7 +120,7 @@ const Header = () => {
                 <Link to="/services/distance-education" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Distance education</Link>
                 <Link to="/services/certificate-attestation" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Certificate attestation</Link>
                 <Link to="/services/credit-transfer" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Credit transfer</Link>
-                <Link to="/services/equivalency-certificate" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Equivalency Certificate</Link>
+                <Link to="/services/equivalency-certificate" className="dropdown-item" onClick={() => { setServicesDropdown(false); setIsMobileMenuOpen(false); }}>Equivalency Services</Link>
               </div>
             )}
           </div>

@@ -9,6 +9,9 @@ const ConsultationPopup = ({ isOpen, onClose }) => {
     email: '',
     course: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
     if (isOpen) {
@@ -29,13 +32,58 @@ const ConsultationPopup = ({ isOpen, onClose }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    // You can add API call here
-    alert('Thank you for your interest! We will contact you soon.');
-    setFormData({ name: '', phone: '', email: '', course: '' });
-    onClose();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      // API endpoint - adjust this URL based on your deployment
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      
+      const response = await fetch(`${API_URL}/api/consultation`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(data.message || 'Thank you for your interest! We will contact you soon.');
+        setFormData({ name: '', phone: '', email: '', course: '' });
+        
+        // Close popup after 2 seconds
+        setTimeout(() => {
+          onClose();
+          setSubmitStatus(null);
+          setSubmitMessage('');
+        }, 2000);
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(data.message || 'Failed to submit your request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // Provide more specific error messages
+      let errorMessage = 'Network error. Please check your connection and try again.';
+      
+      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+        errorMessage = 'Cannot connect to server. Please make sure the backend server is running on port 5000.';
+      } else if (error.message.includes('CORS')) {
+        errorMessage = 'CORS error. Please check server configuration.';
+      }
+      
+      setSubmitStatus('error');
+      setSubmitMessage(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleOverlayClick = (e) => {
@@ -116,8 +164,18 @@ const ConsultationPopup = ({ isOpen, onClose }) => {
               />
             </div>
 
-            <button type="submit" className="consultation-form-submit">
-              Submit
+            {submitStatus && (
+              <div className={`consultation-form-message ${submitStatus === 'success' ? 'success' : 'error'}`}>
+                {submitMessage}
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              className="consultation-form-submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>

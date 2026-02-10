@@ -776,13 +776,6 @@
 
 .postgraduate-cards-row-second {
   justify-content: center;
-  /* Center 3 cards to align with first row's 4 cards */
-  /* Each card is 290px, gap is 24px */
-  /* 4 cards: 4*290 + 3*24 = 1232px */
-  /* 3 cards: 3*290 + 2*24 = 918px */
-  /* Offset to center: (1232 - 918) / 2 = 157px */
-  /* Reduced padding to move left */
-  padding-left: 60px;
 }
 
 .postgraduate-card {
@@ -1159,14 +1152,21 @@
 
   .undergraduate-card-footer,
   .postgraduate-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 8px;
   }
 
   .undergraduate-read-more,
   .postgraduate-read-more {
-    width: 100%;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .undergraduate-duration,
+  .postgraduate-duration {
+    flex-shrink: 0;
   }
 }
 
@@ -1312,13 +1312,28 @@
     font-size: 12px;
   }
 
-  .undergraduate-duration {
-    font-size: 12px;
-    padding: 3px 10px;
+  .undergraduate-card-footer,
+  .postgraduate-card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
   }
 
-  .undergraduate-read-more {
+  .undergraduate-duration,
+  .postgraduate-duration {
     font-size: 12px;
+    padding: 3px 10px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .undergraduate-read-more,
+  .postgraduate-read-more {
+    font-size: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .postgraduate-cards-container {
@@ -1350,15 +1365,6 @@
   }
 
   .postgraduate-card-description {
-    font-size: 12px;
-  }
-
-  .postgraduate-duration {
-    font-size: 12px;
-    padding: 3px 10px;
-  }
-
-  .postgraduate-read-more {
     font-size: 12px;
   }
 }

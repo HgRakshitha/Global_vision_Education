@@ -100,7 +100,7 @@ const Footer = () => {
                 <span className="footer-icon-badge">
                   <img src={locationIcon} alt="Location" className="footer-icon" />
                 </span>
-                <span className="footer-address-text">KM Trading, Al Ferdous Tower - 15th Floor, Room No. 27- Building Al Salam</span>
+                <span className="footer-address-text">KM Trading, Al Ferdous Tower - 15th Floor, Office No. 27- Building Al Salam</span>
               </a>
             </div>
           </div>
