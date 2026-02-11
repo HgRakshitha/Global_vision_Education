@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background-color: #FBF2E7;
+  background-color: #fbf2e7;
   padding: 1rem 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   position: sticky;
@@ -85,7 +85,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: #0F242E;
+  color: #0f242e;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -96,16 +96,18 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
   width: 80%;
   height: 3px;
-  background: linear-gradient(90deg, #006772 0%, #06B795 100%);
+  background: linear-gradient(90deg, #006772 0%, #06b795 100%);
   border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s ease;
 }
 
 .nav-link:hover {
@@ -171,7 +173,7 @@
 .dropdown-item {
   display: block;
   padding: 0.875rem 1.5rem;
-  color: #0F242E;
+  color: #0f242e;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -185,20 +187,24 @@
 }
 
 .dropdown-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, #006772 0%, #06B795 100%);
+  background: linear-gradient(180deg, #006772 0%, #06b795 100%);
   transform: scaleY(0);
   transition: transform 0.25s ease;
   border-radius: 0 4px 4px 0;
 }
 
 .dropdown-item:hover {
-  background: linear-gradient(90deg, rgba(0, 103, 114, 0.08) 0%, rgba(6, 183, 149, 0.05) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 103, 114, 0.08) 0%,
+    rgba(6, 183, 149, 0.05) 100%
+  );
   color: #006772;
   padding-left: 2rem;
 }
@@ -241,7 +247,7 @@
 }
 
 .btn-consultation {
-  background: linear-gradient(135deg, #006772 0%, #06B795 100%);
+  background: linear-gradient(135deg, #006772 0%, #06b795 100%);
   color: white;
   border: none;
   font-size: 1rem;
@@ -257,13 +263,18 @@
 }
 
 .btn-consultation::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -285,15 +296,15 @@
     height: 60px;
     max-width: 200px;
   }
-  
+
   .nav-menu {
     margin-right: 2rem;
   }
-  
+
   .nav-menu {
     gap: 1.5rem;
   }
-  
+
   .nav-link {
     font-size: 0.85rem;
   }
@@ -327,7 +338,7 @@
   display: block;
   height: 3px;
   width: 100%;
-  background-color: #0F242E;
+  background-color: #0f242e;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -349,22 +360,22 @@
     padding: 0.75rem 1rem;
     position: relative;
   }
-  
+
   .company-logo {
     height: 45px;
     max-width: 140px;
   }
-  
+
   .mobile-menu-toggle {
     display: flex;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
-    background-color: #FBF2E7;
+    background-color: #fbf2e7;
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
@@ -380,24 +391,24 @@
     display: flex;
     justify-content: space-between;
   }
-  
+
   .nav-menu.mobile-open {
     transform: translateX(0);
   }
-  
+
   .nav-menu.mobile-open .nav-consultation-btn {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
-  
+
   .nav-link {
     width: 100%;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 1rem;
   }
-  
+
   .nav-link:last-child {
     border-bottom: none;
   }
@@ -419,7 +430,7 @@
     padding: 1rem 1.5rem;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(135deg, #006772 0%, #06B795 100%);
+    background: linear-gradient(135deg, #006772 0%, #06b795 100%);
     color: #ffffff;
     font-size: 1rem;
     font-weight: 700;
@@ -437,20 +448,20 @@
     flex-shrink: 0;
     order: 999;
   }
-  
+
   .nav-consultation-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 103, 114, 0.35);
   }
-  
+
   .nav-consultation-btn:active {
     transform: translateY(0);
   }
-  
+
   .nav-dropdown {
     width: 100%;
   }
-  
+
   .dropdown-menu {
     position: static;
     width: 100%;
@@ -461,21 +472,21 @@
     background-color: rgba(0, 103, 114, 0.05);
     border-radius: 8px;
   }
-  
+
   .dropdown-item {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .header-actions {
     gap: 0.5rem;
   }
-  
+
   .btn-consultation {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
-  
+
   .btn-signin {
     display: none;
   }
@@ -485,12 +496,12 @@
   .header-container {
     padding: 0.5rem 0.75rem;
   }
-  
+
   .company-logo {
     height: 40px;
     max-width: 120px;
   }
-  
+
   .btn-consultation {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
@@ -501,4 +512,3 @@
 .mobile-only {
   display: none;
 }
-
