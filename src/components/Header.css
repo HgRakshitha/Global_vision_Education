@@ -413,13 +413,12 @@
     border-bottom: none;
   }
 
-  /* Move CTA into the menu to avoid cramped header row */
   .header-actions {
     display: none;
   }
 
   .mobile-only {
-    display: flex !important;
+    display: None !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
