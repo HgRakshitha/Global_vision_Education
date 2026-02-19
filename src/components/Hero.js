@@ -8,7 +8,7 @@ const VIDEO_PATH = heroVideo;
 const Hero = () => {
   const videoRef = useRef(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  
+
   // Set video loaded to true immediately to show video
   useEffect(() => {
     setVideoLoaded(true);
@@ -19,23 +19,23 @@ const Hero = () => {
     if (videoRef.current) {
       const video = videoRef.current;
       const videoPath = VIDEO_PATH;
-      
+
       // Set source immediately - use stored path
       video.src = videoPath;
-      
+
       // Force immediate loading - remove ALL lazy loading mechanisms
-      video.setAttribute('preload', 'auto');
-      video.removeAttribute('loading');
-      
+      video.setAttribute("preload", "auto");
+      video.removeAttribute("loading");
+
       // Explicitly disable lazy loading
-      if ('loading' in video) {
-        video.loading = 'eager';
+      if ("loading" in video) {
+        video.loading = "eager";
       }
-      
+
       // Remove any data attributes that might cause lazy loading
-      video.removeAttribute('data-loading');
-      video.removeAttribute('loading');
-      
+      video.removeAttribute("data-loading");
+      video.removeAttribute("loading");
+
       const handleLoadedData = () => {
         setVideoLoaded(true);
         video.play().catch(() => {
@@ -50,15 +50,15 @@ const Hero = () => {
         });
       };
 
-      video.addEventListener('loadeddata', handleLoadedData, { once: true });
-      video.addEventListener('canplay', handleCanPlay, { once: true });
-      
+      video.addEventListener("loadeddata", handleLoadedData, { once: true });
+      video.addEventListener("canplay", handleCanPlay, { once: true });
+
       // Set currentTime to 0 to force immediate load
       video.currentTime = 0;
-      
+
       // Force initial network request
       video.load();
-      
+
       // Try to play immediately
       const playPromise = video.play();
       if (playPromise !== undefined) {
@@ -68,8 +68,8 @@ const Hero = () => {
       }
 
       return () => {
-        video.removeEventListener('loadeddata', handleLoadedData);
-        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener("loadeddata", handleLoadedData);
+        video.removeEventListener("canplay", handleCanPlay);
       };
     }
   }, []);
@@ -89,9 +89,9 @@ const Hero = () => {
         <source src={VIDEO_PATH} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
+
       {/* Title overlay - appears after video loads */}
-      <div className={`hero-title-overlay ${videoLoaded ? 'visible' : ''}`}>
+      <div className={`hero-title-overlay ${videoLoaded ? "visible" : ""}`}>
         <h1 className="hero-title">
           <span>
             Achieve Your Dreams with <span className="highlight">Flexible</span>
@@ -119,7 +119,7 @@ const Hero = () => {
             <div className="hero-stat-label">Academic Partners</div>
           </div>
           <div className="hero-stat">
-            <div className="hero-stat-value">90%</div>
+            <div className="hero-stat-value">100%</div>
             <div className="hero-stat-label">Student Satisfaction</div>
           </div>
         </div>

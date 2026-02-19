@@ -34,6 +34,7 @@ import DistanceEducation from "./components/DistanceEducation";
 import CertificateAttestation from "./components/CertificateAttestation";
 import CreditTransfer from "./components/CreditTransfer";
 import EquivalencyCertificate from "./components/EquivalencyCertificate";
+import InternationalUniversities from "./components/InternationalUniversities";
 
 function Home() {
   return (
@@ -51,7 +52,6 @@ function Home() {
     </>
   );
 }
-
 function App() {
   return (
     <Router>
@@ -84,10 +84,26 @@ function App() {
             <Route path="/courses/msc" element={<MScEducation />} />
             <Route path="/courses/mcom" element={<MComEducation />} />
             <Route path="/courses/med" element={<MEdEducation />} />
-            <Route path="/services/distance-education" element={<DistanceEducation />} />
-            <Route path="/services/certificate-attestation" element={<CertificateAttestation />} />
-            <Route path="/services/credit-transfer" element={<CreditTransfer />} />
-            <Route path="/services/equivalency-certificate" element={<EquivalencyCertificate />} />
+            <Route
+              path="/services/distance-education"
+              element={<DistanceEducation />}
+            />
+            <Route
+              path="/services/certificate-attestation"
+              element={<CertificateAttestation />}
+            />
+            <Route
+              path="/services/credit-transfer"
+              element={<CreditTransfer />}
+            />
+            <Route
+              path="/services/equivalency-certificate"
+              element={<EquivalencyCertificate />}
+            />
+            <Route
+              path="/services/international-universities"
+              element={<InternationalUniversities />}
+            />
           </Routes>
         </div>
       </div>
